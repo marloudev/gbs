@@ -1,19 +1,19 @@
-import { app, BrowserWindow } from 'electron';
-
-let mainWindow;
+const { app, BrowserWindow } = require('electron');
+const path = require('path');
 
 function createWindow() {
     mainWindow = new BrowserWindow({
-        width: 800,
-        height: 600,
+        width: 1100,
+        height: 800,
+        icon: path.join(__dirname, '/public/images/logo.svg'), // Specify the path to your icon file
         webPreferences: {
             nodeIntegration: true,
         },
     });
 
-    mainWindow.loadURL('http://127.0.0.1:8000'); // React development server URL
+    // Load your application URL
+    mainWindow.loadURL('http://127.0.0.1:8000');
     // mainWindow.loadURL('http://localhost/public'); 
-    
     mainWindow.on('closed', function () {
         mainWindow = null;
     });
