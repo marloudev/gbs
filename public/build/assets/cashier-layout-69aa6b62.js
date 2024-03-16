@@ -1,0 +1,1 @@
+import{b as e,r as i,y as o,t as c,j as t}from"./app-7d1f4fcd.js";import f from"./toastify-efa06e0b.js";import{a as m}from"./account-service-eaa15de7.js";function u({children:a}){const r=e();return i.useEffect(()=>{m().then(s=>{s.role=="admin"&&o.visit("/administrator/dashboard"),r(c(s))})},[]),t.jsxs("div",{className:"flex",children:[t.jsx(f,{}),a]})}export{u as default};

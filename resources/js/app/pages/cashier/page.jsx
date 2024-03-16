@@ -20,7 +20,7 @@ export default function CashierPage() {
     }, [JSON.stringify(cart)]);
 
     return (
-        <CashierLayout className='flex'>
+        <CashierLayout>
             <div className='flex-1 basis-7/12 h-screen '>
                 <div className='flex flex-col h-full w-full '>
                     <div className='flex-1 basis-4/6 border-1'>

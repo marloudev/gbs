@@ -7,11 +7,27 @@ use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
-
-    public function index()
+    public function getProducts()
     {
 
         $products = Product::get();
+        return response()->json([
+            'status' => 'status',
+            'data' => $products
+        ]);
+    }
+
+    public function index(Request $request)
+    {
+
+        $searchTerm = $request->input('search');
+
+        // Perform the search query
+        $products = Product::where('barcode', 'like', '%' . $searchTerm . '%')
+            ->orWhere('description', 'like', '%' . $searchTerm . '%')
+            ->get();
+
+        // Return the search results
         return response()->json([
             'status' => 'status',
             'data' => $products
@@ -30,18 +46,16 @@ class ProductController extends Controller
     public function store(Request $request)
     {
 
-        if (env('APP_ENV') == 'production') {
-            Product::create($request->validate([
-                'barcode' => 'required|unique:products',
-                'description' => 'required',
-                'quantity' => 'required',
-                'price' => 'required',
-            ]));
-        }
+        Product::create($request->validate([
+            'barcode' => 'required|unique:products',
+            'description' => 'required',
+            'quantity' => 'required',
+            'price' => 'required',
+        ]));
 
         return response()->json([
             'status' => 'success',
-            'data' => $this->index()->original['data']
+            'data' => $this->getProducts()->original['data']
         ], 200);
     }
 
@@ -56,7 +70,7 @@ class ProductController extends Controller
         ]));
         return response()->json([
             'status' => 'success',
-            'data' => $this->index()->original['data']
+            'data' => $this->getProducts()->original['data']
         ], 200);
     }
 
@@ -65,7 +79,7 @@ class ProductController extends Controller
         Product::where('id', $id)->delete();
         return response()->json([
             'status' => 'success',
-            'data' => $this->index()->original['data']
+            'data' => $this->getProducts()->original['data']
         ], 200);
     }
 }

@@ -1,5 +1,5 @@
-export async function get_products_service(data) {
-    const response = await axios.get('/api/products')
+export async function get_products_service(page,search) {
+    const response = await axios.get('/api/products?page=' + page + '&search=' + search )
     return response.data;
 }
 

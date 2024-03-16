@@ -6,7 +6,6 @@ import { setUser } from '../redux/app-slice';
 import { router } from '@inertiajs/react';
 
 export default function CashierLayout({children}) {
-  const navigate = useNavigate()
   const dispatch = useDispatch()
   useEffect(() => {
     get_account_service()
@@ -18,7 +17,7 @@ export default function CashierLayout({children}) {
       })
   }, []);
   return (
-    <div>
+    <div className='flex'>
       <Toastify />
       {children}
     </div>

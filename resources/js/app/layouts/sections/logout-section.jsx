@@ -1,12 +1,28 @@
 import { Popover, Transition } from '@headlessui/react'
 import { ChevronDownIcon } from '@heroicons/react/20/solid'
-import { Fragment } from 'react'
+import { Fragment, useEffect } from 'react'
 import { logout_account_service } from '../../../services/account-service'
 import { router } from '@inertiajs/react'
 
 
 
 export default function LogoutSection() {
+
+    useEffect(() => {
+        const handleKeyPress = (event) => {
+            const isEscapeKey = event.key.toLowerCase() === 'escape';
+            if (isEscapeKey) {
+                logoutAccount();
+            }
+        };
+
+        window.addEventListener("keydown", handleKeyPress);
+
+        // Cleanup the event listener on component unmount
+        return () => {
+            window.removeEventListener("keydown", handleKeyPress);
+        };
+    }, []);
 
 
     async function logoutAccount() {

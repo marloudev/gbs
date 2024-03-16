@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import ProductsCreateSection from './products-create-section'
 import store from '../../../../../store/store';
 import { getAllProductsThunk } from '../redux/products-thunk';
@@ -8,12 +8,17 @@ import ProductsEditSection from './products-edit-section';
 import AdministratorDeleteProduct from './products-delete-section';
 
 export default function ProductsTableSection() {
-
+  const [page, setPage] = useState(1)
   const { products } = useSelector((state) => state.products);
+  const [search,setSearch] = useState('')
   useEffect(() => {
-    store.dispatch(getAllProductsThunk(get_products_service()))
+    store.dispatch(getAllProductsThunk(get_products_service(page, search)))
   }, []);
 
+  function submitSearch(e) {
+    e.preventDefault()
+    store.dispatch(getAllProductsThunk(get_products_service(page, search)))
+}
   return (
     <section className="container px-2 my-4 mx-auto">
       <div className="sm:flex sm:items-center sm:justify-between">
@@ -63,15 +68,19 @@ export default function ProductsTableSection() {
           </button> */}
         </div>
 
-        <div className="relative flex items-center mt-4 md:mt-0">
+        <form 
+        onSubmit={submitSearch}
+        className="relative flex items-center mt-4 md:mt-0">
           <span className="absolute">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-5 h-5 mx-3">
               <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
             </svg>
           </span>
 
-          <input type="text" placeholder="Search" className="block w-full py-1.5 pr-5 text-gray-700 bg-white border border-gray-200 rounded-lg md:w-80 placeholder-gray-400/70 pl-11 rtl:pr-11 rtl:pl-5  focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40" />
-        </div>
+          <input 
+          onChange={(e)=>setSearch(e.target.value)}
+          type="text" placeholder="Search" className="block w-full py-1.5 pr-5 text-gray-700 bg-white border border-gray-200 rounded-lg md:w-80 placeholder-gray-400/70 pl-11 rtl:pr-11 rtl:pl-5  focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40" />
+        </form>
       </div>
 
       <div className="flex flex-col mt-6">
@@ -144,7 +153,7 @@ export default function ProductsTableSection() {
 
             </div>
 
-            <div className="mt-6 sm:flex sm:items-center sm:justify-between ">
+            {/* <div className="mt-6 sm:flex sm:items-center sm:justify-between ">
               <div className="text-sm text-gray-500">
                 Page <span className="font-medium text-gray-700 ">1 of 10</span>
               </div>
@@ -170,7 +179,7 @@ export default function ProductsTableSection() {
                   </svg>
                 </a>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
