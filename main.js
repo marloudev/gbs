@@ -13,7 +13,7 @@ function createWindow() {
     });
 
     // Load your application URL
-    mainWindow.loadURL('http://127.0.0.1:8000');
+    mainWindow.loadURL('http://gbs-minimart.com');
     // mainWindow.loadURL('http://localhost/public'); 
     mainWindow.on('closed', function () {
         mainWindow = null;
