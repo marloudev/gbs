@@ -34,7 +34,7 @@ Route::get('*', function () {
 })->name('error');
 
 Route::get('/', function () {
-    return Inertia::render('pages/login/page');
+    return Inertia::render('pages/Auth/Login');
 })->name('login.form');
 
 
