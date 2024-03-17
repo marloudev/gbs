@@ -1,11 +1,12 @@
-const { app, BrowserWindow } = require('electron');
-const path = require('path');
+import { app, BrowserWindow } from 'electron';
+import path from 'path';
+
+let mainWindow;
 
 function createWindow() {
     mainWindow = new BrowserWindow({
         width: 1100,
-        height: 800,
-        icon: path.join(__dirname, '/public/images/logo.svg'), // Specify the path to your icon file
+        height: 800, // Specify the path to your icon file
         webPreferences: {
             nodeIntegration: true,
         },
