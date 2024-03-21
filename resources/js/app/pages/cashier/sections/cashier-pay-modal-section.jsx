@@ -8,7 +8,7 @@ import { createPaymentThunk } from '../redux/cashier-thunk';
 
 export default function CashierPayModalSection() {
   const [open, setOpen] = useState(false)
-  const { payment } = useSelector((state) => state.cashier);
+  const { payment, cart } = useSelector((state) => state.cashier);
   const { user } = useSelector((state) => state.app);
   const cancelButtonRef = useRef(null)
   const dispatch = useDispatch()
@@ -33,9 +33,11 @@ export default function CashierPayModalSection() {
         // If 'F' key is pressed and autofocus prop is true
         setOpen(false)
         document.getElementById('paymentDetails').focus();
-      }else if ((event.key === 'P' || event.key === 'p')) {
+      } else if ((event.key === 'P' || event.key === 'p')) {
         // If 'F' key is pressed and autofocus prop is true
-        setOpen(true)
+        if (cart.length != 0 || cart.length != '0') {
+          setOpen(true)
+        }
         setTimeout(() => {
           setAutoFucos(true)
           document.getElementById('paymentDetails').focus();
@@ -49,7 +51,7 @@ export default function CashierPayModalSection() {
     return () => {
       window.removeEventListener("keydown", handleKeyPress);
     };
-  }, [autoFocus]);
+  }, [autoFocus,cart.length]);
 
   function isSubmit() {
     if (payment.tenders < 0) {
@@ -151,8 +153,8 @@ export default function CashierPayModalSection() {
                                       autoFocus={autoFocus}
                                       value={payment.tenders == 0 ? '' : payment.tenders}
                                       onChange={(e) => dispatch(changeTenders({
-                                        value:e.target.value,
-                                        cashier_id:user.id
+                                        value: e.target.value,
+                                        cashier_id: user.id
                                       }))}
                                       type="text"
                                       id="paymentDetails"

@@ -1,6 +1,6 @@
 export async function get_products_service(page,search) {
     const response = await axios.get('/api/products?page=' + page + '&search=' + search )
-    return response.data;
+    return response.data.data;
 }
 
 export async function create_product_service(data) {

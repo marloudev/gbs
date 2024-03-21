@@ -9,19 +9,16 @@ import { useDispatch } from 'react-redux';
 import { setUser } from '../redux/app-slice';
 import { router, usePage } from '@inertiajs/react';
 
-export default function AdministratorLayout({children}) {
+export default function AdministratorLayout({children,user}) {
   const { url } = usePage()
   
   const path = url.split('/')[2]
   const dispatch = useDispatch()
   useEffect(() => {
-    get_account_service()
-      .then(res => {
-        if(res.role != 'admin'){
-          router.visit('/cashier')
-        }
-        dispatch(setUser(res))
-      })
+    if(user.role != 'admin'){
+      router.visit('/cashier')
+    }
+    dispatch(setUser(user))
   }, []);
 
   return (

@@ -25,7 +25,7 @@ export default function CashierPrintDataComponent() {
             <div ref={componentRef}>
 
                 <div className="flex w-full items-center justify-center mb-52">
-                    <div className="w-80 ">
+                    <div className="w-72 ">
                         <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/Tailwind_CSS_Logo.svg" alt="chippz" className="mx-auto w-16 py-4 font-semibold text-black" />
                         <div className="flex flex-col justify-center items-center gap-2">
                             <h4 className="font-semibold">GBS Minimart</h4>
@@ -69,7 +69,7 @@ export default function CashierPrintDataComponent() {
                                 </tbody>
                             </table>
                             <div className=" justify-center items-center flex flex-col gap-2">
-                                --------------------------------------------------------
+                                -----------------------------------------------------
                             </div>
 
                             <p className="flex justify-between">

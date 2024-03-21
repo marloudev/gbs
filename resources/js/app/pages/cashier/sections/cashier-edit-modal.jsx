@@ -1,24 +1,46 @@
 import { Fragment, useEffect, useRef, useState } from 'react'
 import { PencilIcon } from '@heroicons/react/24/outline'
 import { Dialog, Transition } from '@headlessui/react'
-import {  changesCart, setIsPrint } from '../redux/cashier-slice';
+import { changesCart, setIsPrint } from '../redux/cashier-slice';
 import FormFieldInput from '../../../components/Input';
 import { useDispatch, useSelector } from 'react-redux';
-export default function CashierEditModal({ data }) {
+export default function CashierEditModal({ data, selectedRow, index }) {
     const [open, setOpen] = useState(false)
     const cancelButtonRef = useRef(null)
     const { cart } = useSelector((state) => state.cashier);
-    const [value,setValue] = useState(data.quantity)
+    const [value, setValue] = useState(data.quantity)
     const dispatch = useDispatch()
+
+
+    useEffect(() => {
+        const handleKeyPress = (event) => {
+            if (selectedRow == index) {
+                if ((event.key === 'E' || event.key === 'e')) {
+                    setOpen(true)
+                }
+            }
+            if ((event.key === 'C' || event.key === 'c')) {
+                // deleteCartById(parseInt(id))
+                setOpen(false)
+            }
+        };
+
+        window.addEventListener("keydown", handleKeyPress);
+        return () => {
+            window.removeEventListener("keydown", handleKeyPress);
+        };
+    }, [data.id]);
+
 
     function saveChanges(e) {
         e.preventDefault()
         const updateCart = cart.map(obj => {
             if (obj.randomId === data.randomId) {
-                return { ...obj, 
-                    quantity:parseInt(value),
-                    total:parseInt(value) * data.price
-                 }; // merge old object with new data
+                return {
+                    ...obj,
+                    quantity: parseInt(value),
+                    total: parseInt(value) * data.price
+                }; // merge old object with new data
             }
             return obj;
         });
@@ -29,7 +51,7 @@ export default function CashierEditModal({ data }) {
 
     }
 
-  
+
     return (
         <>
             <button
@@ -68,23 +90,24 @@ export default function CashierEditModal({ data }) {
                                         className="bg-white px-4 pb-4 pt-5 sm:p-6 sm:pb-4">
                                         <div className="">
                                             <div className="mt-3 text-center sm:ml-4 sm:mt-0 sm:text-left">
+                                                {data.description}
                                                 <Dialog.Title as="h3" className="text-base font-semibold leading-6 text-gray-900">
                                                     Edit Quantity
                                                 </Dialog.Title>
                                                 <div className="mt-2">
                                                     <div className="relative overflow-x-auto">
                                                         <div className='m-3 my-2'>
-                                                        <FormFieldInput
-                                                            autofocus={true}
-                                                            onChange={(value)=>setValue(value)}
-                                                            value={value}
-                                                            name="quantity"
-                                                            type="number"
-                                                            label="Quanity"
-                                                        // errorMessage="Searching..."
-                                                        />
+                                                            <FormFieldInput
+                                                                autofocus={true}
+                                                                onChange={(value) => setValue(value)}
+                                                                value={value}
+                                                                name="quantity"
+                                                                type="text"
+                                                                label="Quanity"
+                                                            // errorMessage="Searching..."
+                                                            />
                                                         </div>
-                                                        
+
                                                     </div>
                                                 </div>
                                             </div>
