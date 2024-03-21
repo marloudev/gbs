@@ -52,7 +52,7 @@ export default function CashierAmountSection() {
 
     function submitAmount(e) {
         e.preventDefault()
-        const randomId = Math.floor(1000000000 + Math.random() * 9000000000);
+        // const randomId = Math.floor(1000000000 + Math.random() * 9000000000);
         // dispatch(setCart({
         //     ...cart,
         //     randomId: randomId,

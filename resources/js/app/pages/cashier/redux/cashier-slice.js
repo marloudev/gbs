@@ -5,7 +5,7 @@ export const cashierSlice = createSlice({
   name: 'cashier',
   initialState: {
     value: 0,
-    cart: JSON.parse(localStorage.getItem('cart')) ?? [],
+    cart: [],
     selectedItem: null,
     payment: {
       receipt_id: undefined,
@@ -26,13 +26,10 @@ export const cashierSlice = createSlice({
       state.value = action.payload
     },
     setCart: (state, action) => {
-      state.cart = [
-        ...state.cart,
-        action.payload
-      ];
+      state.cart = action.payload;
       state.payment = {
         ...state.payment,
-        total: state.cart.reduce((acc, obj) => acc + obj.total, 0).toFixed(2)
+        total: action.payload.reduce((acc, obj) => acc + obj.total, 0).toFixed(2)
       }
     },
     changesCart: (state, action) => {
@@ -50,7 +47,7 @@ export const cashierSlice = createSlice({
       state.payment = {
         ...state.payment,
         cashier_id: action.payload.cashier_id,
-        receipt_id: state.payment.receipt_id ?? Math.floor(1000000000000 + Math.random() * 90000000000000),
+        receipt_id: localStorage.getItem("receipt_id"),
         tenders: payload,
         change: (parseFloat(payload) - parseFloat(state.payment.total)).toFixed(2)
       }
@@ -82,7 +79,7 @@ export const cashierSlice = createSlice({
       state.payment = {
         ...state.payment,
         discount: parseFloat(action.payload),
-        subtotal:parseFloat(state.cart.reduce((acc, obj) => acc + obj.total, 0).toFixed(2)),
+        subtotal: parseFloat(state.cart.reduce((acc, obj) => acc + obj.total, 0).toFixed(2)),
         total: parseFloat(state.cart.reduce((acc, obj) => acc + obj.total, 0).toFixed(2)) - (parseFloat(state.cart.reduce((acc, obj) => acc + obj.total, 0).toFixed(2)) * parseFloat(action.payload))
       }
     },

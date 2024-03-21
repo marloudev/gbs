@@ -10,6 +10,8 @@ import { changesCart } from './redux/cashier-slice'
 import FunctionKeysSection from './sections/function-keys-section'
 import CashierLayout from '@/app/layouts/cashier-layout'
 import { setUser } from '@/app/redux/app-slice'
+import store from '@/store/store'
+import { get_cart_thunk } from './redux/cashier-thunk'
 
 export default function CashierPage({ auth }) {
     const dispatch = useDispatch()
@@ -20,9 +22,8 @@ export default function CashierPage({ auth }) {
         if (auth.user.role == 'admin') {
             router.visit('/administrator/dashboard')
         }
-        localStorage.setItem('cart', JSON.stringify(cart))
-        dispatch(changesCart(JSON.parse(localStorage.getItem('cart'))))
-    }, [JSON.stringify(cart)]);
+        store.dispatch(get_cart_thunk())
+    }, []);
 
     return (
         <CashierLayout>

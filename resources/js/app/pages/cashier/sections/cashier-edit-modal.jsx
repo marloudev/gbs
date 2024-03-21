@@ -4,6 +4,8 @@ import { Dialog, Transition } from '@headlessui/react'
 import { changesCart, setIsPrint } from '../redux/cashier-slice';
 import FormFieldInput from '../../../components/Input';
 import { useDispatch, useSelector } from 'react-redux';
+import store from '@/store/store';
+import { edit_cart_item_thunk } from '../redux/cashier-thunk';
 export default function CashierEditModal({ data, selectedRow, index }) {
     const [open, setOpen] = useState(false)
     const cancelButtonRef = useRef(null)
@@ -34,17 +36,22 @@ export default function CashierEditModal({ data, selectedRow, index }) {
 
     function saveChanges(e) {
         e.preventDefault()
-        const updateCart = cart.map(obj => {
-            if (obj.randomId === data.randomId) {
-                return {
-                    ...obj,
-                    quantity: parseInt(value),
-                    total: parseInt(value) * data.price
-                }; // merge old object with new data
-            }
-            return obj;
-        });
-        dispatch(changesCart(updateCart))
+        // const updateCart = cart.map(obj => {
+        //     if (obj.randomId === data.randomId) {
+        //         return {
+        //             ...obj,
+        //             quantity: parseInt(value),
+        //             total: parseInt(value) * data.price
+        //         }; // merge old object with new data
+        //     }
+        //     return obj;
+        // });
+        // dispatch(changesCart(updateCart))
+        store.dispatch(edit_cart_item_thunk({
+            id:data.id,
+            quantity: parseInt(value),
+            total: parseInt(value) * data.price
+        }))
         setOpen(false)
     }
     function isSubmit() {

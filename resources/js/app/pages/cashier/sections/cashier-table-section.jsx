@@ -10,7 +10,7 @@ export default function CashierTableSection() {
     const [selectedRow, setSelectedRow] = useState(0);
     const [id, setId] = useState(0)
 
-
+console.log('cart',cart)
 
     useEffect(() => {
         const myElement = myElementRefs.current[selectedRow];
@@ -92,7 +92,7 @@ export default function CashierTableSection() {
                                                 </td>
                                                 <td className="px-4 py-4 text-sm whitespace-nowrap">
                                                     <h2 className="font-medium text-gray-800 ">
-                                                        {res.description}
+                                                        {res.product.description}
                                                     </h2>
                                                 </td>
                                                 <td className="px-4 py-4 text-sm whitespace-nowrap">
@@ -112,17 +112,21 @@ export default function CashierTableSection() {
                                                 </td>
                                                 <td className="px-4 py-4 text-sm whitespace-nowrap">
                                                     <div className='flex gap-4'>
-                                                        {
+                                                        {/* {
                                                             res.registered == true && selectedRow == i ? <CashierEditModal
                                                                 selectedRow={selectedRow}
                                                                 index={i}
                                                                 data={res} /> : <button
-                                                                    className="font-medium text-gray-800  text-white ">
+                                                                    className="font-medium text-gray-800  ">
                                                                 <PencilIcon className='h-6 text-blue-500' />
                                                             </button>
-                                                        }
+                                                        } */}
+                                                        <CashierEditModal
+                                                            selectedRow={selectedRow}
+                                                            index={i}
+                                                            data={res} />
 
-                                                        {
+                                                        {/* {
                                                             selectedRow == i ? <CashierDeleteSection
                                                                 selectedRow={selectedRow}
                                                                 index={i}
@@ -131,7 +135,13 @@ export default function CashierTableSection() {
                                                                 className="font-medium text-gray-800 ">
                                                                 <TrashIcon className='h-6 text-red-500' />
                                                             </button>
-                                                        }
+                                                        } */}
+
+                                                        <CashierDeleteSection
+                                                            selectedRow={selectedRow}
+                                                            index={i}
+                                                            data={res}
+                                                        />
 
                                                     </div>
                                                 </td>

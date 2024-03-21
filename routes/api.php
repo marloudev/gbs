@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AccountController;
 use App\Http\Controllers\AccountDetailsController;
 use App\Http\Controllers\AnalyticsController;
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\LoyalCardController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\SalesController;
@@ -27,6 +28,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::apiResource('products', ProductController::class);
 Route::apiResource('sales', SalesController::class);
 Route::apiResource('accounts', AccountController::class);
+Route::apiResource('carts', CartController::class);
+Route::get('/get_cart/{receipt_id}', [CartController::class, 'get_cart']);
 Route::apiResource('change_account_password', AccountController::class);
 Route::post('/change_account_password/{id}', [AccountController::class, 'change_account_password']);
 Route::apiResource('analytics', AnalyticsController::class);

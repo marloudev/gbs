@@ -1,6 +1,33 @@
+import { create_carts_service, delete_cart_item_service, edit_cart_item_service, get_add_to_carts_service } from '@/services/carts-service';
 import { add_sales_service } from '../../../../services/sales-service';
 import { appSlice } from '../../../redux/app-slice';
 import { cashierSlice } from './cashier-slice';
+import moment from 'moment';
+
+
+export function get_cart_thunk() {
+    return async function (dispatch, getState) {
+        const receipt_id = localStorage.getItem("receipt_id")
+        const response = await get_add_to_carts_service(receipt_id)
+        dispatch(cashierSlice.actions.setCart(response));
+    }
+}
+
+export function delete_cart_item_thunk(id) {
+    return async function (dispatch, getState) {
+        const response = await delete_cart_item_service(id)
+        dispatch(cashierSlice.actions.setCart(response));
+    }
+}
+
+export function edit_cart_item_thunk(data) {
+    return async function (dispatch, getState) {
+      
+        const response = await edit_cart_item_service(data)
+       dispatch(cashierSlice.actions.setCart(response));
+    }
+}
+
 
 export function addCartThunk(product) {
     return async function (dispatch, getState) {
@@ -8,16 +35,27 @@ export function addCartThunk(product) {
         if ((await product).status == 'success') {
             const item = getState().cashier.cart
             const id = (await product).data.id
+
+            var receipt_id = 0;
+
+            if (!localStorage.getItem("receipt_id")) {
+                localStorage.setItem("receipt_id", moment().valueOf());
+            }
+
             const randomId = Math.floor(1000000000 + Math.random() * 9000000000);
-            dispatch(cashierSlice.actions.setCart({
-                ...(await product).data,
-                randomId:randomId,
-                quantity:1,
-                total:(await product).data.price,
-                registered: true
-            }));
+
+            const response = await create_carts_service({
+                receipt_id: localStorage.getItem("receipt_id"),
+                barcode: (await product).data.barcode,
+                randomId: randomId,
+                quantity: 1,
+                price: (await product).data.price,
+                total: (await product).data.price,
+            })
+            console.log('response.data', response.data)
+            dispatch(cashierSlice.actions.setCart(response.data));
             dispatch(cashierSlice.actions.setSearch(''))
-        }else{
+        } else {
             dispatch(cashierSlice.actions.setSearch(''))
         }
     };
@@ -46,6 +84,7 @@ export function createPaymentThunk() {
                 status: 'success',
                 message: 'Created Success!'
             }));
+            localStorage.clear();
         } catch (error) {
             dispatch(cashierSlice.actions.setLoading(false));
             dispatch(appSlice.actions.setToastStatus({
