@@ -9,12 +9,17 @@ import { useDispatch, useSelector } from 'react-redux'
 import { changesCart } from './redux/cashier-slice'
 import FunctionKeysSection from './sections/function-keys-section'
 import CashierLayout from '@/app/layouts/cashier-layout'
+import { setUser } from '@/app/redux/app-slice'
 
-export default function CashierPage() {
+export default function CashierPage({ auth }) {
     const dispatch = useDispatch()
     const { cart } = useSelector((state) => state.cashier);
-
+ 
     useEffect(() => {
+        dispatch(setUser(auth.user))
+        if (auth.user.role == 'admin') {
+            router.visit('/administrator/dashboard')
+        }
         localStorage.setItem('cart', JSON.stringify(cart))
         dispatch(changesCart(JSON.parse(localStorage.getItem('cart'))))
     }, [JSON.stringify(cart)]);
@@ -29,7 +34,7 @@ export default function CashierPage() {
                     </div>
                     <div className='flex-1 flex  basis-2/6 border-1'>
                         <div className='flex-1 flex items-center justify-center font-black bg-red-500 text-white text-center text-9xl'>
-                           GBS
+                            GBS
                         </div>
                         <div className='flex-1 '>
                             <CashierSubTotalSection />

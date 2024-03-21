@@ -10,7 +10,8 @@ class ProductController extends Controller
     public function getProducts()
     {
 
-        $products = Product::get();
+        $products = Product::limit(20)->get();
+    
         return response()->json([
             'status' => 'status',
             'data' => $products
@@ -19,13 +20,13 @@ class ProductController extends Controller
 
     public function index(Request $request)
     {
-
+        $perPage = 20;
         $searchTerm = $request->input('search');
 
         // Perform the search query
         $products = Product::where('barcode', 'like', '%' . $searchTerm . '%')
             ->orWhere('description', 'like', '%' . $searchTerm . '%')
-            ->get();
+            ->paginate($perPage);
 
         // Return the search results
         return response()->json([

@@ -13,7 +13,8 @@ export function addCartThunk(product) {
                 ...(await product).data,
                 randomId:randomId,
                 quantity:1,
-                total:(await product).data.price
+                total:(await product).data.price,
+                registered: true
             }));
             dispatch(cashierSlice.actions.setSearch(''))
         }else{

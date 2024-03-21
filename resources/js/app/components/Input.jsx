@@ -24,7 +24,7 @@ export default function FormFieldInput({
         return () => {
             window.removeEventListener("keydown", handleKeyPress);
         };
-    }, [autofocus, name]);
+    }, [autofocus, name, value]);
 
     useEffect(() => {
         const handleKeyPress = (event) => {

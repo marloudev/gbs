@@ -1,22 +1,16 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { TrashIcon } from "@heroicons/react/24/outline";
-import { changesCart } from '../redux/cashier-slice';
+import { PencilIcon, TrashIcon } from "@heroicons/react/24/outline";
 import CashierEditModal from './cashier-edit-modal';
-
+import CashierDeleteSection from './cashier-delete-section'
 export default function CashierTableSection() {
     const myElementRefs = useRef([]);
     const { cart } = useSelector((state) => state.cashier);
-    const dispatch = useDispatch();
+
     const [selectedRow, setSelectedRow] = useState(0);
     const [id, setId] = useState(0)
 
-    function deleteCartById(randomId) {
-        if (window.confirm('Are you sure want to delete?')) {
-            const newCart = cart.filter(obj => obj.randomId !== randomId);
-            dispatch(changesCart(newCart));
-        }
-    }
+
 
     useEffect(() => {
         const myElement = myElementRefs.current[selectedRow];
@@ -39,22 +33,7 @@ export default function CashierTableSection() {
         };
     }, [selectedRow, cart]);
 
-    useEffect(() => {
-        const handleKeyPress = (event) => {
-            if ((event.key === 'D' || event.key === 'd')) {
-                deleteCartById(parseInt(id))
-            } else if ((event.key === 'E' || event.key === 'e')) {
-                deleteCartById(parseInt(id))
-            }
-        };
 
-        window.addEventListener("keydown", handleKeyPress);
-
-        // Cleanup the event listener on component unmount
-        return () => {
-            window.removeEventListener("keydown", handleKeyPress);
-        };
-    }, [id]);
 
 
 
@@ -133,12 +112,27 @@ export default function CashierTableSection() {
                                                 </td>
                                                 <td className="px-4 py-4 text-sm whitespace-nowrap">
                                                     <div className='flex gap-4'>
-                                                        <CashierEditModal data={res} />
-                                                        <button
-                                                            onClick={() => deleteCartById(res.randomId)}
-                                                            className="font-medium text-gray-800 ">
-                                                            <TrashIcon className='h-6 text-red-500' />
-                                                        </button>
+                                                        {
+                                                            res.registered == true && selectedRow == i ? <CashierEditModal
+                                                                selectedRow={selectedRow}
+                                                                index={i}
+                                                                data={res} /> : <button
+                                                                    className="font-medium text-gray-800  text-white ">
+                                                                <PencilIcon className='h-6 text-blue-500' />
+                                                            </button>
+                                                        }
+
+                                                        {
+                                                            selectedRow == i ? <CashierDeleteSection
+                                                                selectedRow={selectedRow}
+                                                                index={i}
+                                                                data={res}
+                                                            /> : <button
+                                                                className="font-medium text-gray-800 ">
+                                                                <TrashIcon className='h-6 text-red-500' />
+                                                            </button>
+                                                        }
+
                                                     </div>
                                                 </td>
                                             </tr>

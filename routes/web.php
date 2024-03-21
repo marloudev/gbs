@@ -84,6 +84,9 @@ Route::middleware('auth:sanctum')->prefix('cashier')->group(function () {
     Route::get('/', function () {
         return Inertia::render('pages/cashier/page');
     })->name('cashier');
+    Route::get('/search', function () {
+        return Inertia::render('pages/cashier/sections/cashier_amount_section');
+    })->name('cashier.search');
 });
 
 require __DIR__.'/auth.php';

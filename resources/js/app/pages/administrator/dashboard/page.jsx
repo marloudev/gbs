@@ -5,13 +5,13 @@ import { getAllAnalytics } from "./redux/dashboard-thunk";
 import store from '../../../../store/store'
 import { useSelector } from "react-redux";
 import AdministratorLayout from "@/app/layouts/administrator-layout";
-export default function DashboardPage() {
+export default function DashboardPage({ auth }) {
   const { year, tab, analytics } = useSelector((state) => state.dashboard);
   useEffect(() => {
     store.dispatch(getAllAnalytics())
   }, [year, tab]);
   return (
-    <AdministratorLayout>
+    <AdministratorLayout user={auth.user}>
       <DashboardPeriodicTabSection />
       <DashboardLineCartSection
         year={year}

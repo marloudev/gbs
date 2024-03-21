@@ -6,14 +6,24 @@ import InputLabel from '@/Components/InputLabel';
 import PrimaryButton from '@/Components/PrimaryButton';
 import TextInput from '@/Components/TextInput';
 import { Head, Link, useForm } from '@inertiajs/react';
+import { router } from '@inertiajs/react';
 
-export default function Login({ status, canResetPassword }) {
+export default function Login({ status, canResetPassword,auth }) {
     const { data, setData, post, processing, errors, reset } = useForm({
         email: '',
         password: '',
         remember: false,
     });
 
+    useEffect(() => {
+        if (auth.user) {
+            if (auth.user.role == 'admin') {
+                router.visit('/administrator/dashboard')
+            }else{
+                router.visit('/cashier')
+            }  
+        }
+    }, []);
     useEffect(() => {
         return () => {
             reset('password');
