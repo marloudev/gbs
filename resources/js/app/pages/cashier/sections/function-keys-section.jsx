@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import CashierLogoutSection from './cashier-logout-section'
 import CashierDiscountModal from './cashier-discount-modal'
-import CashierAmountSection from './cashier_amount_section'
+import CashierAmountSection from '../../search/sections/search-section'
 import { Link, router } from '@inertiajs/react'
 
 export default function FunctionKeysSection({inputRef}) {

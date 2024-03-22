@@ -8,6 +8,7 @@ import accountSlice from '../app/pages/administrator/accounts/redux/account-slic
 import dashboardSlice from '../app/pages/administrator/dashboard/redux/dashboard-slice';
 import accountDetailsSlice from '../app/pages/administrator/accounts/details/redux/account-details-slice';
 import loyalCardSlice from '../app/pages/administrator/loyalty_card/redux/loyal-card-slice';
+import searchSlice from '@/app/pages/search/redux/search-slice';
 
 const store = configureStore({
     reducer: {
@@ -18,7 +19,8 @@ const store = configureStore({
         accounts:accountSlice,
         dashboard:dashboardSlice,
         account_details:accountDetailsSlice,
-        loyal_card:loyalCardSlice
+        loyal_card:loyalCardSlice,
+        search:searchSlice
     },
 });
 

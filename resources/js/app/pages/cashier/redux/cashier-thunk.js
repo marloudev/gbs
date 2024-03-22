@@ -33,11 +33,7 @@ export function addCartThunk(product) {
     return async function (dispatch, getState) {
         // getState().cashier.cart
         if ((await product).status == 'success') {
-            const item = getState().cashier.cart
-            const id = (await product).data.id
-
-            var receipt_id = 0;
-
+          
             if (!localStorage.getItem("receipt_id")) {
                 localStorage.setItem("receipt_id", moment().valueOf());
             }

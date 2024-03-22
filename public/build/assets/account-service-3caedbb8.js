@@ -1,1 +1,0 @@
-import{i as a}from"./app-096959b0.js";async function e(){return(await a.get("/api/accounts")).data}async function o(s){return(await a.post("/api/accounts",s)).data}async function c(s){return(await a.post("/login",s)).data}async function r(s){return(await a.post("/logout")).data}async function i(){return(await a.get("/api/user")).data}export{i as a,c as b,o as c,e as g,r as l};
