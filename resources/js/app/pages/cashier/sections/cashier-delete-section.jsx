@@ -15,7 +15,7 @@ export default function CashierDeleteSection({ data, selectedRow, index }) {
     useEffect(() => {
         const handleKeyPress = (event) => {
             if ((event.key === 'V' || event.key === 'v')) {
-                deleteCartById(parseInt(data.randomId))
+                deleteCartById(parseInt(data.id))
             }
         };
 
@@ -23,7 +23,7 @@ export default function CashierDeleteSection({ data, selectedRow, index }) {
         return () => {
             window.removeEventListener("keydown", handleKeyPress);
         };
-    }, [data.randomId]);
+    }, [data.id]);
 
     return (
         <div>

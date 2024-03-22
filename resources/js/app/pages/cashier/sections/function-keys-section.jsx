@@ -4,7 +4,7 @@ import CashierDiscountModal from './cashier-discount-modal'
 import CashierAmountSection from './cashier_amount_section'
 import { Link, router } from '@inertiajs/react'
 
-export default function FunctionKeysSection() {
+export default function FunctionKeysSection({inputRef}) {
   useEffect(() => {
     const handleKeyPress = (event) => {
         if ((event.key === 'I' || event.key === 'i')) {
@@ -44,7 +44,9 @@ export default function FunctionKeysSection() {
         </div>
       </Link>
 
-      <CashierDiscountModal />
+      <CashierDiscountModal 
+      inputRef={inputRef}
+      />
 
       <button
         className="flex flex-col items-center justify-center bg-red-500">

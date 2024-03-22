@@ -6,9 +6,9 @@ import FormFieldInput from '../../../components/Input'
 import store from './../../../../store/store'
 import { get_specific_loyal_card_service } from '../../../../services/loyal-card-service';
 import { setDiscount } from '../redux/cashier-slice';
-export default function CashierDiscountModal() {
-    const [open, setOpen] = useState(true)
-    const { selectedItem,payment } = useSelector((state) => state.cashier);
+export default function CashierDiscountModal({ inputRef }) {
+    const [open, setOpen] = useState(false)
+    const { selectedItem, payment } = useSelector((state) => state.cashier);
     const cancelButtonRef = useRef(null)
     const [barcode, setBarcode] = useState('')
     const [pincode, setPincode] = useState('')
@@ -23,12 +23,14 @@ export default function CashierDiscountModal() {
         }
     }, [selectedItem]);
 
-    console.log('payment',payment)
 
     useEffect(() => {
         const handleKeyPress = (event) => {
             if ((event.key === 'L' || event.key === 'l')) {
                 setOpen(true)
+                setTimeout(() => {
+                    inputRef.current.focus();
+                }, 200);
             } else if ((event.key === 'C' || event.key === 'c')) {
                 setOpen(false)
             }
@@ -118,6 +120,7 @@ export default function CashierDiscountModal() {
                                                     {
                                                         !data.pincode && <form onSubmit={searchBarcode}>
                                                             <FormFieldInput
+                                                                inputRef={inputRef}
                                                                 autofocus={true}
                                                                 onChange={setBarcode}
                                                                 value={barcode}
@@ -131,6 +134,7 @@ export default function CashierDiscountModal() {
                                                     {
                                                         data.pincode && <form onSubmit={submitPincode}>
                                                             <FormFieldInput
+                                                                inputRef={inputRef}
                                                                 autofocus={true}
                                                                 onChange={setPincode}
                                                                 value={pincode}

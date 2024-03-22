@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { PencilIcon, TrashIcon } from "@heroicons/react/24/outline";
 import CashierEditModal from './cashier-edit-modal';
 import CashierDeleteSection from './cashier-delete-section'
-export default function CashierTableSection() {
+export default function CashierTableSection({inputRef}) {
     const myElementRefs = useRef([]);
     const { cart } = useSelector((state) => state.cashier);
 
@@ -112,21 +112,19 @@ console.log('cart',cart)
                                                 </td>
                                                 <td className="px-4 py-4 text-sm whitespace-nowrap">
                                                     <div className='flex gap-4'>
-                                                        {/* {
-                                                            res.registered == true && selectedRow == i ? <CashierEditModal
+                                                        {
+                                                           selectedRow == i ? <CashierEditModal
+                                                           inputRef={inputRef}
                                                                 selectedRow={selectedRow}
                                                                 index={i}
                                                                 data={res} /> : <button
                                                                     className="font-medium text-gray-800  ">
                                                                 <PencilIcon className='h-6 text-blue-500' />
                                                             </button>
-                                                        } */}
-                                                        <CashierEditModal
-                                                            selectedRow={selectedRow}
-                                                            index={i}
-                                                            data={res} />
+                                                        }
+                                                       
 
-                                                        {/* {
+                                                        {
                                                             selectedRow == i ? <CashierDeleteSection
                                                                 selectedRow={selectedRow}
                                                                 index={i}
@@ -135,13 +133,7 @@ console.log('cart',cart)
                                                                 className="font-medium text-gray-800 ">
                                                                 <TrashIcon className='h-6 text-red-500' />
                                                             </button>
-                                                        } */}
-
-                                                        <CashierDeleteSection
-                                                            selectedRow={selectedRow}
-                                                            index={i}
-                                                            data={res}
-                                                        />
+                                                        }
 
                                                     </div>
                                                 </td>

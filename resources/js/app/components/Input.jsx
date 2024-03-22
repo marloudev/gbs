@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 
 export default function FormFieldInput({
     name,
@@ -8,43 +8,29 @@ export default function FormFieldInput({
     onChange,
     autofocus,
     value,
+    inputRef
 }) {
-    useEffect(() => {
 
+    useEffect(() => {
         const handleKeyPress = (event) => {
-            if ((event.key === 'F' || event.key === 'f') && autofocus) {
-                // If 'F' key is pressed and autofocus prop is true
-                document.getElementById(name).focus();
+            if ((event.key === 'F' || event.key === 'f')) {
+                inputRef.current.focus();
             }
         };
-
         window.addEventListener("keydown", handleKeyPress);
-
-        // Cleanup the event listener on component unmount
         return () => {
             window.removeEventListener("keydown", handleKeyPress);
         };
-    }, [autofocus, name, value]);
+    }, [autofocus]);
 
-    useEffect(() => {
-        const handleKeyPress = (event) => {
-            if (event.key === 'ArrowUp') {
-                document.getElementById(name).blur();
-            } else if (event.key === 'ArrowDown') {
-                document.getElementById(name).blur();
-            }
-        };
-        window.addEventListener('keydown', handleKeyPress);
-        // Cleanup the event listener on component unmount
-        return () => {
-            window.removeEventListener('keydown', handleKeyPress);
-        };
-    }, []);
+
+
 
     return (
         <div>
             <div className="relative">
                 <input
+                    ref={inputRef}
                     autoFocus={autofocus}
                     onChange={(e) => onChange(e.target.value.replace(/[^0-9.]/g, ''))}
                     type={type}
@@ -65,6 +51,7 @@ export default function FormFieldInput({
             {errorMessage && (
                 <p className="text-red-500 text-sm mt-1.5 font-light">{errorMessage}</p>
             )}
+
         </div>
     );
 }

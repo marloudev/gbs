@@ -12,7 +12,7 @@ export default function CashierModalItemSection() {
     if(selectedItem){
         setOpen(true)
     }else{
-        setOpen(false)
+        // setOpen(false)
     }
   }, [selectedItem]);
   return (
