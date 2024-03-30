@@ -15,7 +15,7 @@ export default function SearchPage() {
                     BACK
                 </div>
             </Link>
-            <div className="bg-white flex flex-col gap-4 px-4 pb-4 pt-5 w-1/2">
+            <div className="bg-white flex flex-col gap-4 px-4 pb-4 pt-5">
                 <SearchSection />
                 <SearchTable />
             </div>
