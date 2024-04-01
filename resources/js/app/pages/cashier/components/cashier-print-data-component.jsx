@@ -71,7 +71,14 @@ export default function CashierPrintDataComponent() {
                             <div className=" justify-center items-center flex flex-col gap-2">
                                 -----------------------------------------------------
                             </div>
-
+                            <p className="flex justify-between">
+                                <span className="text-black font-semibold">Tenders:</span>
+                                <span className='font-semibold'>₱ {payment.tenders}</span>
+                            </p>
+                            <p className="flex justify-between">
+                                <span className="text-black font-semibold">Change:</span>
+                                <span className='font-semibold'>₱ {payment.change}</span>
+                            </p>
                             <p className="flex justify-between">
                                 <span className="text-black font-semibold">Total:</span>
                                 <span className='font-semibold'>₱ {payment.total}</span>
