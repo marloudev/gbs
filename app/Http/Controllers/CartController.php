@@ -9,7 +9,7 @@ class CartController extends Controller
 {
     public function get_cart($receipt_id)
     {
-        $carts = Cart::where('receipt_id', $receipt_id)->with('product')->get();
+        $carts = Cart::where('receipt_id', $receipt_id)->with('product')->orderBy('id', 'DESC')->get();
         return response()->json([
             'status' => 'status',
             'data' => $carts

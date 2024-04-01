@@ -29,6 +29,7 @@ export const cashierSlice = createSlice({
       state.cart = action.payload;
       state.payment = {
         ...state.payment,
+        subtotal: action.payload.reduce((acc, obj) => acc + obj.total, 0).toFixed(2),
         total: action.payload.reduce((acc, obj) => acc + obj.total, 0).toFixed(2)
       }
     },

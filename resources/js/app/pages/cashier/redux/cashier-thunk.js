@@ -48,7 +48,6 @@ export function addCartThunk(product) {
                 price: (await product).data.price,
                 total: (await product).data.price,
             })
-            console.log('response.data', response.data)
             dispatch(cashierSlice.actions.setCart(response.data));
             dispatch(cashierSlice.actions.setSearch(''))
         } else {
