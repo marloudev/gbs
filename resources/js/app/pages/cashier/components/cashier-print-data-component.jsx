@@ -32,15 +32,15 @@ export default function CashierPrintDataComponent() {
                             <p className="text-xs text-center font-semibold">Corner of V. Gustilo Street and S. Carmnona Street.</p>
                         </div>
                         <div className="flex flex-col gap-3 border-b py-6 text-xs">
-                            <p className="flex justify-between">
+                            <p className="flex justify-between mx-5">
                                 <span className="text-black font-semibold">Receipt No.:</span>
                                 <span className='font-semibold'>#{payment.receipt_id}</span>
                             </p>
-                            {/* <p className="flex justify-between">
+                            {/* <p className="flex justify-between mx-5">
                                 <span className="text-black">Order Type:</span>
                                 <span>Dine-in</span>
                             </p> */}
-                            <p className="flex justify-between">
+                            <p className="flex justify-between mx-5">
                                 <span className="text-black font-semibold">Cashier:</span>
                                 <span className='font-semibold'>{user.name}</span>
                             </p>
@@ -71,19 +71,20 @@ export default function CashierPrintDataComponent() {
                             <div className=" justify-center items-center flex flex-col gap-2">
                                 -----------------------------------------------------
                             </div>
-                            <p className="flex justify-between">
-                                <span className="text-black font-semibold">Tenders:</span>
-                                <span className='font-semibold'>₱ {payment.tenders}</span>
-                            </p>
-                            <p className="flex justify-between">
-                                <span className="text-black font-semibold">Change:</span>
-                                <span className='font-semibold'>₱ {payment.change}</span>
-                            </p>
-                            <p className="flex justify-between">
+                            <p className="flex justify-between mx-5">
                                 <span className="text-black font-semibold">Total:</span>
                                 <span className='font-semibold'>₱ {payment.total}</span>
                             </p>
-                            <p className="flex justify-between">
+                            <p className="flex justify-between mx-5">
+                                <span className="text-black font-semibold">Tenders:</span>
+                                <span className='font-semibold'>₱ {payment.tenders}</span>
+                            </p>
+                            <p className="flex justify-between mx-5">
+                                <span className="text-black font-semibold">Change:</span>
+                                <span className='font-semibold'>₱ {payment.change}</span>
+                            </p>
+                            
+                            <p className="flex justify-between mx-5">
                                 <span className="text-black font-semibold">Item Purchased:</span>
                                 <span className='font-semibold'>{cart.reduce((acc, obj) => acc + obj.quantity, 0)}</span>
                             </p>
