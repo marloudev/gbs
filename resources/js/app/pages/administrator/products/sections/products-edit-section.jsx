@@ -118,11 +118,11 @@ export default function ProductsEditSection({ data }) {
                                         value={productForm.price ?? ""}
                                         onChange={(e) => dispatch(setProductForm({
                                             ...productForm,
-                                            price: e.target.value
+                                            price: e.target.value.replace(/[^0-9.]/g, '')
                                         }))}
                                         className=" appearance-none border rounded w-full py-3 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                                         id="price"
-                                        type="number"
+                                        type="text"
                                         placeholder="Input Price" />
                                 </div>
                             </div>
