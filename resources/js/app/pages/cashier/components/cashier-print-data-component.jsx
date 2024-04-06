@@ -58,9 +58,9 @@ export default function CashierPrintDataComponent() {
                                     {
                                         cart.map((res, index) => {
                                             return <tr key={index} className="flex">
-                                                <td className="font-semibold text-xs flex-1 py-1">{res.product.description}</td>
-                                                <td className="font-semibold text-xs min-w-[44px]">{res.quantity}</td>
-                                                <td className="font-semibold text-xs min-w-[44px]">₱ {res.total.toFixed(2)}</td>
+                                                <td className="font-semibold text-xs flex-1 py-1">{res.product.description??''}</td>
+                                                <td className="font-semibold text-xs min-w-[44px]">{res.quantity??0}</td>
+                                                <td className="font-semibold text-xs min-w-[44px]">₱ {res.total.toFixed(2)??0}</td>
                                             </tr>
 
                                         })
