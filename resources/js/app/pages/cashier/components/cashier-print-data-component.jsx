@@ -1,4 +1,5 @@
 
+import moment from 'moment';
 import React, { useEffect, useRef } from 'react';
 import Barcode from 'react-barcode';
 import { useSelector } from 'react-redux';
@@ -32,6 +33,10 @@ export default function CashierPrintDataComponent() {
                             <p className="text-xs text-center font-semibold">Corner of V. Gustilo Street and S. Carmnona Street.</p>
                         </div>
                         <div className="flex flex-col gap-3 border-b py-6 text-xs">
+                        <p className="flex justify-between mx-5">
+                                <span className="text-black font-semibold">Date:</span>
+                                <span className='font-semibold'>{moment(payment.created_at).format('LLL')}</span>
+                            </p>
                             <p className="flex justify-between mx-5">
                                 <span className="text-black font-semibold">Receipt No.:</span>
                                 <span className='font-semibold'>#{payment.receipt_id}</span>

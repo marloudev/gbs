@@ -1,146 +1,146 @@
 {
-  "_ExclamationTriangleIcon-d923facf.js": {
-    "file": "assets/ExclamationTriangleIcon-d923facf.js",
+  "_ExclamationTriangleIcon-e60e1b95.js": {
+    "file": "assets/ExclamationTriangleIcon-e60e1b95.js",
     "imports": [
       "resources/js/app.jsx"
     ]
   },
-  "_GuestLayout-28d0edb6.js": {
-    "file": "assets/GuestLayout-28d0edb6.js",
+  "_GuestLayout-7378d452.js": {
+    "file": "assets/GuestLayout-7378d452.js",
     "imports": [
       "resources/js/app.jsx"
     ]
   },
-  "_InputLabel-873f33b8.js": {
-    "file": "assets/InputLabel-873f33b8.js",
+  "_InputLabel-f3d021ce.js": {
+    "file": "assets/InputLabel-f3d021ce.js",
     "imports": [
       "resources/js/app.jsx"
     ]
   },
-  "_PencilIcon-bb6c178f.js": {
-    "file": "assets/PencilIcon-bb6c178f.js",
+  "_PencilIcon-aee8e8d2.js": {
+    "file": "assets/PencilIcon-aee8e8d2.js",
     "imports": [
       "resources/js/app.jsx"
     ]
   },
-  "_PrimaryButton-36ac1f7e.js": {
-    "file": "assets/PrimaryButton-36ac1f7e.js",
+  "_PrimaryButton-0f058cca.js": {
+    "file": "assets/PrimaryButton-0f058cca.js",
     "imports": [
       "resources/js/app.jsx"
     ]
   },
-  "_TextInput-d6befc2f.js": {
-    "file": "assets/TextInput-d6befc2f.js",
+  "_TextInput-daea078d.js": {
+    "file": "assets/TextInput-daea078d.js",
     "imports": [
       "resources/js/app.jsx"
     ]
   },
-  "_TrashIcon-e880b205.js": {
-    "file": "assets/TrashIcon-e880b205.js",
+  "_TrashIcon-5ced7d80.js": {
+    "file": "assets/TrashIcon-5ced7d80.js",
     "imports": [
       "resources/js/app.jsx"
     ]
   },
-  "_UserGroupIcon-7219e963.js": {
-    "file": "assets/UserGroupIcon-7219e963.js",
+  "_UserGroupIcon-e083c6cf.js": {
+    "file": "assets/UserGroupIcon-e083c6cf.js",
     "imports": [
       "resources/js/app.jsx",
-      "_description-f9bf70f5.js",
-      "_keyboard-996c9d0e.js",
-      "_use-flags-25b3fe05.js"
+      "_description-6252cc91.js",
+      "_keyboard-99104053.js",
+      "_use-flags-c9881f04.js"
     ]
   },
-  "_XMarkIcon-5cb0a61f.js": {
-    "file": "assets/XMarkIcon-5cb0a61f.js",
+  "_XMarkIcon-f05ce496.js": {
+    "file": "assets/XMarkIcon-f05ce496.js",
     "imports": [
       "resources/js/app.jsx"
     ]
   },
-  "_account-details-004fc922.js": {
-    "file": "assets/account-details-004fc922.js",
+  "_account-details-500c81e5.js": {
+    "file": "assets/account-details-500c81e5.js",
     "imports": [
       "resources/js/app.jsx"
     ]
   },
-  "_account-details-search-section-a274958b.js": {
-    "file": "assets/account-details-search-section-a274958b.js",
+  "_account-details-search-section-54963618.js": {
+    "file": "assets/account-details-search-section-54963618.js",
     "imports": [
       "resources/js/app.jsx",
-      "_account-details-004fc922.js"
+      "_account-details-500c81e5.js"
     ],
     "isDynamicEntry": true
   },
-  "_account-service-f324b191.js": {
-    "file": "assets/account-service-f324b191.js",
+  "_account-service-6d1f1637.js": {
+    "file": "assets/account-service-6d1f1637.js",
     "imports": [
       "resources/js/app.jsx"
     ]
   },
-  "_account-thunk-f3006d0f.js": {
-    "file": "assets/account-thunk-f3006d0f.js",
+  "_account-thunk-b4178d08.js": {
+    "file": "assets/account-thunk-b4178d08.js",
     "imports": [
-      "_account-details-004fc922.js",
-      "_account-service-f324b191.js",
+      "_account-details-500c81e5.js",
+      "_account-service-6d1f1637.js",
       "resources/js/app.jsx"
     ]
   },
-  "_barcode-download-pdf-ce1b4be0.js": {
+  "_barcode-download-pdf-3c335ef9.js": {
     "dynamicImports": [
       "node_modules/dompurify/dist/purify.es.js",
       "node_modules/canvg/lib/index.es.js"
     ],
-    "file": "assets/barcode-download-pdf-ce1b4be0.js",
+    "file": "assets/barcode-download-pdf-3c335ef9.js",
     "imports": [
       "resources/js/app.jsx",
-      "_react-barcode-fdda8abb.js"
+      "_react-barcode-c01136db.js"
     ],
     "isDynamicEntry": true
   },
-  "_cashier-thunk-e1b1c12f.js": {
-    "file": "assets/cashier-thunk-e1b1c12f.js",
+  "_cashier-thunk-2b22d1d1.js": {
+    "file": "assets/cashier-thunk-2b22d1d1.js",
     "imports": [
       "_sales-service-19b3eac2.js",
       "resources/js/app.jsx"
     ]
   },
-  "_description-f9bf70f5.js": {
-    "file": "assets/description-f9bf70f5.js",
+  "_description-6252cc91.js": {
+    "file": "assets/description-6252cc91.js",
     "imports": [
       "resources/js/app.jsx",
-      "_use-flags-25b3fe05.js",
-      "_keyboard-996c9d0e.js"
+      "_use-flags-c9881f04.js",
+      "_keyboard-99104053.js"
     ]
   },
-  "_dialog-b8b8e912.js": {
-    "file": "assets/dialog-b8b8e912.js",
+  "_dialog-7a9fa821.js": {
+    "file": "assets/dialog-7a9fa821.js",
     "imports": [
       "resources/js/app.jsx",
-      "_use-flags-25b3fe05.js",
-      "_use-root-containers-3f2b8941.js",
-      "_keyboard-996c9d0e.js",
-      "_open-closed-624e9039.js",
-      "_description-f9bf70f5.js"
+      "_use-flags-c9881f04.js",
+      "_use-root-containers-5f05a97f.js",
+      "_keyboard-99104053.js",
+      "_open-closed-68fddb44.js",
+      "_description-6252cc91.js"
     ]
   },
-  "_keyboard-996c9d0e.js": {
-    "file": "assets/keyboard-996c9d0e.js",
+  "_keyboard-99104053.js": {
+    "file": "assets/keyboard-99104053.js",
     "imports": [
       "resources/js/app.jsx",
-      "_use-flags-25b3fe05.js"
+      "_use-flags-c9881f04.js"
     ]
   },
   "_loyal-card-service-8d6deeca.js": {
     "file": "assets/loyal-card-service-8d6deeca.js"
   },
-  "_loyal-card-thunk-817ad00c.js": {
-    "file": "assets/loyal-card-thunk-817ad00c.js",
+  "_loyal-card-thunk-8e567e22.js": {
+    "file": "assets/loyal-card-thunk-8e567e22.js",
     "imports": [
       "_loyal-card-service-8d6deeca.js",
       "resources/js/app.jsx"
     ]
   },
-  "_open-closed-624e9039.js": {
-    "file": "assets/open-closed-624e9039.js",
+  "_open-closed-68fddb44.js": {
+    "file": "assets/open-closed-68fddb44.js",
     "imports": [
       "resources/js/app.jsx"
     ]
@@ -148,15 +148,15 @@
   "_products-service-2e54bc55.js": {
     "file": "assets/products-service-2e54bc55.js"
   },
-  "_products-thunk-ba8e9fc3.js": {
-    "file": "assets/products-thunk-ba8e9fc3.js",
+  "_products-thunk-839f0610.js": {
+    "file": "assets/products-thunk-839f0610.js",
     "imports": [
       "_products-service-2e54bc55.js",
       "resources/js/app.jsx"
     ]
   },
-  "_react-barcode-fdda8abb.js": {
-    "file": "assets/react-barcode-fdda8abb.js",
+  "_react-barcode-c01136db.js": {
+    "file": "assets/react-barcode-c01136db.js",
     "imports": [
       "resources/js/app.jsx"
     ]
@@ -164,41 +164,41 @@
   "_sales-service-19b3eac2.js": {
     "file": "assets/sales-service-19b3eac2.js"
   },
-  "_transition-fa732d89.js": {
-    "file": "assets/transition-fa732d89.js",
+  "_transition-19561af8.js": {
+    "file": "assets/transition-19561af8.js",
     "imports": [
       "resources/js/app.jsx",
-      "_use-flags-25b3fe05.js",
-      "_open-closed-624e9039.js"
+      "_use-flags-c9881f04.js",
+      "_open-closed-68fddb44.js"
     ]
   },
-  "_use-flags-25b3fe05.js": {
-    "file": "assets/use-flags-25b3fe05.js",
+  "_use-flags-c9881f04.js": {
+    "file": "assets/use-flags-c9881f04.js",
     "imports": [
       "resources/js/app.jsx"
     ]
   },
-  "_use-resolve-button-type-d828fb8b.js": {
-    "file": "assets/use-resolve-button-type-d828fb8b.js",
+  "_use-resolve-button-type-05a3356a.js": {
+    "file": "assets/use-resolve-button-type-05a3356a.js",
     "imports": [
       "resources/js/app.jsx",
-      "_use-flags-25b3fe05.js"
+      "_use-flags-c9881f04.js"
     ]
   },
-  "_use-root-containers-3f2b8941.js": {
-    "file": "assets/use-root-containers-3f2b8941.js",
+  "_use-root-containers-5f05a97f.js": {
+    "file": "assets/use-root-containers-5f05a97f.js",
     "imports": [
       "resources/js/app.jsx",
-      "_keyboard-996c9d0e.js",
-      "_use-flags-25b3fe05.js"
+      "_keyboard-99104053.js",
+      "_use-flags-c9881f04.js"
     ]
   },
   "node_modules/canvg/lib/index.es.js": {
-    "file": "assets/index.es-1de12830.js",
+    "file": "assets/index.es-5040dab8.js",
     "imports": [
       "resources/js/app.jsx",
-      "_barcode-download-pdf-ce1b4be0.js",
-      "_react-barcode-fdda8abb.js"
+      "_barcode-download-pdf-3c335ef9.js",
+      "_react-barcode-c01136db.js"
     ],
     "isDynamicEntry": true,
     "src": "node_modules/canvg/lib/index.es.js"
@@ -238,7 +238,7 @@
       "resources/js/app/pages/Auth/ResetPassword.jsx",
       "resources/js/app/pages/Auth/VerifyEmail.jsx",
       "resources/js/app/pages/administrator/accounts/details/page.jsx",
-      "_account-details-search-section-a274958b.js",
+      "_account-details-search-section-54963618.js",
       "resources/js/app/pages/administrator/accounts/details/sections/account-details-table-section.jsx",
       "resources/js/app/pages/administrator/accounts/page.jsx",
       "resources/js/app/pages/administrator/accounts/sections/administrator-account-change-password-section.jsx",
@@ -247,7 +247,7 @@
       "resources/js/app/pages/administrator/accounts/sections/administrator-create-account-section.jsx",
       "resources/js/app/pages/administrator/accounts/sections/administrator-delete-account.jsx",
       "resources/js/app/pages/administrator/barcode/page.jsx",
-      "_barcode-download-pdf-ce1b4be0.js",
+      "_barcode-download-pdf-3c335ef9.js",
       "resources/js/app/pages/administrator/dashboard/page.jsx",
       "resources/js/app/pages/administrator/dashboard/sections/dashboard-line-cart-section.jsx",
       "resources/js/app/pages/administrator/dashboard/sections/dashboard-periodic-tab-section.jsx",
@@ -287,12 +287,12 @@
       "resources/js/app/pages/search/sections/search-section.jsx",
       "resources/js/app/pages/search/sections/search-table.jsx"
     ],
-    "file": "assets/app-51e2dc0f.js",
+    "file": "assets/app-5b9f29bb.js",
     "isEntry": true,
     "src": "resources/js/app.jsx"
   },
   "resources/js/app/components/Input.jsx": {
-    "file": "assets/Input-2be3dfe7.js",
+    "file": "assets/Input-783df8e9.js",
     "imports": [
       "resources/js/app.jsx"
     ],
@@ -300,16 +300,16 @@
     "src": "resources/js/app/components/Input.jsx"
   },
   "resources/js/app/components/modal.jsx": {
-    "file": "assets/modal-ee8465ee.js",
+    "file": "assets/modal-3c968253.js",
     "imports": [
       "resources/js/app.jsx",
-      "_transition-fa732d89.js",
-      "_dialog-b8b8e912.js",
-      "_use-flags-25b3fe05.js",
-      "_open-closed-624e9039.js",
-      "_use-root-containers-3f2b8941.js",
-      "_keyboard-996c9d0e.js",
-      "_description-f9bf70f5.js"
+      "_transition-19561af8.js",
+      "_dialog-7a9fa821.js",
+      "_use-flags-c9881f04.js",
+      "_open-closed-68fddb44.js",
+      "_use-root-containers-5f05a97f.js",
+      "_keyboard-99104053.js",
+      "_description-6252cc91.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/app/components/modal.jsx"
@@ -322,7 +322,7 @@
     "css": [
       "assets/toastify-d9e3f7bd.css"
     ],
-    "file": "assets/toastify-d687afe1.js",
+    "file": "assets/toastify-2bcdc149.js",
     "imports": [
       "resources/js/app.jsx"
     ],
@@ -330,28 +330,28 @@
     "src": "resources/js/app/components/toastify.jsx"
   },
   "resources/js/app/layouts/administrator-layout.jsx": {
-    "file": "assets/administrator-layout-3f12d43f.js",
+    "file": "assets/administrator-layout-ee222135.js",
     "imports": [
       "resources/js/app.jsx",
       "resources/js/app/layouts/sections/sidebar-section.jsx",
       "resources/js/app/components/toastify.jsx",
       "resources/js/app/layouts/sections/logout-section.jsx",
       "resources/js/app/layouts/sections/year-select-section.jsx",
-      "_UserGroupIcon-7219e963.js",
-      "_description-f9bf70f5.js",
-      "_use-flags-25b3fe05.js",
-      "_keyboard-996c9d0e.js",
-      "_account-service-f324b191.js",
-      "_use-root-containers-3f2b8941.js",
-      "_use-resolve-button-type-d828fb8b.js",
-      "_open-closed-624e9039.js",
-      "_transition-fa732d89.js"
+      "_UserGroupIcon-e083c6cf.js",
+      "_description-6252cc91.js",
+      "_use-flags-c9881f04.js",
+      "_keyboard-99104053.js",
+      "_account-service-6d1f1637.js",
+      "_use-root-containers-5f05a97f.js",
+      "_use-resolve-button-type-05a3356a.js",
+      "_open-closed-68fddb44.js",
+      "_transition-19561af8.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/app/layouts/administrator-layout.jsx"
   },
   "resources/js/app/layouts/cashier-layout.jsx": {
-    "file": "assets/cashier-layout-384139fc.js",
+    "file": "assets/cashier-layout-1d42ab83.js",
     "imports": [
       "resources/js/app.jsx",
       "resources/js/app/components/toastify.jsx"
@@ -360,51 +360,51 @@
     "src": "resources/js/app/layouts/cashier-layout.jsx"
   },
   "resources/js/app/layouts/components/drawer-action.jsx": {
-    "file": "assets/drawer-action-235646b5.js",
+    "file": "assets/drawer-action-c51b5859.js",
     "imports": [
       "resources/js/app.jsx",
-      "_XMarkIcon-5cb0a61f.js",
-      "_transition-fa732d89.js",
-      "_dialog-b8b8e912.js",
-      "_use-flags-25b3fe05.js",
-      "_open-closed-624e9039.js",
-      "_use-root-containers-3f2b8941.js",
-      "_keyboard-996c9d0e.js",
-      "_description-f9bf70f5.js"
+      "_XMarkIcon-f05ce496.js",
+      "_transition-19561af8.js",
+      "_dialog-7a9fa821.js",
+      "_use-flags-c9881f04.js",
+      "_open-closed-68fddb44.js",
+      "_use-root-containers-5f05a97f.js",
+      "_keyboard-99104053.js",
+      "_description-6252cc91.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/app/layouts/components/drawer-action.jsx"
   },
   "resources/js/app/layouts/components/radio-group-component.jsx": {
-    "file": "assets/radio-group-component-7458295a.js",
+    "file": "assets/radio-group-component-a0a9e9bc.js",
     "imports": [
       "resources/js/app.jsx",
-      "_UserGroupIcon-7219e963.js",
-      "_description-f9bf70f5.js",
-      "_use-flags-25b3fe05.js",
-      "_keyboard-996c9d0e.js"
+      "_UserGroupIcon-e083c6cf.js",
+      "_description-6252cc91.js",
+      "_use-flags-c9881f04.js",
+      "_keyboard-99104053.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/app/layouts/components/radio-group-component.jsx"
   },
   "resources/js/app/layouts/components/side-modal-chat.jsx": {
-    "file": "assets/side-modal-chat-00ed0fe1.js",
+    "file": "assets/side-modal-chat-4d11640c.js",
     "imports": [
       "resources/js/app.jsx",
-      "_XMarkIcon-5cb0a61f.js",
-      "_transition-fa732d89.js",
-      "_dialog-b8b8e912.js",
-      "_use-flags-25b3fe05.js",
-      "_open-closed-624e9039.js",
-      "_use-root-containers-3f2b8941.js",
-      "_keyboard-996c9d0e.js",
-      "_description-f9bf70f5.js"
+      "_XMarkIcon-f05ce496.js",
+      "_transition-19561af8.js",
+      "_dialog-7a9fa821.js",
+      "_use-flags-c9881f04.js",
+      "_open-closed-68fddb44.js",
+      "_use-root-containers-5f05a97f.js",
+      "_keyboard-99104053.js",
+      "_description-6252cc91.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/app/layouts/components/side-modal-chat.jsx"
   },
   "resources/js/app/layouts/components/sidebar-component.jsx": {
-    "file": "assets/sidebar-component-ab4768ff.js",
+    "file": "assets/sidebar-component-c68a5197.js",
     "imports": [
       "resources/js/app.jsx"
     ],
@@ -412,66 +412,66 @@
     "src": "resources/js/app/layouts/components/sidebar-component.jsx"
   },
   "resources/js/app/layouts/sections/chat-section.jsx": {
-    "file": "assets/chat-section-87e5e21b.js",
+    "file": "assets/chat-section-0cc1975a.js",
     "imports": [
       "resources/js/app.jsx",
       "resources/js/app/layouts/components/side-modal-chat.jsx",
-      "_dialog-b8b8e912.js",
-      "_XMarkIcon-5cb0a61f.js",
-      "_transition-fa732d89.js",
-      "_use-flags-25b3fe05.js",
-      "_open-closed-624e9039.js",
-      "_use-root-containers-3f2b8941.js",
-      "_keyboard-996c9d0e.js",
-      "_description-f9bf70f5.js"
+      "_dialog-7a9fa821.js",
+      "_XMarkIcon-f05ce496.js",
+      "_transition-19561af8.js",
+      "_use-flags-c9881f04.js",
+      "_open-closed-68fddb44.js",
+      "_use-root-containers-5f05a97f.js",
+      "_keyboard-99104053.js",
+      "_description-6252cc91.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/app/layouts/sections/chat-section.jsx"
   },
   "resources/js/app/layouts/sections/logout-section.jsx": {
-    "file": "assets/logout-section-b8e84a27.js",
+    "file": "assets/logout-section-0e0970ca.js",
     "imports": [
       "resources/js/app.jsx",
-      "_account-service-f324b191.js",
-      "_use-root-containers-3f2b8941.js",
-      "_use-flags-25b3fe05.js",
-      "_keyboard-996c9d0e.js",
-      "_use-resolve-button-type-d828fb8b.js",
-      "_open-closed-624e9039.js",
-      "_transition-fa732d89.js"
+      "_account-service-6d1f1637.js",
+      "_use-root-containers-5f05a97f.js",
+      "_use-flags-c9881f04.js",
+      "_keyboard-99104053.js",
+      "_use-resolve-button-type-05a3356a.js",
+      "_open-closed-68fddb44.js",
+      "_transition-19561af8.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/app/layouts/sections/logout-section.jsx"
   },
   "resources/js/app/layouts/sections/sidebar-section.jsx": {
-    "file": "assets/sidebar-section-122e1d1c.js",
+    "file": "assets/sidebar-section-3ed32215.js",
     "imports": [
       "resources/js/app.jsx",
-      "_UserGroupIcon-7219e963.js",
-      "_description-f9bf70f5.js",
-      "_use-flags-25b3fe05.js",
-      "_keyboard-996c9d0e.js"
+      "_UserGroupIcon-e083c6cf.js",
+      "_description-6252cc91.js",
+      "_use-flags-c9881f04.js",
+      "_keyboard-99104053.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/app/layouts/sections/sidebar-section.jsx"
   },
   "resources/js/app/layouts/sections/sub-sidebar-branches-section.jsx": {
-    "file": "assets/sub-sidebar-branches-section-0df25100.js",
+    "file": "assets/sub-sidebar-branches-section-ad8985d6.js",
     "imports": [
       "resources/js/app.jsx",
       "resources/js/app/layouts/components/radio-group-component.jsx",
-      "_use-flags-25b3fe05.js",
-      "_keyboard-996c9d0e.js",
-      "_use-resolve-button-type-d828fb8b.js",
-      "_open-closed-624e9039.js",
-      "_UserGroupIcon-7219e963.js",
-      "_description-f9bf70f5.js"
+      "_use-flags-c9881f04.js",
+      "_keyboard-99104053.js",
+      "_use-resolve-button-type-05a3356a.js",
+      "_open-closed-68fddb44.js",
+      "_UserGroupIcon-e083c6cf.js",
+      "_description-6252cc91.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/app/layouts/sections/sub-sidebar-branches-section.jsx"
   },
   "resources/js/app/layouts/sections/year-select-section.jsx": {
-    "file": "assets/year-select-section-f453a291.js",
+    "file": "assets/year-select-section-03a29dd9.js",
     "imports": [
       "resources/js/app.jsx"
     ],
@@ -479,288 +479,288 @@
     "src": "resources/js/app/layouts/sections/year-select-section.jsx"
   },
   "resources/js/app/pages/Auth/ConfirmPassword.jsx": {
-    "file": "assets/ConfirmPassword-a5d8fe6e.js",
+    "file": "assets/ConfirmPassword-4c7960b9.js",
     "imports": [
       "resources/js/app.jsx",
-      "_GuestLayout-28d0edb6.js",
-      "_TextInput-d6befc2f.js",
-      "_InputLabel-873f33b8.js",
-      "_PrimaryButton-36ac1f7e.js"
+      "_GuestLayout-7378d452.js",
+      "_TextInput-daea078d.js",
+      "_InputLabel-f3d021ce.js",
+      "_PrimaryButton-0f058cca.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/app/pages/Auth/ConfirmPassword.jsx"
   },
   "resources/js/app/pages/Auth/ForgotPassword.jsx": {
-    "file": "assets/ForgotPassword-43e07d92.js",
+    "file": "assets/ForgotPassword-0e17c908.js",
     "imports": [
       "resources/js/app.jsx",
-      "_GuestLayout-28d0edb6.js",
-      "_TextInput-d6befc2f.js",
-      "_PrimaryButton-36ac1f7e.js"
+      "_GuestLayout-7378d452.js",
+      "_TextInput-daea078d.js",
+      "_PrimaryButton-0f058cca.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/app/pages/Auth/ForgotPassword.jsx"
   },
   "resources/js/app/pages/Auth/Login.jsx": {
-    "file": "assets/Login-c053f2d9.js",
+    "file": "assets/Login-331dac99.js",
     "imports": [
       "resources/js/app.jsx",
-      "_GuestLayout-28d0edb6.js",
-      "_TextInput-d6befc2f.js",
-      "_InputLabel-873f33b8.js",
-      "_PrimaryButton-36ac1f7e.js"
+      "_GuestLayout-7378d452.js",
+      "_TextInput-daea078d.js",
+      "_InputLabel-f3d021ce.js",
+      "_PrimaryButton-0f058cca.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/app/pages/Auth/Login.jsx"
   },
   "resources/js/app/pages/Auth/Register.jsx": {
-    "file": "assets/Register-58737d6e.js",
+    "file": "assets/Register-9adbd2f0.js",
     "imports": [
       "resources/js/app.jsx",
-      "_GuestLayout-28d0edb6.js",
-      "_TextInput-d6befc2f.js",
-      "_InputLabel-873f33b8.js",
-      "_PrimaryButton-36ac1f7e.js"
+      "_GuestLayout-7378d452.js",
+      "_TextInput-daea078d.js",
+      "_InputLabel-f3d021ce.js",
+      "_PrimaryButton-0f058cca.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/app/pages/Auth/Register.jsx"
   },
   "resources/js/app/pages/Auth/ResetPassword.jsx": {
-    "file": "assets/ResetPassword-55ea6052.js",
+    "file": "assets/ResetPassword-547026f4.js",
     "imports": [
       "resources/js/app.jsx",
-      "_GuestLayout-28d0edb6.js",
-      "_TextInput-d6befc2f.js",
-      "_InputLabel-873f33b8.js",
-      "_PrimaryButton-36ac1f7e.js"
+      "_GuestLayout-7378d452.js",
+      "_TextInput-daea078d.js",
+      "_InputLabel-f3d021ce.js",
+      "_PrimaryButton-0f058cca.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/app/pages/Auth/ResetPassword.jsx"
   },
   "resources/js/app/pages/Auth/VerifyEmail.jsx": {
-    "file": "assets/VerifyEmail-e070c1a2.js",
+    "file": "assets/VerifyEmail-6c1b6d07.js",
     "imports": [
       "resources/js/app.jsx",
-      "_GuestLayout-28d0edb6.js",
-      "_PrimaryButton-36ac1f7e.js"
+      "_GuestLayout-7378d452.js",
+      "_PrimaryButton-0f058cca.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/app/pages/Auth/VerifyEmail.jsx"
   },
   "resources/js/app/pages/administrator/accounts/details/page.jsx": {
-    "file": "assets/page-1f0ad5b6.js",
+    "file": "assets/page-a6052200.js",
     "imports": [
       "resources/js/app.jsx",
       "resources/js/app/pages/administrator/accounts/details/sections/account-details-table-section.jsx",
-      "_account-details-search-section-a274958b.js",
+      "_account-details-search-section-54963618.js",
       "resources/js/app/layouts/administrator-layout.jsx",
-      "_account-details-004fc922.js",
+      "_account-details-500c81e5.js",
       "resources/js/app/layouts/sections/sidebar-section.jsx",
-      "_UserGroupIcon-7219e963.js",
-      "_description-f9bf70f5.js",
-      "_use-flags-25b3fe05.js",
-      "_keyboard-996c9d0e.js",
+      "_UserGroupIcon-e083c6cf.js",
+      "_description-6252cc91.js",
+      "_use-flags-c9881f04.js",
+      "_keyboard-99104053.js",
       "resources/js/app/components/toastify.jsx",
       "resources/js/app/layouts/sections/logout-section.jsx",
-      "_account-service-f324b191.js",
-      "_use-root-containers-3f2b8941.js",
-      "_use-resolve-button-type-d828fb8b.js",
-      "_open-closed-624e9039.js",
-      "_transition-fa732d89.js",
+      "_account-service-6d1f1637.js",
+      "_use-root-containers-5f05a97f.js",
+      "_use-resolve-button-type-05a3356a.js",
+      "_open-closed-68fddb44.js",
+      "_transition-19561af8.js",
       "resources/js/app/layouts/sections/year-select-section.jsx"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/app/pages/administrator/accounts/details/page.jsx"
   },
   "resources/js/app/pages/administrator/accounts/details/sections/account-details-table-section.jsx": {
-    "file": "assets/account-details-table-section-b79de999.js",
+    "file": "assets/account-details-table-section-3da7f126.js",
     "imports": [
       "resources/js/app.jsx",
-      "_account-details-search-section-a274958b.js",
-      "_account-details-004fc922.js"
+      "_account-details-search-section-54963618.js",
+      "_account-details-500c81e5.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/app/pages/administrator/accounts/details/sections/account-details-table-section.jsx"
   },
   "resources/js/app/pages/administrator/accounts/page.jsx": {
-    "file": "assets/page-a66705ae.js",
+    "file": "assets/page-8f83060f.js",
     "imports": [
       "resources/js/app.jsx",
       "resources/js/app/pages/administrator/accounts/sections/administrator-account-table-section.jsx",
       "resources/js/app/layouts/administrator-layout.jsx",
-      "_account-thunk-f3006d0f.js",
-      "_account-details-004fc922.js",
-      "_account-service-f324b191.js",
+      "_account-thunk-b4178d08.js",
+      "_account-details-500c81e5.js",
+      "_account-service-6d1f1637.js",
       "resources/js/app/pages/administrator/accounts/sections/administrator-create-account-section.jsx",
       "resources/js/app/layouts/components/drawer-action.jsx",
-      "_XMarkIcon-5cb0a61f.js",
-      "_transition-fa732d89.js",
-      "_use-flags-25b3fe05.js",
-      "_open-closed-624e9039.js",
-      "_dialog-b8b8e912.js",
-      "_use-root-containers-3f2b8941.js",
-      "_keyboard-996c9d0e.js",
-      "_description-f9bf70f5.js",
+      "_XMarkIcon-f05ce496.js",
+      "_transition-19561af8.js",
+      "_use-flags-c9881f04.js",
+      "_open-closed-68fddb44.js",
+      "_dialog-7a9fa821.js",
+      "_use-root-containers-5f05a97f.js",
+      "_keyboard-99104053.js",
+      "_description-6252cc91.js",
       "resources/js/app/pages/administrator/accounts/sections/administrator-account-edit-section.jsx",
-      "_PencilIcon-bb6c178f.js",
+      "_PencilIcon-aee8e8d2.js",
       "resources/js/app/pages/administrator/accounts/sections/administrator-account-change-password-section.jsx",
       "resources/js/app/pages/administrator/accounts/sections/administrator-delete-account.jsx",
-      "_TrashIcon-e880b205.js",
-      "_ExclamationTriangleIcon-d923facf.js",
+      "_TrashIcon-5ced7d80.js",
+      "_ExclamationTriangleIcon-e60e1b95.js",
       "resources/js/app/layouts/sections/sidebar-section.jsx",
-      "_UserGroupIcon-7219e963.js",
+      "_UserGroupIcon-e083c6cf.js",
       "resources/js/app/components/toastify.jsx",
       "resources/js/app/layouts/sections/logout-section.jsx",
-      "_use-resolve-button-type-d828fb8b.js",
+      "_use-resolve-button-type-05a3356a.js",
       "resources/js/app/layouts/sections/year-select-section.jsx"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/app/pages/administrator/accounts/page.jsx"
   },
   "resources/js/app/pages/administrator/accounts/sections/administrator-account-change-password-section.jsx": {
-    "file": "assets/administrator-account-change-password-section-1e0446a3.js",
+    "file": "assets/administrator-account-change-password-section-9dd47814.js",
     "imports": [
       "resources/js/app.jsx",
       "resources/js/app/layouts/components/drawer-action.jsx",
-      "_account-thunk-f3006d0f.js",
-      "_XMarkIcon-5cb0a61f.js",
-      "_transition-fa732d89.js",
-      "_use-flags-25b3fe05.js",
-      "_open-closed-624e9039.js",
-      "_dialog-b8b8e912.js",
-      "_use-root-containers-3f2b8941.js",
-      "_keyboard-996c9d0e.js",
-      "_description-f9bf70f5.js",
-      "_account-details-004fc922.js",
-      "_account-service-f324b191.js"
+      "_account-thunk-b4178d08.js",
+      "_XMarkIcon-f05ce496.js",
+      "_transition-19561af8.js",
+      "_use-flags-c9881f04.js",
+      "_open-closed-68fddb44.js",
+      "_dialog-7a9fa821.js",
+      "_use-root-containers-5f05a97f.js",
+      "_keyboard-99104053.js",
+      "_description-6252cc91.js",
+      "_account-details-500c81e5.js",
+      "_account-service-6d1f1637.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/app/pages/administrator/accounts/sections/administrator-account-change-password-section.jsx"
   },
   "resources/js/app/pages/administrator/accounts/sections/administrator-account-edit-section.jsx": {
-    "file": "assets/administrator-account-edit-section-7f719c0e.js",
+    "file": "assets/administrator-account-edit-section-89e1c0ba.js",
     "imports": [
       "resources/js/app.jsx",
       "resources/js/app/layouts/components/drawer-action.jsx",
-      "_account-thunk-f3006d0f.js",
-      "_PencilIcon-bb6c178f.js",
-      "_XMarkIcon-5cb0a61f.js",
-      "_transition-fa732d89.js",
-      "_use-flags-25b3fe05.js",
-      "_open-closed-624e9039.js",
-      "_dialog-b8b8e912.js",
-      "_use-root-containers-3f2b8941.js",
-      "_keyboard-996c9d0e.js",
-      "_description-f9bf70f5.js",
-      "_account-details-004fc922.js",
-      "_account-service-f324b191.js"
+      "_account-thunk-b4178d08.js",
+      "_PencilIcon-aee8e8d2.js",
+      "_XMarkIcon-f05ce496.js",
+      "_transition-19561af8.js",
+      "_use-flags-c9881f04.js",
+      "_open-closed-68fddb44.js",
+      "_dialog-7a9fa821.js",
+      "_use-root-containers-5f05a97f.js",
+      "_keyboard-99104053.js",
+      "_description-6252cc91.js",
+      "_account-details-500c81e5.js",
+      "_account-service-6d1f1637.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/app/pages/administrator/accounts/sections/administrator-account-edit-section.jsx"
   },
   "resources/js/app/pages/administrator/accounts/sections/administrator-account-table-section.jsx": {
-    "file": "assets/administrator-account-table-section-627feca9.js",
+    "file": "assets/administrator-account-table-section-23e73d88.js",
     "imports": [
       "resources/js/app.jsx",
-      "_account-thunk-f3006d0f.js",
+      "_account-thunk-b4178d08.js",
       "resources/js/app/pages/administrator/accounts/sections/administrator-create-account-section.jsx",
       "resources/js/app/pages/administrator/accounts/sections/administrator-account-edit-section.jsx",
       "resources/js/app/pages/administrator/accounts/sections/administrator-account-change-password-section.jsx",
       "resources/js/app/pages/administrator/accounts/sections/administrator-delete-account.jsx",
-      "_account-details-004fc922.js",
-      "_account-service-f324b191.js",
+      "_account-details-500c81e5.js",
+      "_account-service-6d1f1637.js",
       "resources/js/app/layouts/components/drawer-action.jsx",
-      "_XMarkIcon-5cb0a61f.js",
-      "_transition-fa732d89.js",
-      "_use-flags-25b3fe05.js",
-      "_open-closed-624e9039.js",
-      "_dialog-b8b8e912.js",
-      "_use-root-containers-3f2b8941.js",
-      "_keyboard-996c9d0e.js",
-      "_description-f9bf70f5.js",
-      "_PencilIcon-bb6c178f.js",
-      "_TrashIcon-e880b205.js",
-      "_ExclamationTriangleIcon-d923facf.js"
+      "_XMarkIcon-f05ce496.js",
+      "_transition-19561af8.js",
+      "_use-flags-c9881f04.js",
+      "_open-closed-68fddb44.js",
+      "_dialog-7a9fa821.js",
+      "_use-root-containers-5f05a97f.js",
+      "_keyboard-99104053.js",
+      "_description-6252cc91.js",
+      "_PencilIcon-aee8e8d2.js",
+      "_TrashIcon-5ced7d80.js",
+      "_ExclamationTriangleIcon-e60e1b95.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/app/pages/administrator/accounts/sections/administrator-account-table-section.jsx"
   },
   "resources/js/app/pages/administrator/accounts/sections/administrator-create-account-section.jsx": {
-    "file": "assets/administrator-create-account-section-cd7ec554.js",
+    "file": "assets/administrator-create-account-section-d2ef1e1e.js",
     "imports": [
       "resources/js/app.jsx",
       "resources/js/app/layouts/components/drawer-action.jsx",
-      "_account-thunk-f3006d0f.js",
-      "_XMarkIcon-5cb0a61f.js",
-      "_transition-fa732d89.js",
-      "_use-flags-25b3fe05.js",
-      "_open-closed-624e9039.js",
-      "_dialog-b8b8e912.js",
-      "_use-root-containers-3f2b8941.js",
-      "_keyboard-996c9d0e.js",
-      "_description-f9bf70f5.js",
-      "_account-details-004fc922.js",
-      "_account-service-f324b191.js"
+      "_account-thunk-b4178d08.js",
+      "_XMarkIcon-f05ce496.js",
+      "_transition-19561af8.js",
+      "_use-flags-c9881f04.js",
+      "_open-closed-68fddb44.js",
+      "_dialog-7a9fa821.js",
+      "_use-root-containers-5f05a97f.js",
+      "_keyboard-99104053.js",
+      "_description-6252cc91.js",
+      "_account-details-500c81e5.js",
+      "_account-service-6d1f1637.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/app/pages/administrator/accounts/sections/administrator-create-account-section.jsx"
   },
   "resources/js/app/pages/administrator/accounts/sections/administrator-delete-account.jsx": {
-    "file": "assets/administrator-delete-account-8a9b8325.js",
+    "file": "assets/administrator-delete-account-65dc3987.js",
     "imports": [
       "resources/js/app.jsx",
-      "_account-thunk-f3006d0f.js",
-      "_TrashIcon-e880b205.js",
-      "_ExclamationTriangleIcon-d923facf.js",
-      "_transition-fa732d89.js",
-      "_dialog-b8b8e912.js",
-      "_account-details-004fc922.js",
-      "_account-service-f324b191.js",
-      "_use-flags-25b3fe05.js",
-      "_open-closed-624e9039.js",
-      "_use-root-containers-3f2b8941.js",
-      "_keyboard-996c9d0e.js",
-      "_description-f9bf70f5.js"
+      "_account-thunk-b4178d08.js",
+      "_TrashIcon-5ced7d80.js",
+      "_ExclamationTriangleIcon-e60e1b95.js",
+      "_transition-19561af8.js",
+      "_dialog-7a9fa821.js",
+      "_account-details-500c81e5.js",
+      "_account-service-6d1f1637.js",
+      "_use-flags-c9881f04.js",
+      "_open-closed-68fddb44.js",
+      "_use-root-containers-5f05a97f.js",
+      "_keyboard-99104053.js",
+      "_description-6252cc91.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/app/pages/administrator/accounts/sections/administrator-delete-account.jsx"
   },
   "resources/js/app/pages/administrator/barcode/page.jsx": {
-    "file": "assets/page-e1e40b39.js",
+    "file": "assets/page-5fe4b71e.js",
     "imports": [
       "resources/js/app.jsx",
-      "_barcode-download-pdf-ce1b4be0.js",
-      "_react-barcode-fdda8abb.js"
+      "_barcode-download-pdf-3c335ef9.js",
+      "_react-barcode-c01136db.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/app/pages/administrator/barcode/page.jsx"
   },
   "resources/js/app/pages/administrator/dashboard/page.jsx": {
-    "file": "assets/page-733e83c6.js",
+    "file": "assets/page-944d1ad7.js",
     "imports": [
       "resources/js/app.jsx",
       "resources/js/app/pages/administrator/dashboard/sections/dashboard-line-cart-section.jsx",
       "resources/js/app/pages/administrator/dashboard/sections/dashboard-periodic-tab-section.jsx",
       "resources/js/app/layouts/administrator-layout.jsx",
       "resources/js/app/layouts/sections/sidebar-section.jsx",
-      "_UserGroupIcon-7219e963.js",
-      "_description-f9bf70f5.js",
-      "_use-flags-25b3fe05.js",
-      "_keyboard-996c9d0e.js",
+      "_UserGroupIcon-e083c6cf.js",
+      "_description-6252cc91.js",
+      "_use-flags-c9881f04.js",
+      "_keyboard-99104053.js",
       "resources/js/app/components/toastify.jsx",
       "resources/js/app/layouts/sections/logout-section.jsx",
-      "_account-service-f324b191.js",
-      "_use-root-containers-3f2b8941.js",
-      "_use-resolve-button-type-d828fb8b.js",
-      "_open-closed-624e9039.js",
-      "_transition-fa732d89.js",
+      "_account-service-6d1f1637.js",
+      "_use-root-containers-5f05a97f.js",
+      "_use-resolve-button-type-05a3356a.js",
+      "_open-closed-68fddb44.js",
+      "_transition-19561af8.js",
       "resources/js/app/layouts/sections/year-select-section.jsx"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/app/pages/administrator/dashboard/page.jsx"
   },
   "resources/js/app/pages/administrator/dashboard/sections/dashboard-line-cart-section.jsx": {
-    "file": "assets/dashboard-line-cart-section-1ab1e887.js",
+    "file": "assets/dashboard-line-cart-section-14b85250.js",
     "imports": [
       "resources/js/app.jsx"
     ],
@@ -768,7 +768,7 @@
     "src": "resources/js/app/pages/administrator/dashboard/sections/dashboard-line-cart-section.jsx"
   },
   "resources/js/app/pages/administrator/dashboard/sections/dashboard-periodic-tab-section.jsx": {
-    "file": "assets/dashboard-periodic-tab-section-0fbef1b2.js",
+    "file": "assets/dashboard-periodic-tab-section-fc36e8fb.js",
     "imports": [
       "resources/js/app.jsx"
     ],
@@ -776,239 +776,239 @@
     "src": "resources/js/app/pages/administrator/dashboard/sections/dashboard-periodic-tab-section.jsx"
   },
   "resources/js/app/pages/administrator/loyalty_card/page.jsx": {
-    "file": "assets/page-5c8bb894.js",
+    "file": "assets/page-0fc406eb.js",
     "imports": [
       "resources/js/app.jsx",
       "resources/js/app/pages/administrator/loyalty_card/sections/loyal-card-table-section.jsx",
       "resources/js/app/layouts/administrator-layout.jsx",
-      "_loyal-card-thunk-817ad00c.js",
+      "_loyal-card-thunk-8e567e22.js",
       "_loyal-card-service-8d6deeca.js",
       "resources/js/app/pages/administrator/loyalty_card/sections/loyal-card-delete-section.jsx",
-      "_TrashIcon-e880b205.js",
-      "_ExclamationTriangleIcon-d923facf.js",
-      "_transition-fa732d89.js",
-      "_use-flags-25b3fe05.js",
-      "_open-closed-624e9039.js",
-      "_dialog-b8b8e912.js",
-      "_use-root-containers-3f2b8941.js",
-      "_keyboard-996c9d0e.js",
-      "_description-f9bf70f5.js",
+      "_TrashIcon-5ced7d80.js",
+      "_ExclamationTriangleIcon-e60e1b95.js",
+      "_transition-19561af8.js",
+      "_use-flags-c9881f04.js",
+      "_open-closed-68fddb44.js",
+      "_dialog-7a9fa821.js",
+      "_use-root-containers-5f05a97f.js",
+      "_keyboard-99104053.js",
+      "_description-6252cc91.js",
       "resources/js/app/pages/administrator/loyalty_card/sections/loyal-card-edit-section.jsx",
       "resources/js/app/layouts/components/drawer-action.jsx",
-      "_XMarkIcon-5cb0a61f.js",
-      "_PencilIcon-bb6c178f.js",
+      "_XMarkIcon-f05ce496.js",
+      "_PencilIcon-aee8e8d2.js",
       "resources/js/app/layouts/sections/sidebar-section.jsx",
-      "_UserGroupIcon-7219e963.js",
+      "_UserGroupIcon-e083c6cf.js",
       "resources/js/app/components/toastify.jsx",
       "resources/js/app/layouts/sections/logout-section.jsx",
-      "_account-service-f324b191.js",
-      "_use-resolve-button-type-d828fb8b.js",
+      "_account-service-6d1f1637.js",
+      "_use-resolve-button-type-05a3356a.js",
       "resources/js/app/layouts/sections/year-select-section.jsx"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/app/pages/administrator/loyalty_card/page.jsx"
   },
   "resources/js/app/pages/administrator/loyalty_card/sections/loyal-card-create-section.jsx": {
-    "file": "assets/loyal-card-create-section-0b592175.js",
+    "file": "assets/loyal-card-create-section-89e5000b.js",
     "imports": [
       "resources/js/app.jsx",
       "resources/js/app/layouts/components/drawer-action.jsx",
-      "_loyal-card-thunk-817ad00c.js",
-      "_XMarkIcon-5cb0a61f.js",
-      "_transition-fa732d89.js",
-      "_use-flags-25b3fe05.js",
-      "_open-closed-624e9039.js",
-      "_dialog-b8b8e912.js",
-      "_use-root-containers-3f2b8941.js",
-      "_keyboard-996c9d0e.js",
-      "_description-f9bf70f5.js",
+      "_loyal-card-thunk-8e567e22.js",
+      "_XMarkIcon-f05ce496.js",
+      "_transition-19561af8.js",
+      "_use-flags-c9881f04.js",
+      "_open-closed-68fddb44.js",
+      "_dialog-7a9fa821.js",
+      "_use-root-containers-5f05a97f.js",
+      "_keyboard-99104053.js",
+      "_description-6252cc91.js",
       "_loyal-card-service-8d6deeca.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/app/pages/administrator/loyalty_card/sections/loyal-card-create-section.jsx"
   },
   "resources/js/app/pages/administrator/loyalty_card/sections/loyal-card-delete-section.jsx": {
-    "file": "assets/loyal-card-delete-section-7ef86c70.js",
+    "file": "assets/loyal-card-delete-section-9a71a9a3.js",
     "imports": [
       "resources/js/app.jsx",
-      "_loyal-card-thunk-817ad00c.js",
-      "_TrashIcon-e880b205.js",
-      "_ExclamationTriangleIcon-d923facf.js",
-      "_transition-fa732d89.js",
-      "_dialog-b8b8e912.js",
+      "_loyal-card-thunk-8e567e22.js",
+      "_TrashIcon-5ced7d80.js",
+      "_ExclamationTriangleIcon-e60e1b95.js",
+      "_transition-19561af8.js",
+      "_dialog-7a9fa821.js",
       "_loyal-card-service-8d6deeca.js",
-      "_use-flags-25b3fe05.js",
-      "_open-closed-624e9039.js",
-      "_use-root-containers-3f2b8941.js",
-      "_keyboard-996c9d0e.js",
-      "_description-f9bf70f5.js"
+      "_use-flags-c9881f04.js",
+      "_open-closed-68fddb44.js",
+      "_use-root-containers-5f05a97f.js",
+      "_keyboard-99104053.js",
+      "_description-6252cc91.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/app/pages/administrator/loyalty_card/sections/loyal-card-delete-section.jsx"
   },
   "resources/js/app/pages/administrator/loyalty_card/sections/loyal-card-edit-section.jsx": {
-    "file": "assets/loyal-card-edit-section-9c64bf30.js",
+    "file": "assets/loyal-card-edit-section-3eb074a2.js",
     "imports": [
       "resources/js/app.jsx",
       "resources/js/app/layouts/components/drawer-action.jsx",
-      "_loyal-card-thunk-817ad00c.js",
-      "_PencilIcon-bb6c178f.js",
-      "_XMarkIcon-5cb0a61f.js",
-      "_transition-fa732d89.js",
-      "_use-flags-25b3fe05.js",
-      "_open-closed-624e9039.js",
-      "_dialog-b8b8e912.js",
-      "_use-root-containers-3f2b8941.js",
-      "_keyboard-996c9d0e.js",
-      "_description-f9bf70f5.js",
+      "_loyal-card-thunk-8e567e22.js",
+      "_PencilIcon-aee8e8d2.js",
+      "_XMarkIcon-f05ce496.js",
+      "_transition-19561af8.js",
+      "_use-flags-c9881f04.js",
+      "_open-closed-68fddb44.js",
+      "_dialog-7a9fa821.js",
+      "_use-root-containers-5f05a97f.js",
+      "_keyboard-99104053.js",
+      "_description-6252cc91.js",
       "_loyal-card-service-8d6deeca.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/app/pages/administrator/loyalty_card/sections/loyal-card-edit-section.jsx"
   },
   "resources/js/app/pages/administrator/loyalty_card/sections/loyal-card-table-section.jsx": {
-    "file": "assets/loyal-card-table-section-ae5431f5.js",
+    "file": "assets/loyal-card-table-section-3859e567.js",
     "imports": [
       "resources/js/app.jsx",
-      "_loyal-card-thunk-817ad00c.js",
+      "_loyal-card-thunk-8e567e22.js",
       "resources/js/app/pages/administrator/loyalty_card/sections/loyal-card-delete-section.jsx",
       "resources/js/app/pages/administrator/loyalty_card/sections/loyal-card-edit-section.jsx",
       "_loyal-card-service-8d6deeca.js",
-      "_TrashIcon-e880b205.js",
-      "_ExclamationTriangleIcon-d923facf.js",
-      "_transition-fa732d89.js",
-      "_use-flags-25b3fe05.js",
-      "_open-closed-624e9039.js",
-      "_dialog-b8b8e912.js",
-      "_use-root-containers-3f2b8941.js",
-      "_keyboard-996c9d0e.js",
-      "_description-f9bf70f5.js",
+      "_TrashIcon-5ced7d80.js",
+      "_ExclamationTriangleIcon-e60e1b95.js",
+      "_transition-19561af8.js",
+      "_use-flags-c9881f04.js",
+      "_open-closed-68fddb44.js",
+      "_dialog-7a9fa821.js",
+      "_use-root-containers-5f05a97f.js",
+      "_keyboard-99104053.js",
+      "_description-6252cc91.js",
       "resources/js/app/layouts/components/drawer-action.jsx",
-      "_XMarkIcon-5cb0a61f.js",
-      "_PencilIcon-bb6c178f.js"
+      "_XMarkIcon-f05ce496.js",
+      "_PencilIcon-aee8e8d2.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/app/pages/administrator/loyalty_card/sections/loyal-card-table-section.jsx"
   },
   "resources/js/app/pages/administrator/products/page.jsx": {
-    "file": "assets/page-dd2dda61.js",
+    "file": "assets/page-1729d9e5.js",
     "imports": [
       "resources/js/app.jsx",
       "resources/js/app/pages/administrator/products/sections/products-table-section.jsx",
       "resources/js/app/layouts/administrator-layout.jsx",
       "resources/js/app/pages/administrator/products/sections/products-create-section.jsx",
       "resources/js/app/layouts/components/drawer-action.jsx",
-      "_XMarkIcon-5cb0a61f.js",
-      "_transition-fa732d89.js",
-      "_use-flags-25b3fe05.js",
-      "_open-closed-624e9039.js",
-      "_dialog-b8b8e912.js",
-      "_use-root-containers-3f2b8941.js",
-      "_keyboard-996c9d0e.js",
-      "_description-f9bf70f5.js",
-      "_products-thunk-ba8e9fc3.js",
+      "_XMarkIcon-f05ce496.js",
+      "_transition-19561af8.js",
+      "_use-flags-c9881f04.js",
+      "_open-closed-68fddb44.js",
+      "_dialog-7a9fa821.js",
+      "_use-root-containers-5f05a97f.js",
+      "_keyboard-99104053.js",
+      "_description-6252cc91.js",
+      "_products-thunk-839f0610.js",
       "_products-service-2e54bc55.js",
       "resources/js/app/pages/administrator/products/sections/products-edit-section.jsx",
-      "_PencilIcon-bb6c178f.js",
+      "_PencilIcon-aee8e8d2.js",
       "resources/js/app/pages/administrator/products/sections/products-delete-section.jsx",
-      "_TrashIcon-e880b205.js",
-      "_ExclamationTriangleIcon-d923facf.js",
+      "_TrashIcon-5ced7d80.js",
+      "_ExclamationTriangleIcon-e60e1b95.js",
       "resources/js/app/layouts/sections/sidebar-section.jsx",
-      "_UserGroupIcon-7219e963.js",
+      "_UserGroupIcon-e083c6cf.js",
       "resources/js/app/components/toastify.jsx",
       "resources/js/app/layouts/sections/logout-section.jsx",
-      "_account-service-f324b191.js",
-      "_use-resolve-button-type-d828fb8b.js",
+      "_account-service-6d1f1637.js",
+      "_use-resolve-button-type-05a3356a.js",
       "resources/js/app/layouts/sections/year-select-section.jsx"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/app/pages/administrator/products/page.jsx"
   },
   "resources/js/app/pages/administrator/products/sections/products-create-section.jsx": {
-    "file": "assets/products-create-section-78dccf30.js",
+    "file": "assets/products-create-section-0d4da89d.js",
     "imports": [
       "resources/js/app.jsx",
       "resources/js/app/layouts/components/drawer-action.jsx",
-      "_products-thunk-ba8e9fc3.js",
-      "_XMarkIcon-5cb0a61f.js",
-      "_transition-fa732d89.js",
-      "_use-flags-25b3fe05.js",
-      "_open-closed-624e9039.js",
-      "_dialog-b8b8e912.js",
-      "_use-root-containers-3f2b8941.js",
-      "_keyboard-996c9d0e.js",
-      "_description-f9bf70f5.js",
+      "_products-thunk-839f0610.js",
+      "_XMarkIcon-f05ce496.js",
+      "_transition-19561af8.js",
+      "_use-flags-c9881f04.js",
+      "_open-closed-68fddb44.js",
+      "_dialog-7a9fa821.js",
+      "_use-root-containers-5f05a97f.js",
+      "_keyboard-99104053.js",
+      "_description-6252cc91.js",
       "_products-service-2e54bc55.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/app/pages/administrator/products/sections/products-create-section.jsx"
   },
   "resources/js/app/pages/administrator/products/sections/products-delete-section.jsx": {
-    "file": "assets/products-delete-section-b581b2e7.js",
+    "file": "assets/products-delete-section-bd0adc59.js",
     "imports": [
       "resources/js/app.jsx",
-      "_products-thunk-ba8e9fc3.js",
-      "_TrashIcon-e880b205.js",
-      "_ExclamationTriangleIcon-d923facf.js",
-      "_transition-fa732d89.js",
-      "_dialog-b8b8e912.js",
+      "_products-thunk-839f0610.js",
+      "_TrashIcon-5ced7d80.js",
+      "_ExclamationTriangleIcon-e60e1b95.js",
+      "_transition-19561af8.js",
+      "_dialog-7a9fa821.js",
       "_products-service-2e54bc55.js",
-      "_use-flags-25b3fe05.js",
-      "_open-closed-624e9039.js",
-      "_use-root-containers-3f2b8941.js",
-      "_keyboard-996c9d0e.js",
-      "_description-f9bf70f5.js"
+      "_use-flags-c9881f04.js",
+      "_open-closed-68fddb44.js",
+      "_use-root-containers-5f05a97f.js",
+      "_keyboard-99104053.js",
+      "_description-6252cc91.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/app/pages/administrator/products/sections/products-delete-section.jsx"
   },
   "resources/js/app/pages/administrator/products/sections/products-edit-section.jsx": {
-    "file": "assets/products-edit-section-5eb34caf.js",
+    "file": "assets/products-edit-section-c3cfe1dd.js",
     "imports": [
       "resources/js/app.jsx",
       "resources/js/app/layouts/components/drawer-action.jsx",
-      "_products-thunk-ba8e9fc3.js",
-      "_PencilIcon-bb6c178f.js",
-      "_XMarkIcon-5cb0a61f.js",
-      "_transition-fa732d89.js",
-      "_use-flags-25b3fe05.js",
-      "_open-closed-624e9039.js",
-      "_dialog-b8b8e912.js",
-      "_use-root-containers-3f2b8941.js",
-      "_keyboard-996c9d0e.js",
-      "_description-f9bf70f5.js",
+      "_products-thunk-839f0610.js",
+      "_PencilIcon-aee8e8d2.js",
+      "_XMarkIcon-f05ce496.js",
+      "_transition-19561af8.js",
+      "_use-flags-c9881f04.js",
+      "_open-closed-68fddb44.js",
+      "_dialog-7a9fa821.js",
+      "_use-root-containers-5f05a97f.js",
+      "_keyboard-99104053.js",
+      "_description-6252cc91.js",
       "_products-service-2e54bc55.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/app/pages/administrator/products/sections/products-edit-section.jsx"
   },
   "resources/js/app/pages/administrator/products/sections/products-table-section.jsx": {
-    "file": "assets/products-table-section-f50d137c.js",
+    "file": "assets/products-table-section-5703ed99.js",
     "imports": [
       "resources/js/app.jsx",
       "resources/js/app/pages/administrator/products/sections/products-create-section.jsx",
-      "_products-thunk-ba8e9fc3.js",
+      "_products-thunk-839f0610.js",
       "_products-service-2e54bc55.js",
       "resources/js/app/pages/administrator/products/sections/products-edit-section.jsx",
       "resources/js/app/pages/administrator/products/sections/products-delete-section.jsx",
       "resources/js/app/layouts/components/drawer-action.jsx",
-      "_XMarkIcon-5cb0a61f.js",
-      "_transition-fa732d89.js",
-      "_use-flags-25b3fe05.js",
-      "_open-closed-624e9039.js",
-      "_dialog-b8b8e912.js",
-      "_use-root-containers-3f2b8941.js",
-      "_keyboard-996c9d0e.js",
-      "_description-f9bf70f5.js",
-      "_PencilIcon-bb6c178f.js",
-      "_TrashIcon-e880b205.js",
-      "_ExclamationTriangleIcon-d923facf.js"
+      "_XMarkIcon-f05ce496.js",
+      "_transition-19561af8.js",
+      "_use-flags-c9881f04.js",
+      "_open-closed-68fddb44.js",
+      "_dialog-7a9fa821.js",
+      "_use-root-containers-5f05a97f.js",
+      "_keyboard-99104053.js",
+      "_description-6252cc91.js",
+      "_PencilIcon-aee8e8d2.js",
+      "_TrashIcon-5ced7d80.js",
+      "_ExclamationTriangleIcon-e60e1b95.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/app/pages/administrator/products/sections/products-table-section.jsx"
   },
   "resources/js/app/pages/administrator/sales/page.jsx": {
-    "file": "assets/page-9293e326.js",
+    "file": "assets/page-49169e1a.js",
     "imports": [
       "resources/js/app.jsx",
       "resources/js/app/pages/administrator/sales/sections/administrator-sales-table-section.jsx",
@@ -1016,144 +1016,144 @@
       "_sales-service-19b3eac2.js",
       "resources/js/app/pages/administrator/sales/sections/administrator-show-sales-item-section.jsx",
       "resources/js/app/layouts/components/drawer-action.jsx",
-      "_XMarkIcon-5cb0a61f.js",
-      "_transition-fa732d89.js",
-      "_use-flags-25b3fe05.js",
-      "_open-closed-624e9039.js",
-      "_dialog-b8b8e912.js",
-      "_use-root-containers-3f2b8941.js",
-      "_keyboard-996c9d0e.js",
-      "_description-f9bf70f5.js",
+      "_XMarkIcon-f05ce496.js",
+      "_transition-19561af8.js",
+      "_use-flags-c9881f04.js",
+      "_open-closed-68fddb44.js",
+      "_dialog-7a9fa821.js",
+      "_use-root-containers-5f05a97f.js",
+      "_keyboard-99104053.js",
+      "_description-6252cc91.js",
       "resources/js/app/layouts/sections/sidebar-section.jsx",
-      "_UserGroupIcon-7219e963.js",
+      "_UserGroupIcon-e083c6cf.js",
       "resources/js/app/components/toastify.jsx",
       "resources/js/app/layouts/sections/logout-section.jsx",
-      "_account-service-f324b191.js",
-      "_use-resolve-button-type-d828fb8b.js",
+      "_account-service-6d1f1637.js",
+      "_use-resolve-button-type-05a3356a.js",
       "resources/js/app/layouts/sections/year-select-section.jsx"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/app/pages/administrator/sales/page.jsx"
   },
   "resources/js/app/pages/administrator/sales/sections/administrator-sales-table-section.jsx": {
-    "file": "assets/administrator-sales-table-section-17e4b7d0.js",
+    "file": "assets/administrator-sales-table-section-3b3017bd.js",
     "imports": [
       "resources/js/app.jsx",
       "_sales-service-19b3eac2.js",
       "resources/js/app/pages/administrator/sales/sections/administrator-show-sales-item-section.jsx",
       "resources/js/app/layouts/components/drawer-action.jsx",
-      "_XMarkIcon-5cb0a61f.js",
-      "_transition-fa732d89.js",
-      "_use-flags-25b3fe05.js",
-      "_open-closed-624e9039.js",
-      "_dialog-b8b8e912.js",
-      "_use-root-containers-3f2b8941.js",
-      "_keyboard-996c9d0e.js",
-      "_description-f9bf70f5.js"
+      "_XMarkIcon-f05ce496.js",
+      "_transition-19561af8.js",
+      "_use-flags-c9881f04.js",
+      "_open-closed-68fddb44.js",
+      "_dialog-7a9fa821.js",
+      "_use-root-containers-5f05a97f.js",
+      "_keyboard-99104053.js",
+      "_description-6252cc91.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/app/pages/administrator/sales/sections/administrator-sales-table-section.jsx"
   },
   "resources/js/app/pages/administrator/sales/sections/administrator-show-sales-item-section.jsx": {
-    "file": "assets/administrator-show-sales-item-section-8c5bafa9.js",
+    "file": "assets/administrator-show-sales-item-section-c72ef56f.js",
     "imports": [
       "resources/js/app.jsx",
       "resources/js/app/layouts/components/drawer-action.jsx",
-      "_XMarkIcon-5cb0a61f.js",
-      "_transition-fa732d89.js",
-      "_use-flags-25b3fe05.js",
-      "_open-closed-624e9039.js",
-      "_dialog-b8b8e912.js",
-      "_use-root-containers-3f2b8941.js",
-      "_keyboard-996c9d0e.js",
-      "_description-f9bf70f5.js"
+      "_XMarkIcon-f05ce496.js",
+      "_transition-19561af8.js",
+      "_use-flags-c9881f04.js",
+      "_open-closed-68fddb44.js",
+      "_dialog-7a9fa821.js",
+      "_use-root-containers-5f05a97f.js",
+      "_keyboard-99104053.js",
+      "_description-6252cc91.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/app/pages/administrator/sales/sections/administrator-show-sales-item-section.jsx"
   },
   "resources/js/app/pages/administrator/settings/Partials/DeleteUserForm.jsx": {
-    "file": "assets/DeleteUserForm-4ac058dc.js",
+    "file": "assets/DeleteUserForm-71beb5b0.js",
     "imports": [
       "resources/js/app.jsx",
-      "_TextInput-d6befc2f.js",
-      "_InputLabel-873f33b8.js",
-      "_transition-fa732d89.js",
-      "_dialog-b8b8e912.js",
-      "_use-flags-25b3fe05.js",
-      "_open-closed-624e9039.js",
-      "_use-root-containers-3f2b8941.js",
-      "_keyboard-996c9d0e.js",
-      "_description-f9bf70f5.js"
+      "_TextInput-daea078d.js",
+      "_InputLabel-f3d021ce.js",
+      "_transition-19561af8.js",
+      "_dialog-7a9fa821.js",
+      "_use-flags-c9881f04.js",
+      "_open-closed-68fddb44.js",
+      "_use-root-containers-5f05a97f.js",
+      "_keyboard-99104053.js",
+      "_description-6252cc91.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/app/pages/administrator/settings/Partials/DeleteUserForm.jsx"
   },
   "resources/js/app/pages/administrator/settings/Partials/UpdatePasswordForm.jsx": {
-    "file": "assets/UpdatePasswordForm-75db7c1b.js",
+    "file": "assets/UpdatePasswordForm-3358690a.js",
     "imports": [
       "resources/js/app.jsx",
-      "_TextInput-d6befc2f.js",
-      "_InputLabel-873f33b8.js",
-      "_PrimaryButton-36ac1f7e.js",
-      "_transition-fa732d89.js",
-      "_use-flags-25b3fe05.js",
-      "_open-closed-624e9039.js"
+      "_TextInput-daea078d.js",
+      "_InputLabel-f3d021ce.js",
+      "_PrimaryButton-0f058cca.js",
+      "_transition-19561af8.js",
+      "_use-flags-c9881f04.js",
+      "_open-closed-68fddb44.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/app/pages/administrator/settings/Partials/UpdatePasswordForm.jsx"
   },
   "resources/js/app/pages/administrator/settings/Partials/UpdateProfileInformationForm.jsx": {
-    "file": "assets/UpdateProfileInformationForm-04d44263.js",
+    "file": "assets/UpdateProfileInformationForm-8b0dea9e.js",
     "imports": [
       "resources/js/app.jsx",
-      "_TextInput-d6befc2f.js",
-      "_InputLabel-873f33b8.js",
-      "_PrimaryButton-36ac1f7e.js",
-      "_transition-fa732d89.js",
-      "_use-flags-25b3fe05.js",
-      "_open-closed-624e9039.js"
+      "_TextInput-daea078d.js",
+      "_InputLabel-f3d021ce.js",
+      "_PrimaryButton-0f058cca.js",
+      "_transition-19561af8.js",
+      "_use-flags-c9881f04.js",
+      "_open-closed-68fddb44.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/app/pages/administrator/settings/Partials/UpdateProfileInformationForm.jsx"
   },
   "resources/js/app/pages/administrator/settings/page.jsx": {
-    "file": "assets/page-ae190ca4.js",
+    "file": "assets/page-4b538241.js",
     "imports": [
       "resources/js/app.jsx",
       "resources/js/app/layouts/administrator-layout.jsx",
-      "_TextInput-d6befc2f.js",
+      "_TextInput-daea078d.js",
       "resources/js/app/pages/administrator/settings/Partials/UpdatePasswordForm.jsx",
       "resources/js/app/pages/administrator/settings/Partials/UpdateProfileInformationForm.jsx",
       "resources/js/app/layouts/sections/sidebar-section.jsx",
-      "_UserGroupIcon-7219e963.js",
-      "_description-f9bf70f5.js",
-      "_use-flags-25b3fe05.js",
-      "_keyboard-996c9d0e.js",
+      "_UserGroupIcon-e083c6cf.js",
+      "_description-6252cc91.js",
+      "_use-flags-c9881f04.js",
+      "_keyboard-99104053.js",
       "resources/js/app/components/toastify.jsx",
       "resources/js/app/layouts/sections/logout-section.jsx",
-      "_account-service-f324b191.js",
-      "_use-root-containers-3f2b8941.js",
-      "_use-resolve-button-type-d828fb8b.js",
-      "_open-closed-624e9039.js",
-      "_transition-fa732d89.js",
+      "_account-service-6d1f1637.js",
+      "_use-root-containers-5f05a97f.js",
+      "_use-resolve-button-type-05a3356a.js",
+      "_open-closed-68fddb44.js",
+      "_transition-19561af8.js",
       "resources/js/app/layouts/sections/year-select-section.jsx",
-      "_InputLabel-873f33b8.js",
-      "_PrimaryButton-36ac1f7e.js"
+      "_InputLabel-f3d021ce.js",
+      "_PrimaryButton-0f058cca.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/app/pages/administrator/settings/page.jsx"
   },
   "resources/js/app/pages/cashier/components/cashier-print-data-component.jsx": {
-    "file": "assets/cashier-print-data-component-db46b26b.js",
+    "file": "assets/cashier-print-data-component-dea5906e.js",
     "imports": [
       "resources/js/app.jsx",
-      "_react-barcode-fdda8abb.js"
+      "_react-barcode-c01136db.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/app/pages/cashier/components/cashier-print-data-component.jsx"
   },
   "resources/js/app/pages/cashier/page.jsx": {
-    "file": "assets/page-75c24b12.js",
+    "file": "assets/page-62eb2bb6.js",
     "imports": [
       "resources/js/app.jsx",
       "resources/js/app/pages/cashier/sections/cashier-table-section.jsx",
@@ -1163,23 +1163,23 @@
       "resources/js/app/pages/cashier/components/cashier-print-data-component.jsx",
       "resources/js/app/pages/cashier/sections/function-keys-section.jsx",
       "resources/js/app/layouts/cashier-layout.jsx",
-      "_cashier-thunk-e1b1c12f.js",
+      "_cashier-thunk-2b22d1d1.js",
       "resources/js/app/pages/cashier/sections/cashier-edit-modal.jsx",
       "resources/js/app/components/Input.jsx",
-      "_PencilIcon-bb6c178f.js",
-      "_transition-fa732d89.js",
-      "_use-flags-25b3fe05.js",
-      "_open-closed-624e9039.js",
-      "_dialog-b8b8e912.js",
-      "_use-root-containers-3f2b8941.js",
-      "_keyboard-996c9d0e.js",
-      "_description-f9bf70f5.js",
+      "_PencilIcon-aee8e8d2.js",
+      "_transition-19561af8.js",
+      "_use-flags-c9881f04.js",
+      "_open-closed-68fddb44.js",
+      "_dialog-7a9fa821.js",
+      "_use-root-containers-5f05a97f.js",
+      "_keyboard-99104053.js",
+      "_description-6252cc91.js",
       "resources/js/app/pages/cashier/sections/cashier-delete-section.jsx",
-      "_TrashIcon-e880b205.js",
+      "_TrashIcon-5ced7d80.js",
       "_products-service-2e54bc55.js",
-      "_react-barcode-fdda8abb.js",
+      "_react-barcode-c01136db.js",
       "resources/js/app/pages/cashier/sections/cashier-logout-section.jsx",
-      "_account-service-f324b191.js",
+      "_account-service-6d1f1637.js",
       "resources/js/app/pages/cashier/sections/cashier-discount-modal.jsx",
       "_loyal-card-service-8d6deeca.js",
       "resources/js/app/components/toastify.jsx",
@@ -1189,108 +1189,108 @@
     "src": "resources/js/app/pages/cashier/page.jsx"
   },
   "resources/js/app/pages/cashier/sections/cashier-delete-section.jsx": {
-    "file": "assets/cashier-delete-section-a679c3b0.js",
+    "file": "assets/cashier-delete-section-726487e1.js",
     "imports": [
       "resources/js/app.jsx",
-      "_cashier-thunk-e1b1c12f.js",
-      "_TrashIcon-e880b205.js",
+      "_cashier-thunk-2b22d1d1.js",
+      "_TrashIcon-5ced7d80.js",
       "_sales-service-19b3eac2.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/app/pages/cashier/sections/cashier-delete-section.jsx"
   },
   "resources/js/app/pages/cashier/sections/cashier-discount-modal.jsx": {
-    "file": "assets/cashier-discount-modal-7e1247fa.js",
+    "file": "assets/cashier-discount-modal-05c54b7e.js",
     "imports": [
       "resources/js/app.jsx",
       "resources/js/app/components/Input.jsx",
       "_loyal-card-service-8d6deeca.js",
-      "_transition-fa732d89.js",
-      "_dialog-b8b8e912.js",
-      "_use-flags-25b3fe05.js",
-      "_open-closed-624e9039.js",
-      "_use-root-containers-3f2b8941.js",
-      "_keyboard-996c9d0e.js",
-      "_description-f9bf70f5.js"
+      "_transition-19561af8.js",
+      "_dialog-7a9fa821.js",
+      "_use-flags-c9881f04.js",
+      "_open-closed-68fddb44.js",
+      "_use-root-containers-5f05a97f.js",
+      "_keyboard-99104053.js",
+      "_description-6252cc91.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/app/pages/cashier/sections/cashier-discount-modal.jsx"
   },
   "resources/js/app/pages/cashier/sections/cashier-edit-modal.jsx": {
-    "file": "assets/cashier-edit-modal-7af3872d.js",
+    "file": "assets/cashier-edit-modal-1ceb79b2.js",
     "imports": [
       "resources/js/app.jsx",
       "resources/js/app/components/Input.jsx",
-      "_cashier-thunk-e1b1c12f.js",
-      "_PencilIcon-bb6c178f.js",
-      "_transition-fa732d89.js",
-      "_dialog-b8b8e912.js",
+      "_cashier-thunk-2b22d1d1.js",
+      "_PencilIcon-aee8e8d2.js",
+      "_transition-19561af8.js",
+      "_dialog-7a9fa821.js",
       "_sales-service-19b3eac2.js",
-      "_use-flags-25b3fe05.js",
-      "_open-closed-624e9039.js",
-      "_use-root-containers-3f2b8941.js",
-      "_keyboard-996c9d0e.js",
-      "_description-f9bf70f5.js"
+      "_use-flags-c9881f04.js",
+      "_open-closed-68fddb44.js",
+      "_use-root-containers-5f05a97f.js",
+      "_keyboard-99104053.js",
+      "_description-6252cc91.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/app/pages/cashier/sections/cashier-edit-modal.jsx"
   },
   "resources/js/app/pages/cashier/sections/cashier-logout-section.jsx": {
-    "file": "assets/cashier-logout-section-b7cc351b.js",
+    "file": "assets/cashier-logout-section-1b679f52.js",
     "imports": [
       "resources/js/app.jsx",
-      "_account-service-f324b191.js"
+      "_account-service-6d1f1637.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/app/pages/cashier/sections/cashier-logout-section.jsx"
   },
   "resources/js/app/pages/cashier/sections/cashier-modal-item-section.jsx": {
-    "file": "assets/cashier-modal-item-section-ab96eca3.js",
+    "file": "assets/cashier-modal-item-section-405829b8.js",
     "imports": [
       "resources/js/app.jsx",
-      "_ExclamationTriangleIcon-d923facf.js",
-      "_transition-fa732d89.js",
-      "_dialog-b8b8e912.js",
-      "_use-flags-25b3fe05.js",
-      "_open-closed-624e9039.js",
-      "_use-root-containers-3f2b8941.js",
-      "_keyboard-996c9d0e.js",
-      "_description-f9bf70f5.js"
+      "_ExclamationTriangleIcon-e60e1b95.js",
+      "_transition-19561af8.js",
+      "_dialog-7a9fa821.js",
+      "_use-flags-c9881f04.js",
+      "_open-closed-68fddb44.js",
+      "_use-root-containers-5f05a97f.js",
+      "_keyboard-99104053.js",
+      "_description-6252cc91.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/app/pages/cashier/sections/cashier-modal-item-section.jsx"
   },
   "resources/js/app/pages/cashier/sections/cashier-pay-modal-section.jsx": {
-    "file": "assets/cashier-pay-modal-section-c608a56e.js",
+    "file": "assets/cashier-pay-modal-section-269ca4d7.js",
     "imports": [
       "resources/js/app.jsx",
-      "_cashier-thunk-e1b1c12f.js",
-      "_transition-fa732d89.js",
-      "_dialog-b8b8e912.js",
+      "_cashier-thunk-2b22d1d1.js",
+      "_transition-19561af8.js",
+      "_dialog-7a9fa821.js",
       "_sales-service-19b3eac2.js",
-      "_use-flags-25b3fe05.js",
-      "_open-closed-624e9039.js",
-      "_use-root-containers-3f2b8941.js",
-      "_keyboard-996c9d0e.js",
-      "_description-f9bf70f5.js"
+      "_use-flags-c9881f04.js",
+      "_open-closed-68fddb44.js",
+      "_use-root-containers-5f05a97f.js",
+      "_keyboard-99104053.js",
+      "_description-6252cc91.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/app/pages/cashier/sections/cashier-pay-modal-section.jsx"
   },
   "resources/js/app/pages/cashier/sections/cashier-scanner-section.jsx": {
-    "file": "assets/cashier-scanner-section-dc93a9ca.js",
+    "file": "assets/cashier-scanner-section-064ee2df.js",
     "imports": [
       "resources/js/app.jsx",
       "resources/js/app/components/Input.jsx",
       "_products-service-2e54bc55.js",
-      "_cashier-thunk-e1b1c12f.js",
+      "_cashier-thunk-2b22d1d1.js",
       "_sales-service-19b3eac2.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/app/pages/cashier/sections/cashier-scanner-section.jsx"
   },
   "resources/js/app/pages/cashier/sections/cashier-sub-total-section.jsx": {
-    "file": "assets/cashier-sub-total-section-ec9fa5bf.js",
+    "file": "assets/cashier-sub-total-section-39732d18.js",
     "imports": [
       "resources/js/app.jsx"
     ],
@@ -1298,49 +1298,49 @@
     "src": "resources/js/app/pages/cashier/sections/cashier-sub-total-section.jsx"
   },
   "resources/js/app/pages/cashier/sections/cashier-table-section.jsx": {
-    "file": "assets/cashier-table-section-6c9ba708.js",
+    "file": "assets/cashier-table-section-b36ec4a5.js",
     "imports": [
       "resources/js/app.jsx",
       "resources/js/app/pages/cashier/sections/cashier-edit-modal.jsx",
       "resources/js/app/pages/cashier/sections/cashier-delete-section.jsx",
-      "_PencilIcon-bb6c178f.js",
-      "_TrashIcon-e880b205.js",
+      "_PencilIcon-aee8e8d2.js",
+      "_TrashIcon-5ced7d80.js",
       "resources/js/app/components/Input.jsx",
-      "_cashier-thunk-e1b1c12f.js",
+      "_cashier-thunk-2b22d1d1.js",
       "_sales-service-19b3eac2.js",
-      "_transition-fa732d89.js",
-      "_use-flags-25b3fe05.js",
-      "_open-closed-624e9039.js",
-      "_dialog-b8b8e912.js",
-      "_use-root-containers-3f2b8941.js",
-      "_keyboard-996c9d0e.js",
-      "_description-f9bf70f5.js"
+      "_transition-19561af8.js",
+      "_use-flags-c9881f04.js",
+      "_open-closed-68fddb44.js",
+      "_dialog-7a9fa821.js",
+      "_use-root-containers-5f05a97f.js",
+      "_keyboard-99104053.js",
+      "_description-6252cc91.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/app/pages/cashier/sections/cashier-table-section.jsx"
   },
   "resources/js/app/pages/cashier/sections/function-keys-section.jsx": {
-    "file": "assets/function-keys-section-41e7ae86.js",
+    "file": "assets/function-keys-section-621ff190.js",
     "imports": [
       "resources/js/app.jsx",
       "resources/js/app/pages/cashier/sections/cashier-logout-section.jsx",
       "resources/js/app/pages/cashier/sections/cashier-discount-modal.jsx",
-      "_account-service-f324b191.js",
+      "_account-service-6d1f1637.js",
       "resources/js/app/components/Input.jsx",
       "_loyal-card-service-8d6deeca.js",
-      "_transition-fa732d89.js",
-      "_use-flags-25b3fe05.js",
-      "_open-closed-624e9039.js",
-      "_dialog-b8b8e912.js",
-      "_use-root-containers-3f2b8941.js",
-      "_keyboard-996c9d0e.js",
-      "_description-f9bf70f5.js"
+      "_transition-19561af8.js",
+      "_use-flags-c9881f04.js",
+      "_open-closed-68fddb44.js",
+      "_dialog-7a9fa821.js",
+      "_use-root-containers-5f05a97f.js",
+      "_keyboard-99104053.js",
+      "_description-6252cc91.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/app/pages/cashier/sections/function-keys-section.jsx"
   },
   "resources/js/app/pages/error.jsx": {
-    "file": "assets/error-38dd00f8.js",
+    "file": "assets/error-c884b5ca.js",
     "imports": [
       "resources/js/app.jsx"
     ],
@@ -1348,33 +1348,33 @@
     "src": "resources/js/app/pages/error.jsx"
   },
   "resources/js/app/pages/login/page.jsx": {
-    "file": "assets/page-4313c249.js",
+    "file": "assets/page-ae617cde.js",
     "imports": [
       "resources/js/app.jsx",
-      "_account-service-f324b191.js"
+      "_account-service-6d1f1637.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/app/pages/login/page.jsx"
   },
   "resources/js/app/pages/search/page.jsx": {
-    "file": "assets/page-3f635c40.js",
+    "file": "assets/page-4ff6ca7e.js",
     "imports": [
       "resources/js/app.jsx",
       "resources/js/app/pages/search/sections/search-section.jsx",
       "resources/js/app/pages/search/sections/search-table.jsx",
       "_products-service-2e54bc55.js",
       "resources/js/app/pages/search/sections/search-add-product.jsx",
-      "_cashier-thunk-e1b1c12f.js",
+      "_cashier-thunk-2b22d1d1.js",
       "_sales-service-19b3eac2.js"
     ],
     "isDynamicEntry": true,
     "src": "resources/js/app/pages/search/page.jsx"
   },
   "resources/js/app/pages/search/sections/search-add-product.jsx": {
-    "file": "assets/search-add-product-e459ae9e.js",
+    "file": "assets/search-add-product-a809930c.js",
     "imports": [
       "resources/js/app.jsx",
-      "_cashier-thunk-e1b1c12f.js",
+      "_cashier-thunk-2b22d1d1.js",
       "_products-service-2e54bc55.js",
       "_sales-service-19b3eac2.js"
     ],
@@ -1382,7 +1382,7 @@
     "src": "resources/js/app/pages/search/sections/search-add-product.jsx"
   },
   "resources/js/app/pages/search/sections/search-section.jsx": {
-    "file": "assets/search-section-2e361ed2.js",
+    "file": "assets/search-section-ee9e25d1.js",
     "imports": [
       "resources/js/app.jsx",
       "_products-service-2e54bc55.js"
@@ -1391,11 +1391,11 @@
     "src": "resources/js/app/pages/search/sections/search-section.jsx"
   },
   "resources/js/app/pages/search/sections/search-table.jsx": {
-    "file": "assets/search-table-cbb0590c.js",
+    "file": "assets/search-table-3e00ce12.js",
     "imports": [
       "resources/js/app.jsx",
       "resources/js/app/pages/search/sections/search-add-product.jsx",
-      "_cashier-thunk-e1b1c12f.js",
+      "_cashier-thunk-2b22d1d1.js",
       "_sales-service-19b3eac2.js",
       "_products-service-2e54bc55.js"
     ],

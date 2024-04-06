@@ -90,7 +90,7 @@ export default function CashierPayModalSection({ inputRef }) {
           </Transition.Child>
 
           <div className="fixed inset-0 z-10 w-screen overflow-y-auto">
-            <div className="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
+            <div className="flex min-h-full items-end justify-center p-4 text-center sm:items-start sm:p-0">
               <Transition.Child
                 as={Fragment}
                 enter="ease-out duration-300"
@@ -100,7 +100,7 @@ export default function CashierPayModalSection({ inputRef }) {
                 leaveFrom="opacity-100 translate-y-0 sm:scale-100"
                 leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
               >
-                <Dialog.Panel className="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg">
+                <Dialog.Panel className="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full max-w-6xl">
                   <form
                     onSubmit={acceptPayment}
                     className="bg-white px-4 pb-4 pt-5 sm:p-6 sm:pb-4">
@@ -115,43 +115,43 @@ export default function CashierPayModalSection({ inputRef }) {
 
                               <tbody>
                                 <tr className="bg-white border-b ">
-                                  <th scope="row" className=" py-2 font-medium text-gray-900">
+                                  <th scope="row" className=" py-2 font-medium text-4xl text-gray-900">
                                     Subtotal:
                                   </th>
-                                  <td className="px-6 py-2 font-bold text-gray-900">
+                                  <td className="px-6 py-2 font-bold text-4xl text-gray-900">
                                     ₱ {payment.subtotal}
                                   </td>
                                 </tr>
                                 <tr className="bg-white border-b ">
-                                  <th scope="row" className=" py-2 font-medium text-gray-900">
+                                  <th scope="row" className=" py-2 font-medium text-4xl text-gray-900">
                                     Discount:
                                   </th>
-                                  <td className="px-6 py-2 font-bold text-gray-900">
+                                  <td className="px-6 py-2 font-bold text-4xl text-gray-900">
                                     {parseFloat(payment.discount) * 100}%
                                   </td>
                                 </tr>
                                 <tr className="bg-white border-b ">
-                                  <th scope="row" className=" py-2 font-medium text-gray-900">
+                                  <th scope="row" className=" py-2 font-medium text-4xl text-gray-900">
                                     Tax:
                                   </th>
-                                  <td className="px-6 py-2 font-bold text-gray-900">
+                                  <td className="px-6 py-2 font-bold text-4xl text-gray-900">
                                     ₱ {payment.tax}
                                   </td>
 
                                 </tr>
                                 <tr className="bg-white border-b ">
-                                  <th scope="row" className=" py-2 font-medium text-gray-900">
+                                  <th scope="row" className=" py-2 font-medium text-4xl text-gray-900">
                                     Total:
                                   </th>
-                                  <td className="px-6 py-2 font-bold text-gray-900">
+                                  <td className="px-6 py-2 font-bold text-4xl text-gray-900">
                                     ₱ {payment.total}
                                   </td>
                                 </tr>
                                 <tr className="bg-white border-b ">
-                                  <th scope="row" className=" py-2 font-medium text-gray-900">
+                                  <th scope="row" className=" py-2 font-medium text-4xl text-gray-900">
                                     Tenders:
                                   </th>
-                                  <td className="px-6 py-2 font-bold text-gray-900">
+                                  <td className="px-6 py-2 font-bold text-4xl text-gray-900">
                                     <input
                                       autoFocus={autoFocus}
                                       value={payment.tenders == 0 ? '' : payment.tenders}
@@ -165,10 +165,10 @@ export default function CashierPayModalSection({ inputRef }) {
                                   </td>
                                 </tr>
                                 <tr className="bg-white border-b ">
-                                  <th scope="row" className=" py-2 font-medium text-gray-900">
+                                  <th scope="row" className=" py-2 font-medium text-4xl text-gray-900">
                                     Change:
                                   </th>
-                                  <td className="px-6 py-2 font-bold text-gray-900">
+                                  <td className="px-6 py-2 font-bold text-4xl text-gray-900">
                                     ₱ {payment.change}
                                   </td>
                                 </tr>
