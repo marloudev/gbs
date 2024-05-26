@@ -38,21 +38,24 @@ export default function CashierPage({ auth }) {
                         {/* <CashierModalItemSection /> */}
                     </div>
                     <div className='flex-1 flex  basis-2/6 border-1'>
-                        <div className='flex-1 flex items-center justify-center font-black bg-red-500 text-white text-center text-9xl'>
-                            GBS
+                        <div className='flex-1 flex items-center justify-center font-black bg-red-500 text-white text-center text-7xl'>
+                            GBS Minimart
                         </div>
-                        <div className='flex-1 '>
-                            <CashierSubTotalSection />
-                        </div>
+                        {/* <div className='flex-1 '>
+                        <CashierSubTotalSection />
+                        </div> */}
                     </div>
                 </div>
             </div>
             <div className='flex-1 flex flex-col basis-5/12 border-1'>
                 <div className='flex-1 flex flex-col basis-4/6 border-1'>
-                    <div className='flex-1'>
+                    <div className='flex-none'>
                         <CashierScannerSection 
                         inputRef={inputRef}
                         />
+                    </div>
+                    <div className='flex-1'>
+                    <CashierSubTotalSection />
                     </div>
                     <div className='flex-none  m-4'>
                         <CashierPayModalSection 
