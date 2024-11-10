@@ -4,6 +4,7 @@ import PrimaryButton from '@/Components/PrimaryButton';
 import TextInput from '@/Components/TextInput';
 import { Link, useForm, usePage } from '@inertiajs/react';
 import { Transition } from '@headlessui/react';
+import { TextField } from '@mui/material';
 
 export default function UpdateProfileInformation({ mustVerifyEmail, status, className = '' }) {
     const user = usePage().props.auth.user;
@@ -33,7 +34,7 @@ export default function UpdateProfileInformation({ mustVerifyEmail, status, clas
                 <div>
                     <InputLabel htmlFor="name" value="Name" />
 
-                    <TextInput
+                    <TextField 
                         id="name"
                         className="mt-1 block w-full"
                         value={data.name}
@@ -49,7 +50,7 @@ export default function UpdateProfileInformation({ mustVerifyEmail, status, clas
                 <div>
                     <InputLabel htmlFor="email" value="Email" />
 
-                    <TextInput
+                    <TextField
                         id="email"
                         type="email"
                         className="mt-1 block w-full"

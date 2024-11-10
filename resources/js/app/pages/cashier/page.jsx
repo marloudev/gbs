@@ -57,7 +57,7 @@ export default function CashierPage({ auth }) {
                     <div className='flex-1'>
                     <CashierSubTotalSection />
                     </div>
-                    <div className='flex-none  m-4'>
+                    <div className='flex-none  mx-4'>
                         <CashierPayModalSection 
                         inputRef={inputRef}
                         />

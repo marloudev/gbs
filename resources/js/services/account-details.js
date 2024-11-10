@@ -20,3 +20,12 @@ export async function delete_account_service(data) {
   const response = await axios.delete(`/api/accounts/${data.id}`)
   return response.data;
 }
+
+export async function get_user_login_service() {
+  try {
+      const res = await axios.get("/api/user");
+      return res.data;
+  } catch (error) {
+      return error;
+  }
+}

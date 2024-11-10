@@ -4,7 +4,7 @@ import DashboardPeriodicTabSection from "./sections/dashboard-periodic-tab-secti
 import { getAllAnalytics } from "./redux/dashboard-thunk";
 import store from '../../../../store/store'
 import { useSelector } from "react-redux";
-import AdministratorLayout from "@/app/layouts/administrator-layout";
+import AdministratorLayout from '../administrator-layout'
 export default function DashboardPage({ auth }) {
   const { year, tab, analytics } = useSelector((state) => state.dashboard);
   useEffect(() => {

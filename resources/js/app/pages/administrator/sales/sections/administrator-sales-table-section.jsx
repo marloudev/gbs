@@ -67,20 +67,6 @@ export default function AdministratorSalesTableSection() {
                 </div>
 
                 <div className="mt-6 md:flex md:items-center md:justify-between">
-                    {/* <div className="inline-flex overflow-hidden bg-white border divide-x rounded-lg rtl:flex-row-reverse dark:border-gray-700 ">
-                        <button className="px-5 py-2 text-xs font-medium text-gray-600 transition-colors duration-200 bg-gray-100 sm:text-sm  dark:text-gray-300">
-                            Daily
-                        </button>
-
-                        <button className="px-5 py-2 text-xs font-medium text-gray-600 transition-colors duration-200 sm:text-sm  hover:bg-gray-800  text-gray-300 hover:bg-gray-100">
-                            Weekly
-                        </button>
-
-                        <button className="px-5 py-2 text-xs font-medium text-gray-600 transition-colors duration-200 sm:text-sm  hover:bg-gray-800  text-gray-300 hover:bg-gray-100">
-                            Monthly
-                        </button>
-                    </div> */}
-
                     <form
                         onSubmit={submitSearch}
                         className="relative flex items-center mt-4 md:mt-0">

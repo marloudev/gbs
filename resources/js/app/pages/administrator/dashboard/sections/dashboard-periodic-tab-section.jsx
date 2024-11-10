@@ -1,57 +1,88 @@
-import React from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { setTab } from '../redux/dashboard-slice'
+import * as React from "react";
+import PropTypes from "prop-types";
+import { useTheme } from "@mui/material/styles";
+import AppBar from "@mui/material/AppBar";
+import Tabs from "@mui/material/Tabs";
+import Tab from "@mui/material/Tab";
+import Typography from "@mui/material/Typography";
+import Box from "@mui/material/Box";
+import { useDispatch, useSelector } from "react-redux";
+import { setTab } from "../redux/dashboard-slice";
+
+function TabPanel(props) {
+    const { children, value, index, ...other } = props;
+
+    return (
+        <div
+            role="tabpanel"
+            hidden={value !== index}
+            id={`full-width-tabpanel-${index}`}
+            aria-labelledby={`full-width-tab-${index}`}
+            {...other}
+        >
+            {value === index && (
+                <Box sx={{ p: 3 }}>
+                    <Typography>{children}</Typography>
+                </Box>
+            )}
+        </div>
+    );
+}
+
+TabPanel.propTypes = {
+    children: PropTypes.node,
+    index: PropTypes.number.isRequired,
+    value: PropTypes.number.isRequired,
+};
+
+function a11yProps(index) {
+    return {
+        id: `full-width-tab-${index}`,
+        "aria-controls": `full-width-tabpanel-${index}`,
+    };
+}
 
 export default function DashboardPeriodicTabSection() {
-  const dispatch = useDispatch()
+    const theme = useTheme();
+    const [value, setValue] = React.useState(0);
 
-  const { tab } = useSelector((state) => state.dashboard);
+    const handleChange = (event, newValue) => {
+        setValue(newValue);
+    };
 
-  function isActive(value) {
-    if (tab == value) {
-      return 'px-5 py-2 text-xs font-medium text-gray-600 transition-colors duration-200 bg-red-100 sm:text-sm '
-    } else {
-      return 'px-5 py-2 text-xs font-medium text-gray-600 transition-colors duration-200 sm:text-sm   hover:bg-gray-100'
-    }
-  }
+    const dispatch = useDispatch();
 
-  return (
-    <div className='my-4 px-2'>
-      <div className="sm:flex sm:items-center sm:justify-between">
-        <div>
-          <div className="flex items-center gap-x-3">
-            <h2 className="text-lg font-medium text-gray-800">Dashboard Monitoring</h2>
-          </div>
-        </div>
-      </div>
+    const { tab } = useSelector((state) => state.dashboard);
 
-      <div className="mt-6 md:flex md:items-center md:justify-between">
-        <div className='inline-flex overflow-hidden bg-white border divide-x rounded-lg  rtl:flex-row-reverse'>
-          <button
-            onClick={() => dispatch(setTab('daily'))}
-            className={isActive('daily')}>
-            Daily
-          </button>
-
-          <button
-            onClick={() => dispatch(setTab('weekly'))}
-            className={isActive('weekly')}>
-            Weekly
-          </button>
-
-          <button
-            onClick={() => dispatch(setTab('monthly'))}
-            className={isActive('monthly')}>  Monthly
-          </button>
-
-          <button
-            onClick={() => dispatch(setTab('quarterly'))}
-            className={isActive('quarterly')}>  Quarterly
-          </button>
-        </div>
-
-
-      </div>
-    </div>
-  )
+    return (
+        <Box sx={{ bgcolor: "background.paper", width: 500 }} className="my-5">
+            <AppBar position="static">
+                <Tabs
+                    value={value}
+                    onChange={handleChange}
+                    indicatorColor="primary"
+                    textColor="inherit"
+                    variant="fullWidth"
+                    aria-label="full width tabs example"
+                >
+                    <Tab
+                        label="Daily"
+                        onClick={() => dispatch(setTab("daily"))}
+                    />
+                    <Tab
+                        label="Weekly"
+                        onClick={() => dispatch(setTab("weekly"))}
+                    />
+                    <Tab
+                        label="Monthly"
+                        onClick={() => dispatch(setTab("monthly"))}
+                    />
+                    <Tab
+                        label="Quarterly"
+                        onClick={() => dispatch(setTab("quarterly"))}
+                    />
+                </Tabs>
+            </AppBar>
+        </Box>
+    );
 }

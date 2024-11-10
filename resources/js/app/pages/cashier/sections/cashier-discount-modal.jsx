@@ -6,6 +6,7 @@ import FormFieldInput from '../../../components/Input'
 import store from './../../../../store/store'
 import { get_specific_loyal_card_service } from '../../../../services/loyal-card-service';
 import { setDiscount } from '../redux/cashier-slice';
+import { Button  } from '@mui/material';
 export default function CashierDiscountModal({ inputRef }) {
     const [open, setOpen] = useState(false)
     const { selectedItem, payment } = useSelector((state) => state.cashier);
@@ -72,14 +73,15 @@ export default function CashierDiscountModal({ inputRef }) {
     }
     return (
         <>
-            <button
+            <Button 
+            variant="contained"
                 onClick={() => setOpen(true)}
                 className="flex flex-col items-center justify-center bg-red-500">
                 <h1 className="text-white text-5xl leading-tight font-black">L</h1>
                 <div className='text-white'>
                     DISCOUNT
                 </div>
-            </button>
+            </Button >
             <Transition.Root show={open} as={Fragment}>
                 <Dialog as="div" className="relative z-10" initialFocus={cancelButtonRef} onClose={setOpen}>
                     <Transition.Child

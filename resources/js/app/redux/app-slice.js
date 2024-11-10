@@ -4,6 +4,7 @@ import moment from 'moment'
 export const appSlice = createSlice({
   name: 'app',
   initialState: {
+    pathname:'/'+window.location.pathname.split("/")[2],
     value: 0,
     meridiem:moment().format('A'),
     isModalOpen: false,
@@ -14,9 +15,20 @@ export const appSlice = createSlice({
       status:'waiting',
       message:''
     },
-    user:{}
+    user:{},
+    notification:{
+      open:true,
+      type:'',
+      message:''
+    }
   },
   reducers: {
+    setPathname: (state, action) => {
+      state.pathname = action.payload
+    },
+    setNotification: (state, action) => {
+      state.notification = action.payload
+    },
     incrementByAmount: (state, action) => {
       state.value = action.payload
     },
@@ -41,6 +53,8 @@ export const appSlice = createSlice({
   },
 })
 export const { 
+  setPathname,
+  setNotification,
   incrementByAmount, 
   setIsModalOpen,
   setBranches,
