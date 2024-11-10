@@ -11,6 +11,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\SalesController;
 
 
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
