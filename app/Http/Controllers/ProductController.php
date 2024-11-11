@@ -20,7 +20,7 @@ class ProductController extends Controller
 
     public function index(Request $request)
     {
-        $perPage = 20;
+        $perPage = 10;
         $searchTerm = $request->input('search');
 
         // Perform the search query

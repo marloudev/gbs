@@ -17,6 +17,7 @@ import moment from "moment";
 
 export default function TableSection() {
     const { products } = useSelector((state) => state.products);
+    console.log('products',products)
     return (
         <TableContainer component={Paper}>
             <Table sx={{ minWidth: 650 }} aria-label="simple table">
@@ -30,7 +31,7 @@ export default function TableSection() {
                     </TableRow>
                 </TableHead>
                 <TableBody>
-                    {products?.map((res, i) => {
+                    {products?.data?.map((res, i) => {
                         const dob = moment(res.dob, "YYYY-MM-DD"); // Replace with actual date of birth
                         const age = moment().diff(dob, "years");
                         return (
