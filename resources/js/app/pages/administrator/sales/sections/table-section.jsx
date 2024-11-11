@@ -10,6 +10,7 @@ import Paper from "@mui/material/Paper";
 // import DeleteSection from './delete-section';
 import { useSelector } from "react-redux";
 import moment from "moment";
+import AdministratorShowSalesItemSection from "./administrator-show-sales-item-section";
 // import { Visibility } from '@mui/icons-material';
 // import { Button } from '@mui/material';
 // import { router } from '@inertiajs/react';
@@ -17,6 +18,7 @@ import moment from "moment";
 
 export default function TableSection() {
     const { sales } = useSelector((state) => state.sales);
+    console.log('sales',sales)
     return (
         <TableContainer component={Paper}>
             <Table sx={{ minWidth: 650 }} aria-label="simple table">
@@ -34,9 +36,8 @@ export default function TableSection() {
                     </TableRow>
                 </TableHead>
                 <TableBody>
-                    {sales?.map((res, i) => {
-                        const dob = moment(res.dob, "YYYY-MM-DD"); // Replace with actual date of birth
-                        const age = moment().diff(dob, "years");
+                    {sales?.data?.map((res, i) => {
+                 
                         return (
                             <TableRow
                                 key={i}
@@ -54,11 +55,14 @@ export default function TableSection() {
                                 <TableCell>{res.change}</TableCell>
                                 <TableCell>{res.tenders}</TableCell>
                                 <TableCell>{res.total}</TableCell>
-                                <TableCell>{moment(res?.created_at).format('LLL')}</TableCell>
-                                <TableCell>{res.status}</TableCell>
-                                <TableCell align="right">
-                                    ss
-                                    {/* <ModalOptionSection data={res} /> */}
+                                <TableCell>
+                                    {moment(res?.created_at).format("LLL")}
+                                </TableCell>
+                                <TableCell>
+                                    <AdministratorShowSalesItemSection
+                                        id={res.id}
+                                        data={res}
+                                    />
                                 </TableCell>
                             </TableRow>
                         );

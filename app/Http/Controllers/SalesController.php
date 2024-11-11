@@ -12,45 +12,17 @@ class SalesController extends Controller
     public function index(Request $request)
     {
         $perPage = 10;
-        $query = Sales::with('sales_item')->orderBy('created_at', 'desc');
+        $searchTerm = $request->input('search');
 
-        // Add search functionality
-        if ($request->has('search')) {
-            $searchTerm = $request->input('search');
-            $query->where('receipt_id', 'like', "%$searchTerm%");
-        }
+        // Perform the search query
+        $products = Sales::where('receipt_id', 'like', "%$searchTerm%")->with(['sales_item'])->orderBy('created_at', 'desc')
+            ->paginate($perPage);
 
-        $sales = $query->paginate($perPage);
-        $salesData = [];
-
-        foreach ($sales as $sale) {
-            $saleData = $sale->toArray();
-            $items = [];
-
-            foreach ($sale->sales_item as $item) {
-                $product = Product::find($item['product_id']);
-
-                if ($product) {
-                    $items[] = [
-                        'id' => $item['id'],
-                        'product_id' => $item['product_id'],
-                        'quantity' => $item['quantity'],
-                        'price' => $item['price'],
-                        'product' => $product->toArray(),
-                        'created_at' => $item['created_at'],
-                        'updated_at' => $item['updated_at'],
-                    ];
-                }
-            }
-
-            $saleData['sales_item'] = $items;
-            $salesData[] = $saleData;
-        }
-
+        // Return the search results
         return response()->json([
-            'data' => $salesData,
-            'next_page_url' => $sales->nextPageUrl()
-        ], 200);
+            'status' => 'status',
+            'data' => $products
+        ]);
     }
 
 
@@ -59,7 +31,7 @@ class SalesController extends Controller
         $sales = Sales::create($request->payment);
         foreach ($request->cart as $value) {
             if (env('APP_ENV') == 'production') {
-                $product = Product::where('id','=',$value['product']['id'])->first();
+                $product = Product::where('id', '=', $value['product']['id'])->first();
                 $product->update([
                     'quantity' => $product->quantity - $value['quantity']
                 ]);

@@ -22,7 +22,7 @@ class Sales extends Model
     
 
      public function sales_item(): HasMany
-    {
-        return $this->hasMany(SalesItem::class);
-    }
+     {
+         return $this->hasMany(SalesItem::class, 'sales_id', 'id')->with(['product']);
+     }
 }
