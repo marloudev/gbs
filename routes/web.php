@@ -33,7 +33,7 @@ Route::get('*', function () {
     return Inertia::render('pages/error');
 })->name('error');
 
-Route::get('/', function () {
+Route::middleware('redirectBasedOnRole')->get('/', function () {
     return Inertia::render('pages/login/page');
 })->name('login.form');
 

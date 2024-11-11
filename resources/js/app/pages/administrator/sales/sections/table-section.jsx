@@ -54,7 +54,7 @@ export default function TableSection() {
                                 <TableCell>{res.change}</TableCell>
                                 <TableCell>{res.tenders}</TableCell>
                                 <TableCell>{res.total}</TableCell>
-                                <TableCell>{res.balance.toFixed(2)}</TableCell>
+                                <TableCell>{moment(res?.created_at).format('LLL')}</TableCell>
                                 <TableCell>{res.status}</TableCell>
                                 <TableCell align="right">
                                     ss

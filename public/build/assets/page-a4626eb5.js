@@ -1,0 +1,1 @@
+import{j as o}from"./app-18fb0b2d.js";import{B as r}from"./barcode-download-pdf-31d1f8a0.js";import"./react-barcode-4f2c53e7.js";import"./index-e7f1483a.js";function m({auth:t}){return o.jsx("div",{children:o.jsx(r,{})})}export{m as default};

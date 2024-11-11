@@ -20,7 +20,8 @@ export default function CashierPrintDataComponent() {
             }
         }
     }, [isPrint]);
-
+    
+console.log('cart',cart)
     return (
         <div>
             <div ref={componentRef}>

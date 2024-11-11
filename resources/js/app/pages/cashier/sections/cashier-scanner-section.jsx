@@ -25,12 +25,12 @@ export default function CashierScannerSection({ inputRef }) {
         );
         setLoading(false);
     }
-    function getSearch(value) {
-        dispatch(setSearch(value));
+    function getSearch(e) {
+        dispatch(setSearch(e.target.value));
     }
     return (
         <div className="m-10">
-            <form onCutCapture={submitSearch} onSubmit={submitSearch}>
+            <div onCutCapture={submitSearch} onSubmit={submitSearch}>
               
                 <Paper
                     component="form"
@@ -40,6 +40,7 @@ export default function CashierScannerSection({ inputRef }) {
                         name="search"
                         onChange={getSearch}
                         inputRef={inputRef}
+                        value={search}
                         autoFocus={true}
                         sx={{ ml: 1, flex: 1 }}
                         placeholder={`${loading ? "Loading..." : "Scanning Item"} `}
@@ -53,7 +54,7 @@ export default function CashierScannerSection({ inputRef }) {
                         <SearchIcon />
                     </IconButton>
                 </Paper>
-            </form>
+            </div>
         </div>
     );
 }

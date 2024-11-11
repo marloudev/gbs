@@ -1,3 +1,4 @@
+import { TextField } from "@mui/material";
 import React, { useEffect, useRef } from "react";
 
 export default function FormFieldInput({
@@ -28,7 +29,7 @@ export default function FormFieldInput({
 
     return (
         <div>
-            <div className="relative">
+            {/* <div className="relative">
                 <input
                     ref={inputRef}
                     autoFocus={autofocus}
@@ -46,7 +47,18 @@ export default function FormFieldInput({
                 >
                     {label}
                 </label>
-            </div>
+            </div> */}
+            
+            <TextField
+            className="w-full"
+             ref={inputRef}
+             autoFocus={autofocus}
+             onChange={(e) => onChange(e.target.value.replace(/[^0-9.]/g, ''))}
+             type={type}
+             id={name}
+             name={name}
+             value={value} 
+             label={label} variant="outlined" />
 
             {errorMessage && (
                 <p className="text-red-500 text-sm mt-1.5 font-light">{errorMessage}</p>
