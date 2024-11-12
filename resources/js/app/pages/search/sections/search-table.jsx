@@ -5,6 +5,7 @@ import SearchAddProduct from './search-add-product';
 export default function SearchTable() {
     const { cart } = useSelector((state) => state.cashier);
     const { data } = useSelector((state) => state.search);
+    console.log('data',data)
     return (
         <section className="container ">
             <div className="flex flex-col w-full">
@@ -33,7 +34,7 @@ export default function SearchTable() {
                                 <tbody className="bg-white divide-y divide-gray-200  ">
 
                                     {
-                                        data.map((res, i) => {
+                                        data?.data?.map((res, i) => {
                                             return <tr
                                                 id={res.randomId}
                                                 // ref={(el) => (myElementRefs.current[i] = el)}
