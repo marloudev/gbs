@@ -50,7 +50,6 @@ export function editProductThunk(branches) {
       const result = await edit_product_service(getState().products.productForm)
       // console.log('datass',result.data)
       dispatch(productsSlice.actions.setLoading(false));
-      dispatch(productsSlice.actions.setProducts(result.data));
       dispatch(productsSlice.actions.setProductForm({}));
       dispatch(appSlice.actions.setToastStatus({
         status: 'success',

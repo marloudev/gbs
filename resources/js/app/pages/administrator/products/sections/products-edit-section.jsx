@@ -1,16 +1,35 @@
-import React, { useEffect, useState } from 'react'
-import DrawerAction from '../../../../layouts/components/drawer-action'
-import { useDispatch, useSelector } from 'react-redux'
-import { setProductForm } from '../redux/products-slice'
-import store from '../../../../../store/store'
-import { createProductThunk, editProductThunk } from '../redux/products-thunk'
-import { PencilIcon } from '@heroicons/react/24/outline'
+import React, { useEffect, useState } from "react";
+import DrawerAction from "../../../../layouts/components/drawer-action";
+import { useDispatch, useSelector } from "react-redux";
+import { setProductForm, setProducts } from "../redux/products-slice";
+import store from "../../../../../store/store";
+import { createProductThunk, editProductThunk, getAllProductsThunk } from "../redux/products-thunk";
 
+import Box from "@mui/material/Box";
+import Drawer from "@mui/material/Drawer";
+import Button from "@mui/material/Button";
+import List from "@mui/material/List";
+import Divider from "@mui/material/Divider";
+import ListItem from "@mui/material/ListItem";
+import ListItemButton from "@mui/material/ListItemButton";
+import ListItemIcon from "@mui/material/ListItemIcon";
+import ListItemText from "@mui/material/ListItemText";
+import InboxIcon from "@mui/icons-material/MoveToInbox";
+import MailIcon from "@mui/icons-material/Mail";
+import { Close } from "@mui/icons-material";
+import { TextField } from "@mui/material";
+import { PencilIcon } from "@heroicons/react/24/outline";
+import { get_products_service } from "@/services/products-service";
 export default function ProductsEditSection({ data }) {
     const [open, setOpen] = useState(false)
     const dispatch = useDispatch()
     const { productForm } = useSelector((state) => state.products);
     const { toastStatus } = useSelector((state) => state.app);
+    
+    const url = window.location.href;
+    const parsedUrl = new URL(url);
+    const page = parsedUrl.searchParams.get("page");
+    const search = parsedUrl.searchParams.get("search");
 
     useEffect(() => {
         if (open) {
@@ -34,24 +53,28 @@ export default function ProductsEditSection({ data }) {
     function submitData(e) {
         e.preventDefault()
         store.dispatch(editProductThunk())
+        store.dispatch(getAllProductsThunk(get_products_service(page, search??'')));
     }
 
     return (
         <div>
-
-            <DrawerAction
-                open={open}
-                setOpen={setOpen}
-                button={
-                    <button
-                        onClick={() => setOpen(true)}
-                        className=" text-blue-500">
-                        <PencilIcon className='h-6' />
-                    </button>
-                }
-            >
-                <div className='flex h-full w-full'>
-                    <form
+            <Button variant="contained" onClick={() => setOpen(true)}>
+               
+            <PencilIcon className='h-6' />
+            </Button>
+            <Drawer anchor="right" open={open} onClose={() => setOpen(false)}>
+                <Box className=" w-96" role="presentation">
+                    <div className="flex flex-col gap-4 w-full">
+                        <div className="w-full flex items-end justify-end p-4">
+                            <Button
+                                onClick={() => setOpen(false)}
+                                variant="contained"
+                            >
+                                <Close />
+                            </Button>
+                        </div>
+                        <div className="w-full flex items-end justify-end px-3">
+                        <form
                         onSubmit={submitData}
                         className=" flex flex-col w-full">
                         <div className='flex-none'>
@@ -128,11 +151,14 @@ export default function ProductsEditSection({ data }) {
                             </div>
                         </div>
                         <div className='flex items-center justify-center w-full flex-none'>
-                            <button className='bg-red-500 hover:bg-red-400 p-3 w-full rounded-md text-white font-bold'>Submit</button>
+                            {/* <button className='bg-red-500 hover:bg-red-400 p-3 w-full rounded-md text-white font-bold'>Submit</button> */}
+                            <Button className="w-full" type="submit" variant="contained">Submit</Button>
                         </div>
                     </form>
-                </div>
-            </DrawerAction>
+                        </div>
+                    </div>
+                </Box>
+            </Drawer>
         </div>
-    )
+    );
 }

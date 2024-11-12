@@ -10,6 +10,7 @@ import Paper from "@mui/material/Paper";
 // import DeleteSection from './delete-section';
 import { useSelector } from "react-redux";
 import moment from "moment";
+import ProductsEditSection from "./products-edit-section";
 // import { Visibility } from '@mui/icons-material';
 // import { Button } from '@mui/material';
 // import { router } from '@inertiajs/react';
@@ -48,8 +49,8 @@ export default function TableSection() {
                                 <TableCell>{res.quantity}</TableCell>
                                 <TableCell>{res.price}</TableCell>
                                 <TableCell align="right">
-                                    ss
                                     {/* <ModalOptionSection data={res} /> */}
+                                    <ProductsEditSection data={res} />
                                 </TableCell>
                             </TableRow>
                         );
