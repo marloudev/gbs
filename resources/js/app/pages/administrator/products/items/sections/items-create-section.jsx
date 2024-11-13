@@ -171,79 +171,80 @@ export default function ItemsCreateSection() {
                             onSubmit={submitData}
                             className="flex flex-col w-full min-h-[80vh]  p-4"
                         >
-                            <div className="flex flex-col gap-4 mb-4">
-                                <div className="text-xl font-semibold">
-                                    PARENT ITEM
-                                </div>
-                                <div className="flex gap-4 w-full">
-                                    <TextField
-                                        className="w-full"
-                                        required
-                                        value={form.items[0].barcode}
-                                        onChange={(e) =>
-                                            handleInputChange(
-                                                0,
-                                                "barcode",
-                                                e.target.value,
-                                            )
-                                        }
-                                        label="Barcode"
-                                        variant="outlined"
-                                    />
-                                    <TextField
-                                        className="w-full"
-                                        required
-                                        value={form.items[0].name}
-                                        onChange={(e) =>
-                                            handleInputChange(
-                                                0,
-                                                "name",
-                                                e.target.value,
-                                            )
-                                        }
-                                        label="Product Name"
-                                        variant="outlined"
-                                    />
-                                    <TextField
-                                        className="w-full"
-                                        required
-                                        value={form.items[0].description}
-                                        onChange={(e) =>
-                                            handleInputChange(
-                                                0,
-                                                "description",
-                                                e.target.value,
-                                            )
-                                        }
-                                        label="Description"
-                                        variant="outlined"
-                                    />
-                                    <FormControl required fullWidth>
-                                        <InputLabel>
-                                            Unit of Measurement
-                                        </InputLabel>
-                                        <Select
-                                            label="Unit of Measurement"
-                                            value={form.items[0].uom}
+                            <div className="flex-1">
+                                <div className="flex flex-col gap-4 mb-4">
+                                    <div className="text-xl font-semibold">
+                                        PARENT ITEM
+                                    </div>
+                                    <div className="flex gap-4 w-full">
+                                        <TextField
+                                            className="w-full"
+                                            required
+                                            value={form.items[0].barcode}
                                             onChange={(e) =>
                                                 handleInputChange(
                                                     0,
-                                                    "uom",
+                                                    "barcode",
                                                     e.target.value,
                                                 )
                                             }
-                                        >
-                                            {units.map((unit) => (
-                                                <MenuItem
-                                                    key={unit}
-                                                    value={unit}
-                                                >
-                                                    {unit}
-                                                </MenuItem>
-                                            ))}
-                                        </Select>
-                                    </FormControl>
-                                    {/* <TextField
+                                            label="Barcode"
+                                            variant="outlined"
+                                        />
+                                        <TextField
+                                            className="w-full"
+                                            required
+                                            value={form.items[0].name}
+                                            onChange={(e) =>
+                                                handleInputChange(
+                                                    0,
+                                                    "name",
+                                                    e.target.value,
+                                                )
+                                            }
+                                            label="Product Name"
+                                            variant="outlined"
+                                        />
+                                        <TextField
+                                            className="w-full"
+                                            required
+                                            value={form.items[0].description}
+                                            onChange={(e) =>
+                                                handleInputChange(
+                                                    0,
+                                                    "description",
+                                                    e.target.value,
+                                                )
+                                            }
+                                            label="Description"
+                                            variant="outlined"
+                                        />
+                                        <FormControl required fullWidth>
+                                            <InputLabel>
+                                                Unit of Measurement
+                                            </InputLabel>
+                                            <Select
+                                                label="Unit of Measurement"
+                                                value={form.items[0].uom}
+                                                onChange={(e) =>
+                                                    handleInputChange(
+                                                        0,
+                                                        "uom",
+                                                        e.target.value,
+                                                    )
+                                                }
+                                            >
+                                                {units.map((unit) => (
+                                                    <MenuItem
+                                                        key={unit}
+                                                        value={unit}
+                                                    >
+                                                        {unit}
+                                                    </MenuItem>
+                                                ))}
+                                            </Select>
+                                        </FormControl>
+                                        {/* <TextField
                                         className="w-full"
                                         required
                                         value={form.items[0].quantity}
@@ -260,24 +261,24 @@ export default function ItemsCreateSection() {
                                         label="Quantity"
                                         variant="outlined"
                                     /> */}
-                                    <TextField
-                                        className="w-full"
-                                        required
-                                        value={form.items[0].capital}
-                                        onChange={(e) =>
-                                            handleInputChange(
-                                                0,
-                                                "capital",
-                                                e.target.value.replace(
-                                                    /[^0-9.]/g,
-                                                    "",
-                                                ),
-                                            )
-                                        }
-                                        label="Capital"
-                                        variant="outlined"
-                                    />
-                                    {/* <TextField
+                                        <TextField
+                                            className="w-full"
+                                            required
+                                            value={form.items[0].capital}
+                                            onChange={(e) =>
+                                                handleInputChange(
+                                                    0,
+                                                    "capital",
+                                                    e.target.value.replace(
+                                                        /[^0-9.]/g,
+                                                        "",
+                                                    ),
+                                                )
+                                            }
+                                            label="Capital"
+                                            variant="outlined"
+                                        />
+                                        {/* <TextField
                                         className="w-full"
                                         required
                                         value={
@@ -296,7 +297,7 @@ export default function ItemsCreateSection() {
                                         label="Percent Selling Price"
                                         variant="outlined"
                                     /> */}
-                                    {/* <TextField
+                                        {/* <TextField
                                         className="w-full"
                                         required
                                         value={form.items[0].discount}
@@ -313,120 +314,120 @@ export default function ItemsCreateSection() {
                                         label="Discount"
                                         variant="outlined"
                                     /> */}
-                                </div>
-                            </div>
-                            <div className="text-xl font-semibold">
-                                CHILDREN ITEM
-                            </div>
-                            {form.items.map((item, index) => (
-                                <div
-                                    key={index}
-                                    className="flex flex-col gap-4 mb-4"
-                                >
-                                    <div className="text-xl font-semibold flex items-center justify-between">
-                                        <div>Item {index + 1}</div>
-                                        {index != 0 && (
-                                            <Button
-                                                variant="outlined"
-                                                onClick={() =>
-                                                    removeItem(index)
-                                                }
-                                            >
-                                                <Delete /> Remove
-                                            </Button>
-                                        )}
                                     </div>
-                                    <div className="flex gap-4 w-full">
-                                        <TextField
-                                            disabled={index == 0}
-                                            className="w-full"
-                                            required
-                                            value={item.barcode}
-                                            onChange={(e) =>
-                                                handleInputChange(
-                                                    index,
-                                                    "barcode",
-                                                    e.target.value,
-                                                )
-                                            }
-                                            label="Barcode"
-                                            variant="outlined"
-                                        />
-                                        <TextField
-                                            disabled={index == 0}
-                                            className="w-full"
-                                            required
-                                            value={item.name}
-                                            onChange={(e) =>
-                                                handleInputChange(
-                                                    index,
-                                                    "name",
-                                                    e.target.value,
-                                                )
-                                            }
-                                            label="Product Name"
-                                            variant="outlined"
-                                        />
-                                        <TextField
-                                            disabled={index == 0}
-                                            className="w-full"
-                                            required
-                                            value={item.description}
-                                            onChange={(e) =>
-                                                handleInputChange(
-                                                    index,
-                                                    "description",
-                                                    e.target.value,
-                                                )
-                                            }
-                                            label="Description"
-                                            variant="outlined"
-                                        />
-
-                                        <FormControl fullWidth>
-                                            <InputLabel>
-                                                Unit of Measurement
-                                            </InputLabel>
-                                            <Select
+                                </div>
+                                <div className="text-xl font-semibold">
+                                    CHILDREN ITEM
+                                </div>
+                                {form.items.map((item, index) => (
+                                    <div
+                                        key={index}
+                                        className="flex flex-col gap-4 mb-4"
+                                    >
+                                        <div className="text-xl font-semibold flex items-center justify-between">
+                                            <div>Item {index + 1}</div>
+                                            {index != 0 && (
+                                                <Button
+                                                    variant="outlined"
+                                                    onClick={() =>
+                                                        removeItem(index)
+                                                    }
+                                                >
+                                                    <Delete /> Remove
+                                                </Button>
+                                            )}
+                                        </div>
+                                        <div className="flex gap-4 w-full">
+                                            <TextField
                                                 disabled={index == 0}
-                                                label="Unit of Measurement"
-                                                value={item.uom}
+                                                className="w-full"
+                                                required
+                                                value={item.barcode}
                                                 onChange={(e) =>
                                                     handleInputChange(
                                                         index,
-                                                        "uom",
+                                                        "barcode",
                                                         e.target.value,
                                                     )
                                                 }
-                                            >
-                                                {units.map((unit) => (
-                                                    <MenuItem
-                                                        key={unit}
-                                                        value={unit}
-                                                    >
-                                                        {unit}
-                                                    </MenuItem>
-                                                ))}
-                                            </Select>
-                                        </FormControl>
-                                        <TextField
-                                            className="w-full"
-                                            required
-                                            value={item.quantity}
-                                            onChange={(e) =>
-                                                handleInputChange(
-                                                    index,
-                                                    "quantity",
-                                                    e.target.value.replace(
-                                                        /[^0-9.]/g,
-                                                        "",
-                                                    ),
-                                                )
-                                            }
-                                            label="Quantity"
-                                            variant="outlined"
-                                        />
-                                        {/* <TextField
+                                                label="Barcode"
+                                                variant="outlined"
+                                            />
+                                            <TextField
+                                                disabled={index == 0}
+                                                className="w-full"
+                                                required
+                                                value={item.name}
+                                                onChange={(e) =>
+                                                    handleInputChange(
+                                                        index,
+                                                        "name",
+                                                        e.target.value,
+                                                    )
+                                                }
+                                                label="Product Name"
+                                                variant="outlined"
+                                            />
+                                            <TextField
+                                                disabled={index == 0}
+                                                className="w-full"
+                                                required
+                                                value={item.description}
+                                                onChange={(e) =>
+                                                    handleInputChange(
+                                                        index,
+                                                        "description",
+                                                        e.target.value,
+                                                    )
+                                                }
+                                                label="Description"
+                                                variant="outlined"
+                                            />
+
+                                            <FormControl fullWidth>
+                                                <InputLabel>
+                                                    Unit of Measurement
+                                                </InputLabel>
+                                                <Select
+                                                    disabled={index == 0}
+                                                    label="Unit of Measurement"
+                                                    value={item.uom}
+                                                    onChange={(e) =>
+                                                        handleInputChange(
+                                                            index,
+                                                            "uom",
+                                                            e.target.value,
+                                                        )
+                                                    }
+                                                >
+                                                    {units.map((unit) => (
+                                                        <MenuItem
+                                                            key={unit}
+                                                            value={unit}
+                                                        >
+                                                            {unit}
+                                                        </MenuItem>
+                                                    ))}
+                                                </Select>
+                                            </FormControl>
+                                            <TextField
+                                                className="w-full"
+                                                required
+                                                value={item.quantity}
+                                                onChange={(e) =>
+                                                    handleInputChange(
+                                                        index,
+                                                        "quantity",
+                                                        e.target.value.replace(
+                                                            /[^0-9.]/g,
+                                                            "",
+                                                        ),
+                                                    )
+                                                }
+                                                label="Quantity"
+                                                variant="outlined"
+                                            />
+                                            {/* <TextField
                                             disabled={index == 0}
                                             className="w-full"
                                             required
@@ -444,24 +445,24 @@ export default function ItemsCreateSection() {
                                             label="Capital"
                                             variant="outlined"
                                         /> */}
-                                        <TextField
-                                            className="w-full"
-                                            required
-                                            value={item.price}
-                                            onChange={(e) =>
-                                                handleInputChange(
-                                                    index,
-                                                    "price",
-                                                    e.target.value.replace(
-                                                        /[^0-9.]/g,
-                                                        "",
-                                                    ),
-                                                )
-                                            }
-                                            label="Price"
-                                            variant="outlined"
-                                        />
-                                        {/* <TextField
+                                            <TextField
+                                                className="w-full"
+                                                required
+                                                value={item.price}
+                                                onChange={(e) =>
+                                                    handleInputChange(
+                                                        index,
+                                                        "price",
+                                                        e.target.value.replace(
+                                                            /[^0-9.]/g,
+                                                            "",
+                                                        ),
+                                                    )
+                                                }
+                                                label="Price"
+                                                variant="outlined"
+                                            />
+                                            {/* <TextField
                                             className="w-full"
                                             required
                                             value={item.percent_selling_price}
@@ -479,26 +480,27 @@ export default function ItemsCreateSection() {
                                             variant="outlined"
                                         /> */}
 
-                                        <TextField
-                                            className="w-full"
-                                            required
-                                            value={item.discount}
-                                            onChange={(e) =>
-                                                handleInputChange(
-                                                    index,
-                                                    "discount",
-                                                    e.target.value.replace(
-                                                        /[^0-9.]/g,
-                                                        "",
-                                                    ),
-                                                )
-                                            }
-                                            label="Discount"
-                                            variant="outlined"
-                                        />
+                                            <TextField
+                                                className="w-full"
+                                                required
+                                                value={item.discount}
+                                                onChange={(e) =>
+                                                    handleInputChange(
+                                                        index,
+                                                        "discount",
+                                                        e.target.value.replace(
+                                                            /[^0-9.]/g,
+                                                            "",
+                                                        ),
+                                                    )
+                                                }
+                                                label="Discount"
+                                                variant="outlined"
+                                            />
+                                        </div>
                                     </div>
-                                </div>
-                            ))}
+                                ))}
+                            </div>
                             <Button
                                 disabled={loading}
                                 size="large"
