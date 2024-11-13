@@ -142,8 +142,8 @@ export default function ItemsCreateSection() {
         "Kilo",
         "Grams",
         "Each",
-        'Dozen',
-        'Pack'
+        "Dozen",
+        "Pack",
     ];
     return (
         <div>
@@ -162,7 +162,7 @@ export default function ItemsCreateSection() {
                             </Button>
                             <Button
                                 onClick={() => setOpen(false)}
-                                variant="contained"
+                                variant="outlined"
                             >
                                 <Close /> Close
                             </Button>
@@ -388,7 +388,7 @@ export default function ItemsCreateSection() {
                                                 Unit of Measurement
                                             </InputLabel>
                                             <Select
-                                            disabled={index == 0}
+                                                disabled={index == 0}
                                                 label="Unit of Measurement"
                                                 value={item.uom}
                                                 onChange={(e) =>
@@ -461,7 +461,7 @@ export default function ItemsCreateSection() {
                                             label="Price"
                                             variant="outlined"
                                         />
-                                        <TextField
+                                        {/* <TextField
                                             className="w-full"
                                             required
                                             value={item.percent_selling_price}
@@ -477,7 +477,7 @@ export default function ItemsCreateSection() {
                                             }
                                             label="Percent Selling Price"
                                             variant="outlined"
-                                        />
+                                        /> */}
 
                                         <TextField
                                             className="w-full"
