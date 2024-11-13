@@ -47,10 +47,18 @@ Route::middleware('auth:sanctum')->prefix('administrator')->group(function () {
         return Inertia::render('pages/administrator/sales/page');
     })->name('sales');
 
-    Route::get('/products', function () {
-        return Inertia::render('pages/administrator/products/page');
-    })->name('products');
-    
+    Route::prefix('products')->group(function () {
+        Route::get('/items', function () {
+            return Inertia::render('pages/administrator/products/items/page');
+        });
+        Route::get('/receives', function () {
+            return Inertia::render('pages/administrator/products/receives/page');
+        });
+        Route::get('/supplies', function () {
+            return Inertia::render('pages/administrator/products/supplies/page');
+        });
+    });
+
     Route::get('/loyalty_card', function () {
         return Inertia::render('pages/administrator/loyalty_card/page');
     })->name('loyalty_card');
@@ -66,8 +74,6 @@ Route::middleware('auth:sanctum')->prefix('administrator')->group(function () {
     Route::get('/settings', function () {
         return Inertia::render('pages/administrator/settings/page');
     })->name('settings');
-
-    
 });
 
 Route::get('/barcode', function () {
@@ -89,4 +95,4 @@ Route::middleware('auth:sanctum')->prefix('cashier')->group(function () {
     })->name('cashier.search');
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';

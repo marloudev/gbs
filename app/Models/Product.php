@@ -13,5 +13,15 @@ class Product extends Model
         'description',
         'quantity',
         'price',
-     ];
+        // 'barcode',//
+        // 'name',//
+        // 'description',//
+        // 'uom',
+        // 'quantity',//
+        // 'capital',
+        // 'percent_selling_price',
+        // 'discount',
+        // 'price',//
+        // 'isVat',
+    ];
 }

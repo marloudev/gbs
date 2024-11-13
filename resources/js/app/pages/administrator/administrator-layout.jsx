@@ -16,7 +16,10 @@ import { useDispatch, useSelector } from "react-redux";
 import { setPathname } from "@/app/redux/app-slice";
 import {
     AccountBalanceWallet,
+    AddShoppingCart,
     AssignmentInd,
+    AutoAwesome,
+    Bookmarks,
     Diversity1,
     Diversity3,
     Engineering,
@@ -26,10 +29,12 @@ import {
     Groups,
     Groups2,
     HistoryEdu,
+    Inventory,
     MarkEmailRead,
     MarkEmailUnread,
     Payment,
     People,
+    PostAdd,
     PowerSettingsNew,
     School,
     SupervisedUserCircle,
@@ -60,6 +65,24 @@ const NAVIGATION = [
         segment: "products",
         title: "Products",
         icon: <ShoppingCartIcon />,
+        children: [
+            {
+                segment: "items",
+                title: "Items",
+                icon: <PostAdd />,
+            },
+            {
+                segment: "receives",
+                title: "Receives",
+                icon: <AddShoppingCart />,
+            },
+            {
+                segment: "supplies",
+                title: "Supplies",
+                icon: <Inventory />,
+            },
+            
+        ],
     },
     {
         segment: "accounts",
@@ -67,10 +90,10 @@ const NAVIGATION = [
         icon: <Groups />,
     },
     {
-      segment: "settings",
-      title: "Settings",
-      icon: <EngineeringOutlined />,
-  },
+        segment: "settings",
+        title: "Settings",
+        icon: <EngineeringOutlined />,
+    },
     {
         kind: "divider",
     },
@@ -148,7 +171,7 @@ function AdministratorLayout({ children }, props) {
             theme={demoTheme}
             window={demoWindow}
             branding={{
-                logo: '',
+                logo: "",
                 // <img src="/images/logo.png" /> logo
                 title: "GBS Mini Mart Cashiering System",
             }}
