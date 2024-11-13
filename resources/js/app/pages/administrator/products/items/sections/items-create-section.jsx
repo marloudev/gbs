@@ -459,7 +459,7 @@ export default function ItemsCreateSection() {
                                                         ),
                                                     )
                                                 }
-                                                label="Price"
+                                                label="Selling Price"
                                                 variant="outlined"
                                             />
                                             {/* <TextField
