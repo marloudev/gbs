@@ -10,6 +10,7 @@ import { Box, Button, Modal, Typography } from "@mui/material";
 export default function CashierPayModalSection({ inputRef }) {
     const [open, setOpen] = useState(false);
     const { payment, cart } = useSelector((state) => state.cashier);
+    const [loading, setLoading] = useState(false);
     const { user } = useSelector((state) => state.app);
     const cancelButtonRef = useRef(null);
     const dispatch = useDispatch();
@@ -17,13 +18,19 @@ export default function CashierPayModalSection({ inputRef }) {
 
     async function acceptPayment(e) {
         e.preventDefault();
-        if (!isSubmit()) {
-            await store.dispatch(createPaymentThunk());
-            await setOpen(false);
-            setTimeout(() => {
-                document.body.focus();
-                inputRef.current.focus();
-            }, 1000);
+        setLoading(true);
+        try {
+            if (!isSubmit()) {
+                await store.dispatch(createPaymentThunk());
+                await setOpen(false);
+                setTimeout(() => {
+                    document.body.focus();
+                    inputRef.current.focus();
+                }, 1000);
+                setLoading(false);
+            }
+        } catch (error) {
+            setLoading(false);
         }
     }
 
@@ -73,7 +80,7 @@ export default function CashierPayModalSection({ inputRef }) {
         top: "50%",
         left: "50%",
         transform: "translate(-50%, -50%)",
-        width: '50%',
+        width: "50%",
         bgcolor: "background.paper",
         boxShadow: 24,
     };
@@ -87,9 +94,7 @@ export default function CashierPayModalSection({ inputRef }) {
                 onClick={() => handleOpen(true)}
                 variant="contained"
             >
-                <div className="py-1">
-                PAY
-                </div>
+                <div className="py-1">PAY</div>
             </Button>
             <Modal
                 open={open}
@@ -218,7 +223,7 @@ export default function CashierPayModalSection({ inputRef }) {
                     </form>
                     <div className="bg-gray-50 gap-3 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6">
                         <Button
-                            disabled={isSubmit()}
+                            disabled={isSubmit() || loading}
                             onClick={acceptPayment}
                             variant="contained"
                         >

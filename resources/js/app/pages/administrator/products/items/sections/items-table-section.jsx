@@ -53,6 +53,7 @@ export default function TableSection() {
                                 <TableCell>{res.description}</TableCell>
                                 <TableCell>{res.uom}</TableCell>
                                 <TableCell>{res.capital}</TableCell>
+                                <TableCell></TableCell>
                                 <TableCell align="right">
                                     {/* <ModalOptionSection data={res} /> */}
                                     {/* <ProductsEditSection data={res} /> */}

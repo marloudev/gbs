@@ -388,6 +388,7 @@ export default function ItemsCreateSection() {
                                                 Unit of Measurement
                                             </InputLabel>
                                             <Select
+                                            disabled={index == 0}
                                                 label="Unit of Measurement"
                                                 value={item.uom}
                                                 onChange={(e) =>
