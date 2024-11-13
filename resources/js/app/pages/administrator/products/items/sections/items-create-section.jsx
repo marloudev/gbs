@@ -129,7 +129,22 @@ export default function ItemsCreateSection() {
             dispatch(setProductForm({}));
         }
     }, [open, dispatch]);
-
+    const units = [
+        "Carton",
+        "Case",
+        "Bag",
+        "Tray",
+        "Can",
+        "Roll",
+        "Sheet",
+        "Plastic",
+        "Bottle",
+        "Kilo",
+        "Grams",
+        "Each",
+        'Dozen',
+        'Pack'
+    ];
     return (
         <div>
             <Button variant="contained" onClick={() => setOpen(true)}>
@@ -218,11 +233,14 @@ export default function ItemsCreateSection() {
                                                 )
                                             }
                                         >
-                                            <MenuItem value="Box">Box</MenuItem>
-                                            <MenuItem value="Plastic">
-                                                Plastic
-                                            </MenuItem>
-                                            <MenuItem value="Bag">Bag</MenuItem>
+                                            {units.map((unit) => (
+                                                <MenuItem
+                                                    key={unit}
+                                                    value={unit}
+                                                >
+                                                    {unit}
+                                                </MenuItem>
+                                            ))}
                                         </Select>
                                     </FormControl>
                                     {/* <TextField
@@ -370,7 +388,6 @@ export default function ItemsCreateSection() {
                                                 Unit of Measurement
                                             </InputLabel>
                                             <Select
-                                                disabled={index == 0}
                                                 label="Unit of Measurement"
                                                 value={item.uom}
                                                 onChange={(e) =>
@@ -381,15 +398,14 @@ export default function ItemsCreateSection() {
                                                     )
                                                 }
                                             >
-                                                <MenuItem value="Box">
-                                                    Box
-                                                </MenuItem>
-                                                <MenuItem value="Plastic">
-                                                    Plastic
-                                                </MenuItem>
-                                                <MenuItem value="Bag">
-                                                    Bag
-                                                </MenuItem>
+                                                {units.map((unit) => (
+                                                    <MenuItem
+                                                        key={unit}
+                                                        value={unit}
+                                                    >
+                                                        {unit}
+                                                    </MenuItem>
+                                                ))}
                                             </Select>
                                         </FormControl>
                                         <TextField
