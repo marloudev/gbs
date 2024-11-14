@@ -82,7 +82,7 @@ export default function ProductsEditSection({ data }) {
                                 </div>
                                 <div className="flex flex-col h-[85vh] justify-between mt-5 w-full">
                                     <div className="flex flex-col gap-4">
-                                        <TextField
+                                        {/* <TextField
                                             className="w-full"
                                             required
                                             value={productForm.barcode ?? ""}
@@ -97,7 +97,7 @@ export default function ProductsEditSection({ data }) {
                                             id="barcode"
                                             label="Barcode"
                                             variant="outlined"
-                                        />
+                                        /> */}
                                         <TextField
                                             className="w-full"
                                             required
@@ -135,7 +135,7 @@ export default function ProductsEditSection({ data }) {
                                             label="Quantity"
                                             variant="outlined"
                                         />
-                                        {/* <TextField
+                                        <TextField
                                             type="number"
                                             className="w-full"
                                             required
@@ -151,7 +151,7 @@ export default function ProductsEditSection({ data }) {
                                             id="price"
                                             label="Price"
                                             variant="outlined"
-                                        /> */}
+                                        />
                                         {/* <button className='bg-red-500 hover:bg-red-400 p-3 w-full rounded-md text-white font-bold'>Submit</button> */}
                                     </div>
                                     <Button

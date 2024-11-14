@@ -34,7 +34,6 @@ export function edit_cart_item_thunk(data) {
 export function addCartThunk(product) {
     return async function (dispatch, getState) {
         // getState().cashier.cart
-        console.log("status", (await product).status);
         if ((await product).status == "success") {
             if (!localStorage.getItem("receipt_id")) {
                 localStorage.setItem(
@@ -46,15 +45,17 @@ export function addCartThunk(product) {
             const randomId = Math.floor(
                 1000000000 + Math.random() * 9000000000,
             );
-
             const response = await create_carts_service({
                 receipt_id: localStorage.getItem("receipt_id"),
                 barcode: (await product).data.barcode,
                 randomId: randomId,
-                quantity: 1,
+                quantity: (await product).data.quantity,
                 price: (await product).data.price,
                 total: (await product).data.price,
+                capital: (await product).data.capital,
+                supply_barcode: (await product).data?.item_product?.item?.barcode??0
             });
+
             dispatch(cashierSlice.actions.setCart(response.data));
             dispatch(cashierSlice.actions.setSearch(""));
         } else {

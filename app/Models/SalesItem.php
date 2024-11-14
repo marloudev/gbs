@@ -14,6 +14,7 @@ class SalesItem extends Model
         'product_id',
         'quantity',
         'price',
+        'capital'
     ];
     
     public function product(): HasOne

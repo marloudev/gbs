@@ -50,7 +50,7 @@ export default function TableSection() {
                                 <TableCell>{res.price}</TableCell>
                                 <TableCell align="right">
                                     {/* <ModalOptionSection data={res} /> */}
-                                    <ProductsEditSection data={res} />
+                                    {/* <ProductsEditSection data={res} /> */}
                                 </TableCell>
                             </TableRow>
                         );

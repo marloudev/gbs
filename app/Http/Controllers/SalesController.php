@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Product;
 use App\Models\Sales;
 use App\Models\SalesItem;
+use App\Models\Supply;
 use Illuminate\Http\Request;
 
 class SalesController extends Controller
@@ -33,17 +34,19 @@ class SalesController extends Controller
         if (!$sales) {
             $sales = Sales::create($request->payment);
             foreach ($request->cart as $value) {
-                if (env('APP_ENV') == 'production') {
-                    $product = Product::where('id', '=', $value['product']['id'])->first();
-                    $product->update([
-                        'quantity' => $product->quantity - $value['quantity']
+                $supply = Supply::where('barcode', '=', $value['supply_barcode'])->first();
+                if ($supply) {
+                    $supply->update([
+                        'quantity' => $supply->quantity - $value['quantity']
                     ]);
                 }
+
                 SalesItem::create([
                     'sales_id' => $sales->id,
                     'product_id' => $value['product']['id'],
                     'quantity' => $value['quantity'],
                     'price' => $value['price'],
+                    'capital' => $value['capital'],
                 ]);
             }
         }

@@ -12,7 +12,9 @@ class Cart extends Model
     protected $fillable = [
         'receipt_id',
         'barcode',
+        'supply_barcode',
         'price',
+        'capital',
         'quantity',
         'randomId',
         'total',

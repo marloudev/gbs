@@ -11,14 +11,15 @@ import Paper from "@mui/material/Paper";
 import { useSelector } from "react-redux";
 import moment from "moment";
 import ProductsEditSection from "./products-edit-section";
+import ReceivedItemSection from "./received-item-section";
 // import { Visibility } from '@mui/icons-material';
 // import { Button } from '@mui/material';
 // import { router } from '@inertiajs/react';
 // import AddEnrollmentSection from './add-enrollment-section';
 
 export default function TableSection() {
-    const { supplies } = useSelector((state) => state.products);
-    console.log('supplies',supplies)
+    const { receives } = useSelector((state) => state.products);
+    console.log('receivesss', receives)
     return (
         <TableContainer component={Paper}>
             <Table sx={{ minWidth: 650 }} aria-label="simple table">
@@ -26,13 +27,15 @@ export default function TableSection() {
                     <TableRow>
                         <TableCell>Barcode</TableCell>
                         <TableCell>Description</TableCell>
+                        <TableCell>Item Count</TableCell>
                         <TableCell>Quantity</TableCell>
-                        {/* <TableCell>Price</TableCell> */}
+                        <TableCell>Total Received Quantity</TableCell>
+                        <TableCell>Status</TableCell>
                         <TableCell>Action</TableCell>
                     </TableRow>
                 </TableHead>
                 <TableBody>
-                    {supplies?.data?.map((res, i) => {
+                    {receives?.data?.map((res, i) => {
                         const dob = moment(res.dob, "YYYY-MM-DD"); // Replace with actual date of birth
                         const age = moment().diff(dob, "years");
                         return (
@@ -44,13 +47,19 @@ export default function TableSection() {
                                     },
                                 }}
                             >
-                                <TableCell>GB-{res.barcode}</TableCell>
-                                <TableCell>{res.description}</TableCell>
+                                <TableCell>GB-{res.item?.barcode}</TableCell>
+                                <TableCell>{res.item?.description}</TableCell>
+                                <TableCell>{res.item_count}</TableCell>
                                 <TableCell>{res.quantity}</TableCell>
-                                {/* <TableCell>{res.price}</TableCell> */}
-                                <TableCell>
+                                <TableCell>{res.total_quantity}</TableCell>
+                                <TableCell>{res.status}</TableCell>
+                                <TableCell >
+                                    {
+                                        res.status == "Pending" &&
+                                        <ReceivedItemSection data={res} />
+                                    }
                                     {/* <ModalOptionSection data={res} /> */}
-                                    <ProductsEditSection data={res} />
+                                    {/* <ProductsEditSection data={res} /> */}
                                 </TableCell>
                             </TableRow>
                         );

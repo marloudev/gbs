@@ -8,3 +8,9 @@ export async function get_items_service() {
   const response = await axios.get('/api/items')
   return response.data;
 }
+
+
+export async function get_items_by_id_service(item_id) {
+  const response = await axios.get('/api/items/'+item_id)
+  return response.data;
+}

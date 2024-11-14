@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import ProductsCreateSection from './products-create-section'
-import store from '../../../../../store/store';
-import { getAllProductsThunk } from '../redux/products-thunk';
-import { get_products_service } from '../../../../../services/products-service';
+import store from '../../../../../../store/store';
+import { getAllProductsThunk } from '../../redux/products-thunk';
+import { get_products_service } from '../../../../../../services/products-service';
 import { useSelector } from 'react-redux';
 import ProductsEditSection from './products-edit-section';
 import AdministratorDeleteProduct from './products-delete-section';

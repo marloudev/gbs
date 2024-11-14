@@ -15,7 +15,9 @@ return new class extends Migration
             $table->id();
             $table->string('receipt_id')->nullable();
             $table->string('barcode')->nullable();
+            $table->string('supply_barcode')->nullable();
             $table->double('price')->nullable();
+            $table->double('capital')->nullable();
             $table->bigInteger('quantity')->nullable();
             $table->bigInteger('randomId')->nullable();
             $table->double('total')->nullable();

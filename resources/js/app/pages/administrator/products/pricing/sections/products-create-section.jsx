@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from "react";
-import DrawerAction from "../../../../layouts/components/drawer-action";
 import { useDispatch, useSelector } from "react-redux";
-import { setProductForm, setProducts } from "../redux/products-slice";
-import store from "../../../../../store/store";
-import { createProductThunk } from "../redux/products-thunk";
+import { setProductForm, setProducts } from "../../redux/products-slice";
+import store from "../../../../../../store/store";
+import { createProductThunk } from "../../redux/products-thunk";
 
 import Box from "@mui/material/Box";
 import Drawer from "@mui/material/Drawer";

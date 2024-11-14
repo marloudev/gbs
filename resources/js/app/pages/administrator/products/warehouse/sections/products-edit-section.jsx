@@ -135,7 +135,7 @@ export default function ProductsEditSection({ data }) {
                                             label="Quantity"
                                             variant="outlined"
                                         />
-                                        {/* <TextField
+                                        <TextField
                                             type="number"
                                             className="w-full"
                                             required
@@ -151,7 +151,7 @@ export default function ProductsEditSection({ data }) {
                                             id="price"
                                             label="Price"
                                             variant="outlined"
-                                        /> */}
+                                        />{" "}
                                         {/* <button className='bg-red-500 hover:bg-red-400 p-3 w-full rounded-md text-white font-bold'>Submit</button> */}
                                     </div>
                                     <Button

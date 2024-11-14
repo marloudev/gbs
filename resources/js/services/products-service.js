@@ -12,6 +12,7 @@ export async function edit_product_service(data) {
     const response = await axios.put(`/api/products/${data.id}`, data)
     return response.data;
 }
+
 export async function get_specific_product_service(id) {
     const response = await axios.get(`/api/products/${id}`)
     return response.data;

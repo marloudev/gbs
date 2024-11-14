@@ -9,9 +9,10 @@ use App\Http\Controllers\CartController;
 use App\Http\Controllers\ItemController;
 use App\Http\Controllers\LoyalCardController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ReceiveController;
 use App\Http\Controllers\SalesController;
-
-
+use App\Http\Controllers\SupplyController;
+use App\Http\Controllers\WarehouseController;
 
 /*
 |--------------------------------------------------------------------------
@@ -38,4 +39,9 @@ Route::apiResource('analytics', AnalyticsController::class);
 Route::apiResource('account_details', AccountDetailsController::class);
 Route::apiResource('loyal_cards', LoyalCardController::class);
 Route::apiResource('items', ItemController::class);
+Route::apiResource('receives', ReceiveController::class);
+Route::post('/change_status', [ReceiveController::class, 'change_status']);
+Route::post('/pullout_item', [ReceiveController::class, 'pullout_item']);
+Route::apiResource('warehouses', WarehouseController::class);
+Route::apiResource('supplies', SupplyController::class);
 

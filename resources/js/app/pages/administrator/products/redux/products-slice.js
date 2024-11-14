@@ -8,6 +8,10 @@ export const productsSlice = createSlice({
         productForm: {},
         loading: false,
         items: [],
+        item: {},
+        receives: [],
+        warehouses: [],
+        supplies: []
     },
     reducers: {
         setProducts: (state, action) => {
@@ -22,9 +26,21 @@ export const productsSlice = createSlice({
         setItems: (state, action) => {
             state.items = action.payload;
         },
+        setItem: (state, action) => {
+            state.item = action.payload;
+        },
+        setReceives: (state, action) => {
+            state.receives = action.payload;
+        },
+        setWarehouses: (state, action) => {
+            state.warehouses = action.payload;
+        },
+        setSupplies: (state, action) => {
+            state.supplies = action.payload;
+        },
     },
 });
-export const { setProducts, setRecipes, setProductForm, setItems } =
+export const { setProducts, setRecipes, setProductForm, setItems, setItem, setReceives, setWarehouses,setSupplies } =
     productsSlice.actions;
 
 export default productsSlice.reducer;

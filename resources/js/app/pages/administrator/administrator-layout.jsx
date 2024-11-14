@@ -32,6 +32,7 @@ import {
     Inventory,
     MarkEmailRead,
     MarkEmailUnread,
+    Money,
     Payment,
     People,
     PostAdd,
@@ -39,6 +40,7 @@ import {
     School,
     SupervisedUserCircle,
     Unsubscribe,
+    Warehouse,
 } from "@mui/icons-material";
 import LogoutSection from "../_sections/logout-section";
 
@@ -72,14 +74,24 @@ const NAVIGATION = [
                 icon: <PostAdd />,
             },
             {
-                segment: "receives",
-                title: "Receives",
+                segment: "orders",
+                title: "Orders",
                 icon: <AddShoppingCart />,
+            },
+            {
+                segment: "warehouse",
+                title: "Warehouse",
+                icon: <Warehouse />,
             },
             {
                 segment: "supplies",
                 title: "Supplies",
                 icon: <Inventory />,
+            },
+            {
+                segment: "pricing",
+                title: "Pricing",
+                icon: <Money />,
             },
             
         ],

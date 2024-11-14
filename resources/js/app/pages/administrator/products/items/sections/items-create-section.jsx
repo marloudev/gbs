@@ -20,6 +20,7 @@ import {
 } from "@mui/material";
 import store from "@/store/store";
 import moment from "moment";
+import { setNotification } from "@/app/redux/app-slice";
 
 export default function ItemsCreateSection() {
     const [open, setOpen] = useState(false);
@@ -43,7 +44,7 @@ export default function ItemsCreateSection() {
             },
         ],
     });
-
+    
     useEffect(() => {
         if (toastStatus.status === "success") {
             setOpen(false);
@@ -90,34 +91,53 @@ export default function ItemsCreateSection() {
 
     const submitData = async (e) => {
         e.preventDefault();
-        if (window.confirm("You want to continue.")) {
-            setLoading(true);
+        if (window.confirm("You would like to continue?")) {
+            // setLoading(true);
             try {
-                await store.dispatch(
+                const res = await store.dispatch(
                     create_items_thunk({
                         ...form,
                         item_id: moment().format("MMDDYYYYHHmmss"),
                     }),
                 );
-                await store.dispatch(get_items_thunk());
-                setForm({
-                    items: [
-                        {
-                            barcode: "",
-                            name: "",
-                            description: "",
-                            uom: "Box",
-                            quantity: 0,
-                            capital: 0,
-                            price: 0,
-                            percent_selling_price: 0,
-                            discount: 0,
-                            isVat: 0,
-                        },
-                    ],
-                });
-                setOpen(false);
-                setLoading(false);
+                if (res.status == "exist") {
+                    dispatch(
+                        setNotification({
+                            open: true,
+                            type: 'error',
+                            message: 'Parent Item is already exist!'
+                        }),
+                    );
+                    setLoading(false);
+                } else {
+                    await store.dispatch(get_items_thunk());
+                    setForm({
+                        items: [
+                            {
+                                barcode: "",
+                                name: "",
+                                description: "",
+                                uom: "Box",
+                                quantity: 0,
+                                capital: 0,
+                                price: 0,
+                                percent_selling_price: 0,
+                                discount: 0,
+                                isVat: 0,
+                            },
+                        ],
+                    });
+                    dispatch(
+                        setNotification({
+                            open: true,
+                            type: 'success',
+                            message: 'Created Successfully'
+                        }),
+                    );
+                    setOpen(false);
+                    setLoading(false);
+                }
+
             } catch (error) {
                 setLoading(false);
             }
@@ -143,7 +163,11 @@ export default function ItemsCreateSection() {
         "Grams",
         "Each",
         "Dozen",
+        "Half Dozen",
         "Pack",
+        "Small",
+        "Medium",
+        "Large",
     ];
     return (
         <div>
@@ -175,6 +199,7 @@ export default function ItemsCreateSection() {
                                 <div className="flex flex-col gap-4 mb-4">
                                     <div className="text-xl font-semibold">
                                         PARENT ITEM
+                                        {/* (Supply) */}
                                     </div>
                                     <div className="flex gap-4 w-full">
                                         <TextField
@@ -202,7 +227,7 @@ export default function ItemsCreateSection() {
                                                     e.target.value,
                                                 )
                                             }
-                                            label="Product Name"
+                                            label="Brand Name"
                                             variant="outlined"
                                         />
                                         <TextField
@@ -244,23 +269,40 @@ export default function ItemsCreateSection() {
                                                 ))}
                                             </Select>
                                         </FormControl>
-                                        {/* <TextField
-                                        className="w-full"
-                                        required
-                                        value={form.items[0].quantity}
-                                        onChange={(e) =>
-                                            handleInputChange(
-                                                0,
-                                                "quantity",
-                                                e.target.value.replace(
-                                                    /[^0-9.]/g,
-                                                    "",
-                                                ),
-                                            )
-                                        }
-                                        label="Quantity"
-                                        variant="outlined"
-                                    /> */}
+                                        <TextField
+                                            className="w-full"
+                                            required
+                                            value={form.items[0].quantity}
+                                            onChange={(e) =>
+                                                handleInputChange(
+                                                    0,
+                                                    "quantity",
+                                                    e.target.value.replace(
+                                                        /[^0-9.]/g,
+                                                        "",
+                                                    ),
+                                                )
+                                            }
+                                            label="Quantity"
+                                            variant="outlined"
+                                        />
+                                        <TextField
+                                            className="w-full"
+                                            required
+                                            value={form.items[0].price}
+                                            onChange={(e) =>
+                                                handleInputChange(
+                                                    0,
+                                                    "price",
+                                                    e.target.value.replace(
+                                                        /[^0-9.]/g,
+                                                        "",
+                                                    ),
+                                                )
+                                            }
+                                            label="Selling Price"
+                                            variant="outlined"
+                                        />
                                         <TextField
                                             className="w-full"
                                             required
@@ -278,25 +320,8 @@ export default function ItemsCreateSection() {
                                             label="Capital"
                                             variant="outlined"
                                         />
-                                        {/* <TextField
-                                        className="w-full"
-                                        required
-                                        value={
-                                            form.items[0].percent_selling_price
-                                        }
-                                        onChange={(e) =>
-                                            handleInputChange(
-                                                0,
-                                                "percent_selling_price",
-                                                e.target.value.replace(
-                                                    /[^0-9.]/g,
-                                                    "",
-                                                ),
-                                            )
-                                        }
-                                        label="Percent Selling Price"
-                                        variant="outlined"
-                                    /> */}
+
+
                                         {/* <TextField
                                         className="w-full"
                                         required
@@ -318,188 +343,195 @@ export default function ItemsCreateSection() {
                                 </div>
                                 <div className="text-xl font-semibold">
                                     CHILDREN ITEM
+                                    {/* (Product) */}
                                 </div>
-                                {form.items.map((item, index) => (
-                                    <div
-                                        key={index}
-                                        className="flex flex-col gap-4 mb-4"
-                                    >
-                                        <div className="text-xl font-semibold flex items-center justify-between">
-                                            <div>Item {index + 1}</div>
-                                            {index != 0 && (
-                                                <Button
-                                                    variant="outlined"
-                                                    onClick={() =>
-                                                        removeItem(index)
-                                                    }
-                                                >
-                                                    <Delete /> Remove
-                                                </Button>
-                                            )}
-                                        </div>
-                                        <div className="flex gap-4 w-full">
-                                            <TextField
-                                                disabled={index == 0}
-                                                className="w-full"
-                                                required
-                                                value={item.barcode}
-                                                onChange={(e) =>
-                                                    handleInputChange(
-                                                        index,
-                                                        "barcode",
-                                                        e.target.value,
-                                                    )
-                                                }
-                                                label="Barcode"
-                                                variant="outlined"
-                                            />
-                                            <TextField
-                                                disabled={index == 0}
-                                                className="w-full"
-                                                required
-                                                value={item.name}
-                                                onChange={(e) =>
-                                                    handleInputChange(
-                                                        index,
-                                                        "name",
-                                                        e.target.value,
-                                                    )
-                                                }
-                                                label="Product Name"
-                                                variant="outlined"
-                                            />
-                                            <TextField
-                                                disabled={index == 0}
-                                                className="w-full"
-                                                required
-                                                value={item.description}
-                                                onChange={(e) =>
-                                                    handleInputChange(
-                                                        index,
-                                                        "description",
-                                                        e.target.value,
-                                                    )
-                                                }
-                                                label="Description"
-                                                variant="outlined"
-                                            />
-
-                                            <FormControl fullWidth>
-                                                <InputLabel>
-                                                    Unit of Measurement
-                                                </InputLabel>
-                                                <Select
-                                                    disabled={index == 0}
-                                                    label="Unit of Measurement"
-                                                    value={item.uom}
-                                                    onChange={(e) =>
-                                                        handleInputChange(
-                                                            index,
-                                                            "uom",
-                                                            e.target.value,
-                                                        )
-                                                    }
-                                                >
-                                                    {units.map((unit) => (
-                                                        <MenuItem
-                                                            key={unit}
-                                                            value={unit}
+                                {form.items.map((item, index) => {
+                                    return (
+                                        <>
+                                            {index != 0 && <div
+                                                key={index}
+                                                className="flex flex-col gap-4 mb-4"
+                                            >
+                                                <div className="text-xl font-semibold flex items-center justify-between">
+                                                    <div>Item {index + 1}</div>
+                                                    {index != 0 && (
+                                                        <Button
+                                                            variant="outlined"
+                                                            onClick={() =>
+                                                                removeItem(index)
+                                                            }
                                                         >
-                                                            {unit}
-                                                        </MenuItem>
-                                                    ))}
-                                                </Select>
-                                            </FormControl>
-                                            <TextField
-                                                className="w-full"
-                                                required
-                                                value={item.quantity}
-                                                onChange={(e) =>
-                                                    handleInputChange(
-                                                        index,
-                                                        "quantity",
-                                                        e.target.value.replace(
-                                                            /[^0-9.]/g,
-                                                            "",
-                                                        ),
-                                                    )
-                                                }
-                                                label="Quantity"
-                                                variant="outlined"
-                                            />
-                                            {/* <TextField
-                                            disabled={index == 0}
-                                            className="w-full"
-                                            required
-                                            value={item.capital}
-                                            onChange={(e) =>
-                                                handleInputChange(
-                                                    index,
-                                                    "capital",
-                                                    e.target.value.replace(
-                                                        /[^0-9.]/g,
-                                                        "",
-                                                    ),
-                                                )
-                                            }
-                                            label="Capital"
-                                            variant="outlined"
-                                        /> */}
-                                            <TextField
-                                                className="w-full"
-                                                required
-                                                value={item.price}
-                                                onChange={(e) =>
-                                                    handleInputChange(
-                                                        index,
-                                                        "price",
-                                                        e.target.value.replace(
-                                                            /[^0-9.]/g,
-                                                            "",
-                                                        ),
-                                                    )
-                                                }
-                                                label="Selling Price"
-                                                variant="outlined"
-                                            />
-                                            {/* <TextField
-                                            className="w-full"
-                                            required
-                                            value={item.percent_selling_price}
-                                            onChange={(e) =>
-                                                handleInputChange(
-                                                    index,
-                                                    "percent_selling_price",
-                                                    e.target.value.replace(
-                                                        /[^0-9.]/g,
-                                                        "",
-                                                    ),
-                                                )
-                                            }
-                                            label="Percent Selling Price"
-                                            variant="outlined"
-                                        /> */}
+                                                            <Delete /> Remove
+                                                        </Button>
+                                                    )}
+                                                </div>
+                                                <div className="flex gap-4 w-full">
+                                                    <TextField
+                                                        type="number"
+                                                        className="w-full"
+                                                        required
+                                                        value={item.barcode}
+                                                        onChange={(e) =>
+                                                            handleInputChange(
+                                                                index,
+                                                                "barcode",
+                                                                e.target.value,
+                                                            )
+                                                        }
+                                                        label="Barcode"
+                                                        variant="outlined"
+                                                    />
+                                                    <TextField
 
-                                            <TextField
-                                                className="w-full"
-                                                required
-                                                value={item.discount}
-                                                onChange={(e) =>
-                                                    handleInputChange(
-                                                        index,
-                                                        "discount",
-                                                        e.target.value.replace(
-                                                            /[^0-9.]/g,
-                                                            "",
-                                                        ),
-                                                    )
-                                                }
-                                                label="Discount"
-                                                variant="outlined"
-                                            />
-                                        </div>
-                                    </div>
-                                ))}
+                                                        className="w-full"
+                                                        required
+                                                        value={item.name}
+                                                        onChange={(e) =>
+                                                            handleInputChange(
+                                                                index,
+                                                                "name",
+                                                                e.target.value,
+                                                            )
+                                                        }
+                                                        label="Brand Name"
+                                                        variant="outlined"
+                                                    />
+                                                    <TextField
+
+                                                        className="w-full"
+                                                        required
+                                                        value={item.description}
+                                                        onChange={(e) =>
+                                                            handleInputChange(
+                                                                index,
+                                                                "description",
+                                                                e.target.value,
+                                                            )
+                                                        }
+                                                        label="Description"
+                                                        variant="outlined"
+                                                    />
+
+                                                    <FormControl fullWidth>
+                                                        <InputLabel>
+                                                            Unit of Measurement
+                                                        </InputLabel>
+                                                        <Select
+
+                                                            label="Unit of Measurement"
+                                                            value={item.uom}
+                                                            onChange={(e) =>
+                                                                handleInputChange(
+                                                                    index,
+                                                                    "uom",
+                                                                    e.target.value,
+                                                                )
+                                                            }
+                                                        >
+                                                            {units.map((unit) => (
+                                                                <MenuItem
+                                                                    key={unit}
+                                                                    value={unit}
+                                                                >
+                                                                    {unit}
+                                                                </MenuItem>
+                                                            ))}
+                                                        </Select>
+                                                    </FormControl>
+                                                    <TextField
+                                                        className="w-full"
+                                                        required
+
+                                                        value={item.quantity}
+                                                        onChange={(e) =>
+                                                            handleInputChange(
+                                                                index,
+                                                                "quantity",
+                                                                e.target.value.replace(
+                                                                    /[^0-9.]/g,
+                                                                    "",
+                                                                ),
+                                                            )
+                                                        }
+                                                        label="Quantity"
+                                                        variant="outlined"
+                                                    />
+                                                    {/* <TextField
+                                        
+                                        className="w-full"
+                                        required
+                                        value={item.capital}
+                                        onChange={(e) =>
+                                            handleInputChange(
+                                                index,
+                                                "capital",
+                                                e.target.value.replace(
+                                                    /[^0-9.]/g,
+                                                    "",
+                                                ),
+                                            )
+                                        }
+                                        label="Capital"
+                                        variant="outlined"
+                                    /> */}
+                                                    <TextField
+                                                        className="w-full"
+                                                        required
+                                                        value={item.price}
+                                                        onChange={(e) =>
+                                                            handleInputChange(
+                                                                index,
+                                                                "price",
+                                                                e.target.value.replace(
+                                                                    /[^0-9.]/g,
+                                                                    "",
+                                                                ),
+                                                            )
+                                                        }
+                                                        label="Selling Price"
+                                                        variant="outlined"
+                                                    />
+                                                    {/* <TextField
+                                        className="w-full"
+                                        required
+                                        value={item.percent_selling_price}
+                                        onChange={(e) =>
+                                            handleInputChange(
+                                                index,
+                                                "percent_selling_price",
+                                                e.target.value.replace(
+                                                    /[^0-9.]/g,
+                                                    "",
+                                                ),
+                                            )
+                                        }
+                                        label="Percent Selling Price"
+                                        variant="outlined"
+                                    /> */}
+
+                                                    <TextField
+                                                        className="w-full"
+                                                        required
+                                                        value={item.capital}
+                                                        onChange={(e) =>
+                                                            handleInputChange(
+                                                                index,
+                                                                "capital",
+                                                                e.target.value.replace(
+                                                                    /[^0-9.]/g,
+                                                                    "",
+                                                                ),
+                                                            )
+                                                        }
+                                                        label="Capital"
+                                                        variant="outlined"
+                                                    />
+                                                </div>
+                                            </div>}
+
+                                        </>
+                                    )
+                                })}
                             </div>
                             <Button
                                 disabled={loading}

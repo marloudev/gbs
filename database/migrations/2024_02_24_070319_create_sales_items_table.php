@@ -17,6 +17,7 @@ return new class extends Migration
             $table->bigInteger('product_id')->nullable();
             $table->bigInteger('quantity')->nullable();
             $table->double('price')->nullable();
+            $table->double('capital')->nullable();
             $table->timestamps();
         });
     }

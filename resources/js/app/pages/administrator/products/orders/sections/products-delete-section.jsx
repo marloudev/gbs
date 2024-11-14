@@ -1,8 +1,8 @@
 import { Fragment, useRef, useState } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
 import { ExclamationTriangleIcon, TrashIcon } from '@heroicons/react/24/outline'
-import { deleteProductThunk } from '../redux/products-thunk'
-import store from '../../../../../store/store'
+import { deleteProductThunk } from '../../redux/products-thunk'
+import store from '../../../../../../store/store'
 
 export default function AdministratorDeleteProduct({ data }) {
     const [open, setOpen] = useState(false)

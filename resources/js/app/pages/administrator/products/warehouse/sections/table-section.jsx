@@ -6,33 +6,27 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
-// import UpdateSection from './update-section';
-// import DeleteSection from './delete-section';
 import { useSelector } from "react-redux";
 import moment from "moment";
-import ProductsEditSection from "./products-edit-section";
-// import { Visibility } from '@mui/icons-material';
-// import { Button } from '@mui/material';
-// import { router } from '@inertiajs/react';
-// import AddEnrollmentSection from './add-enrollment-section';
+import PulloutItemSection from "./pullout-item-section";
 
 export default function TableSection() {
-    const { supplies } = useSelector((state) => state.products);
-    console.log('supplies',supplies)
+    const { warehouses } = useSelector((state) => state.products);
+    console.log('receivesss', warehouses)
     return (
         <TableContainer component={Paper}>
             <Table sx={{ minWidth: 650 }} aria-label="simple table">
                 <TableHead>
                     <TableRow>
                         <TableCell>Barcode</TableCell>
+                        <TableCell>Brand Name</TableCell>
                         <TableCell>Description</TableCell>
-                        <TableCell>Quantity</TableCell>
-                        {/* <TableCell>Price</TableCell> */}
+                        <TableCell>Total Quantity</TableCell>
                         <TableCell>Action</TableCell>
                     </TableRow>
                 </TableHead>
                 <TableBody>
-                    {supplies?.data?.map((res, i) => {
+                    {warehouses?.data?.map((res, i) => {
                         const dob = moment(res.dob, "YYYY-MM-DD"); // Replace with actual date of birth
                         const age = moment().diff(dob, "years");
                         return (
@@ -44,13 +38,12 @@ export default function TableSection() {
                                     },
                                 }}
                             >
-                                <TableCell>GB-{res.barcode}</TableCell>
+                                <TableCell>GB-{res?.barcode}</TableCell>
+                                <TableCell>{res.brand}</TableCell>
                                 <TableCell>{res.description}</TableCell>
                                 <TableCell>{res.quantity}</TableCell>
-                                {/* <TableCell>{res.price}</TableCell> */}
-                                <TableCell>
-                                    {/* <ModalOptionSection data={res} /> */}
-                                    <ProductsEditSection data={res} />
+                                <TableCell >
+                                    <PulloutItemSection data={res} />
                                 </TableCell>
                             </TableRow>
                         );

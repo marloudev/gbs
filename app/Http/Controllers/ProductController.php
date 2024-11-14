@@ -38,7 +38,7 @@ class ProductController extends Controller
     public function show($id)
     {
 
-        $products = Product::where('barcode', '=', $id)
+        $products = Product::where('barcode', '=', $id)->with(['item_product'])
         ->orWhere('id', '=', $id)->first();
         return response()->json([
             'status' => $products == null ? 'Not Found!' : 'success',

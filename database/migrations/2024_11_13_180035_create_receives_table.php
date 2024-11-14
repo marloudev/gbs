@@ -13,6 +13,11 @@ return new class extends Migration
     {
         Schema::create('receives', function (Blueprint $table) {
             $table->id();
+            $table->bigInteger('item_id')->nullable();
+            $table->bigInteger('quantity')->nullable();
+            $table->bigInteger('item_count')->nullable();
+            $table->bigInteger('total_quantity')->nullable();
+            $table->string('status')->nullable();
             $table->timestamps();
         });
     }

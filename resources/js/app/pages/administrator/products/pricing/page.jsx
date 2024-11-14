@@ -1,15 +1,14 @@
 import React, { useEffect, useState } from "react";
-import ProductsTableSection from "./sections/products-table-section";
 import AdministratorLayout from "../../administrator-layout";
 import TableSection from "./sections/table-section";
 import store from "@/store/store";
-import { get_supplies_thunk, getAllProductsThunk } from "./../redux/products-thunk";
+import { getAllProductsThunk } from "../redux/products-thunk";
 import { get_products_service } from "@/services/products-service";
 import ProductsCreateSection from "./sections/products-create-section";
 import PaginateSection from "./sections/paginate-section";
 import SearchSection from "./sections/search-section";
 
-export default function SuppliesPage({ auth }) {
+export default function PricingPage({ auth }) {
     const url = window.location.href;
     const parsedUrl = new URL(url);
     const page = parsedUrl.searchParams.get("page");
@@ -17,8 +16,7 @@ export default function SuppliesPage({ auth }) {
 
     console.log(window.location);
     useEffect(() => {
-        // store.dispatch(getAllProductsThunk(get_products_service(page, search??'')));
-        store.dispatch(get_supplies_thunk())
+        store.dispatch(getAllProductsThunk(get_products_service(page, search??'')));
     }, [page,search]);
 
     return (

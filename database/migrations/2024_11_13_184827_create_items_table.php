@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('name')->nullable();
             $table->string('description')->nullable();
             $table->string('uom')->nullable();
+            $table->bigInteger('quantity')->nullable();
             $table->double('capital')->nullable();
             $table->string('isVat')->nullable();
             $table->timestamps();

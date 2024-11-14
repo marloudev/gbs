@@ -51,11 +51,17 @@ Route::middleware('auth:sanctum')->prefix('administrator')->group(function () {
         Route::get('/items', function () {
             return Inertia::render('pages/administrator/products/items/page');
         });
-        Route::get('/receives', function () {
-            return Inertia::render('pages/administrator/products/receives/page');
+        Route::get('/orders', function () {
+            return Inertia::render('pages/administrator/products/orders/page');
+        });
+        Route::get('/warehouse', function () {
+            return Inertia::render('pages/administrator/products/warehouse/page');
         });
         Route::get('/supplies', function () {
             return Inertia::render('pages/administrator/products/supplies/page');
+        });
+        Route::get('/pricing', function () {
+            return Inertia::render('pages/administrator/products/pricing/page');
         });
     });
 

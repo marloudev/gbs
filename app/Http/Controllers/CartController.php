@@ -52,6 +52,8 @@ class CartController extends Controller
             'quantity' => 'required',
             'randomId' => 'required',
             'total' => 'required',
+            'supply_barcode' => 'required',
+            'capital' => 'required',
         ]));
 
         return response()->json([
