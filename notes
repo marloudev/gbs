@@ -1,3 +1,9 @@
 ang product ginabawas sa supply
 mo order product makita sa item.
 sa orders ang total quantity madungag sa supply
+
+
+add capital and supply_barcode in carts
+add capital  in sales_items
+add quantity  in items
+add capital and remaining in products

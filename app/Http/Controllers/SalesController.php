@@ -34,13 +34,14 @@ class SalesController extends Controller
         if (!$sales) {
             $sales = Sales::create($request->payment);
             foreach ($request->cart as $value) {
-                $supply = Supply::where('barcode', '=', $value['supply_barcode'])->first();
-                if ($supply) {
-                    $supply->update([
-                        'quantity' => $supply->quantity - $value['quantity']
-                    ]);
+                if ($value['supply_barcode']) {
+                    $supply = Supply::where('barcode', '=', $value['supply_barcode'])->first();
+                    if ($supply) {
+                        $supply->update([
+                            'quantity' => $supply->quantity - $value['quantity']
+                        ]);
+                    }
                 }
-
                 SalesItem::create([
                     'sales_id' => $sales->id,
                     'product_id' => $value['product']['id'],

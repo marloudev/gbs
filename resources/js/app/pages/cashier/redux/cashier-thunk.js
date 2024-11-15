@@ -52,7 +52,7 @@ export function addCartThunk(product) {
                 quantity: (await product).data.quantity,
                 price: (await product).data.price,
                 total: (await product).data.price,
-                capital: (await product).data.capital,
+                capital: (await product)?.data?.capital??0,
                 supply_barcode: (await product).data?.item_product?.item?.barcode??0
             });
 

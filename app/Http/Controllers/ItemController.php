@@ -43,24 +43,36 @@ class ItemController extends Controller
                             'item_id' => $request->item_id,
                         ]);
                     }
-                    ItemProduct::create([
-                        ...$value,
-                        'item_id' => $request->item_id,
-                    ]);
+                    $item_product = ItemProduct::where('barcode', $value['barcode'])->first();
+                    if (!$item_product) {
+                        ItemProduct::create([
+                            ...$value,
+                            'item_id' => $request->item_id,
+                        ]);
+                    }
                     //end ares ni
 
                     //start ares ni
                     $product = Product::where('barcode', $value['barcode'])->first();
-                    if (!$product && $key == 0) {
-                        Supply::create([
-                            'barcode' => $value['barcode'],
-                            'brand' => $value['name'],
-                            'description' => $value['description'],
-                            'uom' => $value['uom'],
-                            'quantity' => 0,
-                        ]);
+                    if ($key == 0) {
+                        $supply = Supply::where('barcode', $value['barcode'])->first();
+                        if (!$supply) {
+                            Supply::create([
+                                'barcode' => $value['barcode'],
+                                'brand' => $value['name'],
+                                'description' => $value['description'],
+                                'uom' => $value['uom'],
+                                'quantity' => 0,
+                            ]);
+                        }
                     }
-                    if (!$product && $key != 0) {
+                    if ($product) {
+                        $product->update([
+                            'quantity' => $value['quantity'],
+                            'capital' => $value['capital'],
+                            'remaining' => 0,
+                        ]);
+                    } else {
                         Product::create([
                             'barcode' => $value['barcode'],
                             'description' => $value['description'],
@@ -70,6 +82,7 @@ class ItemController extends Controller
                             'remaining' => 0,
                         ]);
                     }
+
                     //end ares ni
                 }
             }

@@ -283,7 +283,7 @@ export default function ItemsCreateSection() {
                                                     ),
                                                 )
                                             }
-                                            label="Quantity"
+                                            label="Selling Quantity"
                                             variant="outlined"
                                         />
                                         <TextField
@@ -453,7 +453,7 @@ export default function ItemsCreateSection() {
                                                                 ),
                                                             )
                                                         }
-                                                        label="Quantity"
+                                                        label="Selling Quantity"
                                                         variant="outlined"
                                                     />
                                                     {/* <TextField
