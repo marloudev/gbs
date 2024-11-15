@@ -49,7 +49,7 @@ export function addCartThunk(product) {
                 receipt_id: localStorage.getItem("receipt_id"),
                 barcode: (await product).data.barcode,
                 randomId: randomId,
-                quantity: (await product).data.quantity,
+                quantity: (await product)?.data?.quantity??1,
                 price: (await product).data.price,
                 total: (await product).data.price,
                 capital: (await product)?.data?.capital??0,
