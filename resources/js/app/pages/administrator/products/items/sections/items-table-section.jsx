@@ -111,7 +111,7 @@ export default function TableSection() {
         <TableContainer component={Paper}>
             <Table aria-label="collapsible table">
                 <TableBody>
-                    {items?.data.map((row) => (
+                    {items?.data?.map((row) => (
                         <Row key={row.name} row={row} />
                     ))}
                 </TableBody>
