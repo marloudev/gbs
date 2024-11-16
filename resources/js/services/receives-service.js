@@ -3,6 +3,11 @@ export async function create_receives_service(data) {
     return response.data;
   }
   
+  export async function delete_receives_service(data) {
+    const response = await axios.delete('/api/receives/'+data.id)
+    return response.data;
+  }
+  
   
   export async function get_receives_service() {
     const path = window.location.pathname.split('/')[3]

@@ -26,6 +26,13 @@ class ReceiveController extends Controller
         ]);
     }
 
+    public function destroy($id)
+    {
+        Receive::where('id', $id)->delete();
+        return response()->json([
+            'status' => 'success',
+        ], 200);
+    }
     public function index(Request $request)
     {
         $receives = Receive::with(['item_products', 'item'])->paginate(10);

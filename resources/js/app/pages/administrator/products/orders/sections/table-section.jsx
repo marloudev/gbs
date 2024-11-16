@@ -12,6 +12,7 @@ import { useSelector } from "react-redux";
 import moment from "moment";
 import ProductsEditSection from "./products-edit-section";
 import ReceivedItemSection from "./received-item-section";
+import AdministratorDeleteProduct from "./products-delete-section";
 // import { Visibility } from '@mui/icons-material';
 // import { Button } from '@mui/material';
 // import { router } from '@inertiajs/react';
@@ -58,6 +59,7 @@ export default function TableSection() {
                                         res.status == "Pending" &&
                                         <ReceivedItemSection data={res} />
                                     }
+                                    <AdministratorDeleteProduct  data={res}/>
                                     {/* <ModalOptionSection data={res} /> */}
                                     {/* <ProductsEditSection data={res} /> */}
                                 </TableCell>

@@ -2,7 +2,7 @@ import { create_items_service, get_items_by_id_service, get_items_service } from
 import { create_product_service, delete_product_service, edit_product_service } from '../../../../../services/products-service';
 import { appSlice } from '../../../../redux/app-slice';
 import { productsSlice } from './products-slice';
-import { change_status_service, create_receives_service, get_receives_service, pullout_item_service } from '@/services/receives-service';
+import { change_status_service, create_receives_service, delete_receives_service, get_receives_service, pullout_item_service } from '@/services/receives-service';
 import { get_warehouses_service } from '@/services/warehouses-service';
 import { get_supplies_service } from '@/services/supplies-service';
 
@@ -66,6 +66,12 @@ export function get_supplies_thunk(products) {
 export function change_status_thunk(data) {
   return async function (dispatch, getState) {
     const res = await change_status_service(data)
+  };
+}
+
+export function delete_receives_thunk(data) {
+  return async function (dispatch, getState) {
+    const res = await delete_receives_service(data)
   };
 }
 
