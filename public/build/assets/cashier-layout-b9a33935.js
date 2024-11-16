@@ -1,1 +1,0 @@
-import{j as r}from"./app-f825970e.js";import t from"./toastify-01874380.js";import"./clsx-0839fdbe.js";function e({children:s}){return r.jsxs("div",{className:"flex",children:[r.jsx(t,{}),s]})}export{e as default};

@@ -5,7 +5,7 @@ import { useSelector } from "react-redux";
 import { router } from "@inertiajs/react";
 
 export default function PaginateSection() {
-    const { supplies } = useSelector((state) => state.products);
+    const { items } = useSelector((state) => state.products);
     const url = window.location.href;
     const parsedUrl = new URL(url);
     const page = parsedUrl.searchParams.get("page");
@@ -16,7 +16,7 @@ export default function PaginateSection() {
                 <Pagination
                 defaultPage={parseInt(page)}
                   onChange={(e,page)=>router.visit('?page='+page)}
-                    count={supplies?.last_page ?? 0}
+                    count={items?.last_page ?? 0}
                     variant="outlined"
                     shape="rounded"
                 />
