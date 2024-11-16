@@ -117,7 +117,7 @@ export default function ProductsEditSection({ data }) {
                                             label="Description"
                                             variant="outlined"
                                         />
-                                        <TextField
+                                        {/* <TextField
                                             type="number"
                                             className="w-full"
                                             required
@@ -134,7 +134,7 @@ export default function ProductsEditSection({ data }) {
                                             id="quantity"
                                             label="Quantity"
                                             variant="outlined"
-                                        />
+                                        /> */}
                                         <TextField
                                             type="number"
                                             className="w-full"
