@@ -5,7 +5,7 @@ export async function create_warehouses_service(data) {
   
   
   export async function get_warehouses_service() {
-    const response = await axios.get('/api/warehouses')
+    const response = await axios.get('/api/warehouses'+window.location.search)
     return response.data;
   }
   

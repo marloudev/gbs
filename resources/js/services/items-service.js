@@ -5,7 +5,7 @@ export async function create_items_service(data) {
 
 
 export async function get_items_service() {
-  const response = await axios.get('/api/items')
+  const response = await axios.get('/api/items'+window.location.search)
   return response.data;
 }
 
