@@ -46,14 +46,7 @@ export default function AccountDetailsTableSection() {
                                 }}
                             >
                                 <TableCell>
-                                    <div
-                                        // href={
-                                        //     "/administrator/accounts/" + res.id
-                                        // }
-                                        className="font-medium text-gray-800"
-                                    >
-                                        {res.sale_date}
-                                    </div>
+                                {res.sale_date}
                                 </TableCell>
                                 <TableCell>
                                     {" "}

@@ -11,6 +11,7 @@ import Paper from "@mui/material/Paper";
 import { useSelector } from "react-redux";
 import moment from "moment";
 import ProductsEditSection from "./products-edit-section";
+import { Chip } from "@mui/material";
 // import { Visibility } from '@mui/icons-material';
 // import { Button } from '@mui/material';
 // import { router } from '@inertiajs/react';
@@ -18,7 +19,7 @@ import ProductsEditSection from "./products-edit-section";
 
 export default function TableSection() {
     const { supplies } = useSelector((state) => state.products);
-    console.log('supplies',supplies)
+    console.log("supplies", supplies);
     return (
         <TableContainer component={Paper}>
             <Table sx={{ minWidth: 650 }} aria-label="simple table">
@@ -46,7 +47,17 @@ export default function TableSection() {
                             >
                                 <TableCell>GB-{res.barcode}</TableCell>
                                 <TableCell>{res.description}</TableCell>
-                                <TableCell>{res.quantity}</TableCell>
+                                <TableCell>
+                                    <Chip
+                                        color={
+                                            res.quantity <= 2
+                                                ? "error"
+                                                : "success"
+                                        }
+                                        label={`${res.uom} ${res.quantity}`}
+                                        variant="outlined"
+                                    />
+                                </TableCell>
                                 {/* <TableCell>{res.price}</TableCell> */}
                                 <TableCell>
                                     {/* <ModalOptionSection data={res} /> */}

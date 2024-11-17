@@ -9,6 +9,7 @@ import Paper from "@mui/material/Paper";
 import { useSelector } from "react-redux";
 import moment from "moment";
 import PulloutItemSection from "./pullout-item-section";
+import { Chip } from "@mui/material";
 
 export default function TableSection() {
     const { warehouses } = useSelector((state) => state.products);
@@ -41,7 +42,17 @@ export default function TableSection() {
                                 <TableCell>GB-{res?.barcode}</TableCell>
                                 <TableCell>{res.brand}</TableCell>
                                 <TableCell>{res.description}</TableCell>
-                                <TableCell>{res.quantity}</TableCell>
+                                <TableCell>
+                                <Chip
+                                        color={
+                                            res.quantity <= 2
+                                                ? "error"
+                                                : "success"
+                                        }
+                                        label={`${res.uom} ${res.quantity}`}
+                                        variant="outlined"
+                                    />
+                                </TableCell>
                                 <TableCell >
                                     <PulloutItemSection data={res} />
                                 </TableCell>

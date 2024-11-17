@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import ProductsTableSection from "./sections/products-table-section";
 import AdministratorLayout from "../../administrator-layout";
 import TableSection from "./sections/table-section";
 import store from "@/store/store";
