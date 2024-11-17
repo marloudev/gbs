@@ -10,12 +10,31 @@ use Illuminate\Http\Request;
 
 class ItemController extends Controller
 {
+    // public function index(Request $request)
+    // {
+    //     $items = Item::with(['items'])->paginate(10);
+    //     return response()->json([
+    //         'status' => $items,
+    //     ]);
+    // }
     public function index(Request $request)
     {
-        $items = Item::with(['items'])->paginate(10);
+        $query = Item::with(['items']);
+        if ($request->search && $request->search != 'null') {
+            $query->where('item_id', '=', $request->search)
+                ->orWhere(function ($q) use ($request) {
+                    // $q->orWhereHas('item', function ($q) use ($request) {
+                    //     $q->where('barcode', '=', $request->search);
+                    // });
+                    $q->orWhere('barcode', '=', $request->search);
+                });
+        }
+    
+        $query->orderByDesc('created_at');
+        $loanRecords = $query->paginate(10);
         return response()->json([
-            'status' => $items,
-        ]);
+            'status' => $loanRecords,
+        ], 200);
     }
 
     public function show($item_id)

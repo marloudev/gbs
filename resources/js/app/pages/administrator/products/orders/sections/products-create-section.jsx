@@ -102,14 +102,14 @@ export default function ProductsCreateSection() {
                                             <TableHead>
                                                 <TableRow>
                                                     <TableCell>Item Name</TableCell>
-                                                    <TableCell align="right">{item?.name}</TableCell>
+                                                    <TableCell align="right">{item?.name} {item?.description}</TableCell>
                                                 </TableRow>
                                                 <TableRow>
                                                     <TableCell>Quantity</TableCell>
-                                                    <TableCell align="right">{item?.quantity}</TableCell>
+                                                    <TableCell align="right">{item?.uom} {item?.quantity}</TableCell>
                                                 </TableRow>
                                                 <TableRow>
-                                                    <TableCell>Total Quantity</TableCell>
+                                                    <TableCell>Total Order Quantity</TableCell>
                                                     <TableCell align="right">{(item?.quantity ?? 0) * (form?.quantity ?? 0)}</TableCell>
                                                 </TableRow>
                                             </TableHead>

@@ -10,9 +10,9 @@ export async function create_receives_service(data) {
   
   
   export async function get_receives_service() {
-    const path = window.location.pathname.split('/')[3]
-    const status = path == 'orders'?'Pending':'Received'
-    const response = await axios.get('/api/receives?status='+status)
+    const params = new URLSearchParams(window.location.search);
+    const searchTerm = params.get('search');
+    const response = await axios.get('/api/receives?search='+searchTerm)
     return response.data;
   }
   export async function change_status_service(data) {

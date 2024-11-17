@@ -20,7 +20,7 @@ import AdministratorDeleteProduct from "./products-delete-section";
 
 export default function TableSection() {
     const { receives } = useSelector((state) => state.products);
-    console.log('receivesss', receives)
+    console.log("receivesss", receives);
     return (
         <TableContainer component={Paper}>
             <Table sx={{ minWidth: 650 }} aria-label="simple table">
@@ -29,6 +29,8 @@ export default function TableSection() {
                         <TableCell>Barcode</TableCell>
                         <TableCell>Description</TableCell>
                         <TableCell>Item Count</TableCell>
+                        <TableCell>Unit Of Measurement</TableCell>
+                        <TableCell>Capital</TableCell>
                         <TableCell>Quantity</TableCell>
                         <TableCell>Total Received Quantity</TableCell>
                         <TableCell>Status</TableCell>
@@ -49,17 +51,22 @@ export default function TableSection() {
                                 }}
                             >
                                 <TableCell>GB-{res.item?.barcode}</TableCell>
-                                <TableCell>{res.item?.description}</TableCell>
+                                <TableCell>{res.item?.name} {res.item?.description}</TableCell>
                                 <TableCell>{res.item_count}</TableCell>
+                                <TableCell>{res.item?.uom}</TableCell>
+                                <TableCell>{res.item?.capital}</TableCell>
                                 <TableCell>{res.quantity}</TableCell>
                                 <TableCell>{res.total_quantity}</TableCell>
                                 <TableCell>{res.status}</TableCell>
-                                <TableCell >
-                                    {
-                                        res.status == "Pending" &&
-                                        <ReceivedItemSection data={res} />
-                                    }
-                                    <AdministratorDeleteProduct  data={res}/>
+                                <TableCell>
+                                    <div className="flex gap-3">
+                                        {res.status == "Pending" && (
+                                            <ReceivedItemSection data={res} />
+                                        )}
+                                        <AdministratorDeleteProduct
+                                            data={res}
+                                        />
+                                    </div>
                                     {/* <ModalOptionSection data={res} /> */}
                                     {/* <ProductsEditSection data={res} /> */}
                                 </TableCell>

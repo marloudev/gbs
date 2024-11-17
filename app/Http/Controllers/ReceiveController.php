@@ -35,11 +35,25 @@ class ReceiveController extends Controller
     }
     public function index(Request $request)
     {
-        $receives = Receive::with(['item_products', 'item'])->paginate(10);
+        $query = Receive::with(['item_products', 'item']);
+        if ($request->search && $request->search != 'null') {
+            $query->where('item_id', '=', $request->search)
+                ->orWhere(function ($q) use ($request) {
+                    $q->orWhereHas('item', function ($q) use ($request) {
+                        // Search by barcode in the related item table
+                        $q->where('barcode', '=', $request->search);
+                    });
+                });
+        }
+    
+        $query->orderByDesc('created_at');
+        $loanRecords = $query->paginate(10);
         return response()->json([
-            'status' => $receives,
-        ]);
+            'status' => $loanRecords,
+        ], 200);
     }
+    
+
 
     public function change_status(Request $request)
     {
