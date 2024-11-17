@@ -7,8 +7,9 @@ import store from "../../../../store/store";
 import { createPaymentThunk } from "../redux/cashier-thunk";
 import { Box, Button, Modal, Typography } from "@mui/material";
 
-export default function CashierPayModalSection({ inputRef }) {
+export default function CashierPayModalSection() {
     const [open, setOpen] = useState(false);
+    const inputRef = useRef(null);
     const { payment, cart } = useSelector((state) => state.cashier);
     const [loading, setLoading] = useState(false);
     const { user } = useSelector((state) => state.app);

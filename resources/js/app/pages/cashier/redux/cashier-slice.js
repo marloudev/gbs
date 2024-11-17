@@ -7,6 +7,7 @@ export const cashierSlice = createSlice({
     value: 0,
     cart: [],
     selectedItem: null,
+    focus:null,
     payment: {
       receipt_id: undefined,
       cashier_id: 0,
@@ -75,6 +76,9 @@ export const cashierSlice = createSlice({
     setSearch: (state, action) => {
       state.search = action.payload
     },
+    setFocus: (state, action) => {
+      state.focus = action.payload
+    },
     setDiscount: (state, action) => {
       console.log(parseFloat(state.cart.reduce((acc, obj) => acc + obj.total, 0).toFixed(2)) * parseFloat(action.payload))
       state.payment = {
@@ -96,7 +100,8 @@ export const {
   setIsPrint,
   setSearch,
   changesCart,
-  setDiscount
+  setDiscount,
+  setFocus
 } = cashierSlice.actions
 
 export default cashierSlice.reducer

@@ -12,8 +12,9 @@ import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 
-export default function CashierTableSection({ inputRef }) {
+export default function CashierTableSection() {
     const myElementRefs = useRef([]);
+    const inputRef = useRef(null);
     const { cart } = useSelector((state) => state.cashier);
 
     const [selectedRow, setSelectedRow] = useState(0);

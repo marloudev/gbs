@@ -4,7 +4,7 @@ import { PencilIcon, TrashIcon } from "@heroicons/react/24/outline";
 import store from "@/store/store";
 import { delete_cart_item_thunk } from "../redux/cashier-thunk";
 
-export default function CashierDeleteSection({ data, selectedRow, index }) {
+export default function CashierDeleteSection({ data,  }) {
     const dispatch = useDispatch();
 
     function deleteCartById(id) {

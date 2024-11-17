@@ -1,31 +1,41 @@
-import { Fragment, useEffect, useRef, useState } from 'react'
-import { PencilIcon } from '@heroicons/react/24/outline'
-import { Dialog, Transition } from '@headlessui/react'
-import { changesCart, setIsPrint } from '../redux/cashier-slice';
-import FormFieldInput from '../../../components/Input';
-import { useDispatch, useSelector } from 'react-redux';
-import store from '@/store/store';
-import { edit_cart_item_thunk } from '../redux/cashier-thunk';
-export default function CashierEditModal({ data, selectedRow, index, inputRef }) {
-    const [open, setOpen] = useState(false)
-    const cancelButtonRef = useRef(null)
+import { Fragment, useEffect, useRef, useState } from "react";
+import { PencilIcon } from "@heroicons/react/24/outline";
+import { Dialog, Transition } from "@headlessui/react";
+import { changesCart, setIsPrint } from "../redux/cashier-slice";
+import FormFieldInput from "../../../components/Input";
+import { useDispatch, useSelector } from "react-redux";
+import store from "@/store/store";
+import { edit_cart_item_thunk } from "../redux/cashier-thunk";
+import { useHotkeys } from "react-hotkeys-hook";
+import { Button, InputBase, Paper } from "@mui/material";
+
+export default function CashierEditModal({ data, selectedRow, index }) {
+    const [open, setOpen] = useState(false);
+    const cancelButtonRef = useRef(null);
     const { cart } = useSelector((state) => state.cashier);
-    const [value, setValue] = useState(data.quantity)
-    const dispatch = useDispatch()
+    const [value, setValue] = useState(data.quantity);
+    const [originalValue, setOriginalValue] = useState(data.quantity); // Track original value
+    const dispatch = useDispatch();
+    const inputRef = useRef(null);
+
+    useHotkeys("f", () => {
+        if (inputRef.current) {
+            inputRef.current.focus(); // Focus on the input field
+        }
+    });
 
     useEffect(() => {
         const handleKeyPress = (event) => {
-            if (selectedRow == index) {
-                if ((event.key === 'E' || event.key === 'e')) {
-                    setOpen(true)
+            if (selectedRow === index) {
+                if (event.key === "E" || event.key === "e") {
+                    setOpen(true);
                     setTimeout(() => {
                         inputRef.current.focus();
                     }, 300);
                 }
             }
-            if ((event.key === 'C' || event.key === 'c')) {
-                // deleteCartById(parseInt(id))
-                setOpen(false)
+            if (event.key === "C" || event.key === "c") {
+                setOpen(false);
             }
         };
 
@@ -35,41 +45,38 @@ export default function CashierEditModal({ data, selectedRow, index, inputRef })
         };
     }, [data.id]);
 
-
     function saveChanges(e) {
-        e.preventDefault()
-        // const updateCart = cart.map(obj => {
-        //     if (obj.randomId === data.randomId) {
-        //         return {
-        //             ...obj,
-        //             quantity: parseInt(value),
-        //             total: parseInt(value) * data.price
-        //         }; // merge old object with new data
-        //     }
-        //     return obj;
-        // });
-        // dispatch(changesCart(updateCart))
-        store.dispatch(edit_cart_item_thunk({
-            id: data.id,
-            quantity: parseInt(value),
-            total: parseInt(value) * data.price
-        }))
-        setOpen(false)
+        e.preventDefault();
+        store.dispatch(
+            edit_cart_item_thunk({
+                id: data.id,
+                quantity: parseInt(value),
+                total: parseInt(value) * data.price,
+            }),
+        );
+        setOpen(false);
     }
+
+    // Disable the Cancel button if there are no changes
     function isSubmit() {
-
+        return value === originalValue;
     }
-
 
     return (
         <>
             <button
                 onClick={() => setOpen(true)}
-                className="font-medium text-gray-800  text-white ">
-                <PencilIcon className='h-6 text-blue-500' />
+                className="font-medium  text-white"
+            >
+                <PencilIcon className="h-6 text-blue-500" />
             </button>
             <Transition.Root show={open} as={Fragment}>
-                <Dialog as="div" className="relative z-10" initialFocus={cancelButtonRef} onClose={setOpen}>
+                <Dialog
+                    as="div"
+                    className="relative z-10"
+                    initialFocus={cancelButtonRef}
+                    onClose={setOpen}
+                >
                     <Transition.Child
                         as={Fragment}
                         enter="ease-out duration-300"
@@ -93,53 +100,74 @@ export default function CashierEditModal({ data, selectedRow, index, inputRef })
                                 leaveFrom="opacity-100 translate-y-0 sm:scale-100"
                                 leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
                             >
-                                <Dialog.Panel className="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg">
-                                    <form
+                                <Dialog.Panel className="relative transform overflow-hidden rounded-lg bg-gray-300 text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg">
+                                    <div
                                         onSubmit={saveChanges}
-                                        className="bg-white px-4 pb-4 pt-5 sm:p-6 sm:pb-4">
-                                        <div className="">
-                                            <div className="mt-3 text-center sm:ml-4 sm:mt-0 sm:text-left">
-                                                {data.product.description}
-                                                <Dialog.Title as="h3" className="text-base font-semibold leading-6 text-gray-900">
-                                                    Edit Quantity
-                                                </Dialog.Title>
-                                                <div className="mt-2">
-                                                    <div className="relative overflow-x-auto">
-                                                        <div className='m-3 my-2'>
-                                                            <FormFieldInput
-                                                                inputRef={inputRef}
-                                                                autofocus={true}
-                                                                onChange={(value) => setValue(value)}
+                                        className="bg-gray-300 px-4 pb-4 pt-5 sm:p-6 sm:pb-4"
+                                    >
+                                        <div className="mt-3 text-center sm:ml-4 sm:mt-0 sm:text-left">
+                                            {data.product.description}
+                                            <Dialog.Title
+                                                as="h3"
+                                                className="text-base font-semibold leading-6 text-gray-900"
+                                            >
+                                                Edit Quantity
+                                            </Dialog.Title>
+                                            <div className="mt-2">
+                                                <div className="relative overflow-x-auto">
+                                                    <div className="m-3 my-2">
+                                                        <Paper
+                                                            component="form"
+                                                            sx={{
+                                                                p: "2px 4px",
+                                                                display: "flex",
+                                                                alignItems:
+                                                                    "center",
+                                                            }}
+                                                        >
+                                                            <InputBase
+                                                                className="w-full"
+                                                                inputRef={
+                                                                    inputRef
+                                                                }
+                                                                autoFocus={true}
+                                                                onChange={(e) =>
+                                                                    setValue(
+                                                                        e.target
+                                                                            .value,
+                                                                    )
+                                                                }
                                                                 value={value}
                                                                 name="quantity"
-                                                                type="text"
-                                                                label="Quanity"
-                                                            // errorMessage="Searching..."
+                                                                type="number"
+                                                                label="Quantity"
+                                                                inputProps={{
+                                                                    "aria-label":
+                                                                        "quantity",
+                                                                }}
                                                             />
-                                                        </div>
-
+                                                        </Paper>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </form>
-                                    <div className="bg-gray-50 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6">
-                                        <button
-                                            disabled={isSubmit()}
-                                            type="submit"
-                                            className={`inline-flex w-full justify-center rounded-md ${isSubmit() ? 'bg-red-300' : 'bg-red-600 hover:bg-red-500'}  px-3 py-2 text-sm font-semibold text-white shadow-sm  sm:ml-3 sm:w-auto`}
-                                            onClick={saveChanges}
-                                        >
-                                            Confirm Payment
-                                        </button>
-                                        <button
-                                            type="button"
-                                            className="mt-3 inline-flex w-full justify-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 sm:mt-0 sm:w-auto"
-                                            onClick={() => setOpen(false)}
-                                            ref={cancelButtonRef}
-                                        >
-                                            Cancel
-                                        </button>
+                                        <div className="bg-gray-300 px-3 py-3 sm:flex sm:flex-row-reverse gap-4">
+                                            <Button
+                                                disabled={isSubmit()}
+                                                onSubmit={saveChanges}
+                                                variant="contained"
+                                            >
+                                                Confirm Payment
+                                            </Button>
+                                            <Button
+                                                color="error"
+                                                onClick={() => setOpen(false)}
+                                                ref={cancelButtonRef}
+                                                variant="outlined"
+                                            >
+                                                Cancel
+                                            </Button>
+                                        </div>
                                     </div>
                                 </Dialog.Panel>
                             </Transition.Child>
@@ -148,5 +176,5 @@ export default function CashierEditModal({ data, selectedRow, index, inputRef })
                 </Dialog>
             </Transition.Root>
         </>
-    )
+    );
 }

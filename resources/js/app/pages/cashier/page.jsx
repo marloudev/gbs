@@ -18,7 +18,6 @@ import { Button } from "@mui/material";
 export default function CashierPage({ auth }) {
     const dispatch = useDispatch();
     const { cart } = useSelector((state) => state.cashier);
-    const inputRef = useRef(null);
 
     useEffect(() => {
         dispatch(setUser(auth.user));
@@ -33,7 +32,7 @@ export default function CashierPage({ auth }) {
             <div className="flex-1 basis-7/12 h-screen ">
                 <div className="flex flex-col h-full w-full ">
                     <div className="flex-1 basis-4/6 border-1 overflow-auto">
-                        <CashierTableSection inputRef={inputRef} />
+                        <CashierTableSection />
                         {/* <CashierModalItemSection /> */}
                     </div>
                     <div className="flex-1 w-full flex h-full  basis-2/6 border-1">
@@ -53,17 +52,17 @@ export default function CashierPage({ auth }) {
             <div className="flex-1 flex flex-col basis-5/12 border-1">
                 <div className="flex-1 flex flex-col basis-4/6 border-1">
                     <div className="flex-none">
-                        <CashierScannerSection inputRef={inputRef} />
+                        <CashierScannerSection />
                     </div>
                     <div className="flex-1">
                         <CashierSubTotalSection />
                     </div>
                     <div className="flex-none  mx-4">
-                        <CashierPayModalSection inputRef={inputRef} />
+                        <CashierPayModalSection />
                     </div>
                 </div>
                 <div className="flex-1 basis-2/6  border-1">
-                    <FunctionKeysSection inputRef={inputRef} />
+                    <FunctionKeysSection />
                 </div>
             </div>
             <div className="hidden">

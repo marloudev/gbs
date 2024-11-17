@@ -1,11 +1,12 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import CashierLogoutSection from "./cashier-logout-section";
 import CashierDiscountModal from "./cashier-discount-modal";
 import CashierAmountSection from "../../search/sections/search-section";
 import { Link, router } from "@inertiajs/react";
 import { Button } from "@mui/material";
+export default function FunctionKeysSection() {
 
-export default function FunctionKeysSection({ inputRef }) {
+    const inputRef = useRef(null);
     useEffect(() => {
         const handleKeyPress = (event) => {
             if (event.key === "I" || event.key === "i") {
@@ -18,6 +19,7 @@ export default function FunctionKeysSection({ inputRef }) {
             window.removeEventListener("keydown", handleKeyPress);
         };
     }, []);
+    
     return (
         <div className="grid grid-cols-4 gap-4 h-full p-4 border-t">
             <Button
@@ -37,7 +39,7 @@ export default function FunctionKeysSection({ inputRef }) {
                 <h1 className="text-white text-5xl leading-tight font-black">
                     F
                 </h1>
-                <div className="text-white">FUCOS</div>
+                <div className="text-white">FOCUS</div>
             </Button>
             {/* <CashierAmountSection /> */}
             <Button
