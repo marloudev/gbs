@@ -5,50 +5,31 @@ namespace App\Http\Controllers;
 use App\Models\Sales;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Carbon\Carbon;
 
 class AccountDetailsController extends Controller
 {
+
     public function index(Request $request)
     {
-        $query = Sales::where('cashier_id', $request->cashier_id);
+        $cashier = User::findOrFail($request->cashier_id);
 
-        // Add search date filter if provided
-        if ($request->search !== null) {
-            if ($request->has('search')) {
-                $query->whereDate('created_at', $request->search);
-            }
-        }
+        // Calculate sales grouped by date for the current year
+        $dailySales = $cashier->account()
+            ->selectRaw('DATE(created_at) as sale_date, SUM(total) as daily_total')
+            ->whereYear('created_at', Carbon::now()->year) // Filter by current year
+            ->groupBy('sale_date')
+            ->orderBy('sale_date', 'desc') // Order by latest date
+            ->get();
 
-        // Add year filter if provided
-        if ($request->has('year')) {
-            $query->whereYear('created_at', $request->year);
-        }
-
-        $distinctDates = $query
-            ->selectRaw('DATE(created_at) as distinct_date')
-            ->distinct()
-            ->pluck('distinct_date');
-
-        $dailySales = [];
-        $account = User::where('id', $request->cashier_id)->first();
-        foreach ($distinctDates as $i => $date) {
-            $salesForDate = Sales::where('cashier_id', $request->cashier_id)
-                ->whereDate('created_at', $date)
-                ->get();
-
-            // Calculate the total sum for the sales of the current date
-            $totalSum = $salesForDate->sum('total');
-
-            $dailySales[$i] = [
-                'date' => $date,
-                'account' => $account,
-                'total_sum' => $totalSum,
-            ];
-        }
-
+        // Return the result as JSON
         return response()->json([
             'status' => 'success',
-            'data' => $dailySales,
+            'data' => [
+                'cashier' => $cashier->only(['id', 'name', 'email']),
+                'daily_sales' => $dailySales,
+            ],
         ], 200);
     }
+
 }

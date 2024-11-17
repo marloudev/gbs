@@ -25,4 +25,5 @@ class Sales extends Model
      {
          return $this->hasMany(SalesItem::class, 'sales_id', 'id')->with(['product']);
      }
+     
 }

@@ -32,8 +32,10 @@ export default function TableSection() {
                         <TableCell>Unit Of Measurement</TableCell>
                         <TableCell>Capital</TableCell>
                         <TableCell>Quantity</TableCell>
-                        <TableCell>Total Received Quantity</TableCell>
+                        <TableCell>Total Received</TableCell>
                         <TableCell>Status</TableCell>
+                        <TableCell>Created At</TableCell>
+                        <TableCell>Received At</TableCell>
                         <TableCell>Action</TableCell>
                     </TableRow>
                 </TableHead>
@@ -60,6 +62,18 @@ export default function TableSection() {
                                 <TableCell>{res.quantity}</TableCell>
                                 <TableCell>{res.total_quantity}</TableCell>
                                 <TableCell>{res.status}</TableCell>
+                                <TableCell>
+                                    {moment(res.created_at).format("LLL")}
+                                </TableCell>
+                                <TableCell>
+                                    {res.created_at != res.updated_at && (
+                                        <>
+                                            {moment(res.updated_at).format(
+                                                "LLL",
+                                            )}
+                                        </>
+                                    )}
+                                </TableCell>
                                 <TableCell>
                                     <div className="flex gap-3">
                                         {res.status == "Pending" && (
