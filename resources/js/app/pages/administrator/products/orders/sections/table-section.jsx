@@ -51,7 +51,9 @@ export default function TableSection() {
                                 }}
                             >
                                 <TableCell>GB-{res.item?.barcode}</TableCell>
-                                <TableCell>{res.item?.name} {res.item?.description}</TableCell>
+                                <TableCell>
+                                    {res.item?.name} {res.item?.description}
+                                </TableCell>
                                 <TableCell>{res.item_count}</TableCell>
                                 <TableCell>{res.item?.uom}</TableCell>
                                 <TableCell>{res.item?.capital}</TableCell>
@@ -61,11 +63,15 @@ export default function TableSection() {
                                 <TableCell>
                                     <div className="flex gap-3">
                                         {res.status == "Pending" && (
-                                            <ReceivedItemSection data={res} />
+                                            <>
+                                                <ReceivedItemSection
+                                                    data={res}
+                                                />
+                                                <AdministratorDeleteProduct
+                                                    data={res}
+                                                />
+                                            </>
                                         )}
-                                        <AdministratorDeleteProduct
-                                            data={res}
-                                        />
                                     </div>
                                     {/* <ModalOptionSection data={res} /> */}
                                     {/* <ProductsEditSection data={res} /> */}

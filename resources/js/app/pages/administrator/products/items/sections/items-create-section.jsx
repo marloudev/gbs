@@ -158,6 +158,7 @@ export default function ItemsCreateSection() {
         "Roll",
         "Sheet",
         "Plastic",
+        'Ream',
         "Bottle",
         "Kilo",
         "Grams",

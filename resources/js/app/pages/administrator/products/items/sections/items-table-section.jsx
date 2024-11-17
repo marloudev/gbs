@@ -34,9 +34,9 @@ function Row(props) {
                             <KeyboardArrowDownIcon />
                         )}
                     </IconButton>{" "}
-                    {row.item_id}
+                    {row.barcode}
                 </TableCell>
-                <TableCell>{row.barcode}</TableCell>
+                {/* <TableCell>{row.barcode}</TableCell> */}
                 <TableCell>{row.name}</TableCell>
                 <TableCell>{row.description}</TableCell>
                 <TableCell>{row.uom}</TableCell>
@@ -55,7 +55,7 @@ function Row(props) {
                             <Table size="small" aria-label="purchases">
                                 <TableHead>
                                     <TableRow>
-                                        <TableCell>Item ID</TableCell>
+                                        {/* <TableCell>Item ID</TableCell> */}
                                         <TableCell>Barcode</TableCell>
                                         <TableCell>Brand Name</TableCell>
                                         <TableCell>Description</TableCell>
@@ -69,7 +69,7 @@ function Row(props) {
                                 <TableBody>
                                     {row.items.map((res, i) => (
                                         <TableRow key={i}>
-                                            <TableCell>{res.item_id}</TableCell>
+                                            {/* <TableCell>{res.item_id}</TableCell> */}
                                             <TableCell>{res.barcode}</TableCell>
                                             <TableCell>{res.name}</TableCell>
                                             <TableCell>
@@ -100,7 +100,7 @@ export default function TableSection() {
             <Table aria-label="collapsible table">
                 <TableBody>
                     <TableRow>
-                        <TableCell>Item ID</TableCell>
+                        {/* <TableCell>Item ID</TableCell> */}
                         <TableCell>Barcode</TableCell>
                         <TableCell>Name</TableCell>
                         <TableCell>Description</TableCell>

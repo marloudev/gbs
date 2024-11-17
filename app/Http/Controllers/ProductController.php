@@ -11,7 +11,7 @@ class ProductController extends Controller
     {
 
         $products = Product::limit(20)->get();
-
+    
         return response()->json([
             'status' => 'status',
             'data' => $products
@@ -24,7 +24,7 @@ class ProductController extends Controller
         $searchTerm = $request->input('search');
 
         // Perform the search query
-        $products = Product::where('barcode', '=', $searchTerm)
+        $products = Product::where('barcode', 'like', '%' . $searchTerm . '%')
             ->orWhere('description', 'like', '%' . $searchTerm . '%')
             ->paginate($perPage);
 
@@ -39,7 +39,7 @@ class ProductController extends Controller
     {
 
         $products = Product::where('barcode', '=', $id)->with(['item_product'])
-            ->orWhere('id', '=', $id)->first();
+        ->orWhere('id', '=', $id)->first();
         return response()->json([
             'status' => $products == null ? 'Not Found!' : 'success',
             'data' => $products
