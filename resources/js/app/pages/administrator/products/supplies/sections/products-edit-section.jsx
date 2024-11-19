@@ -14,8 +14,9 @@ import { TextField } from "@mui/material";
 export default function ProductsEditSection({ data }) {
     const [open, setOpen] = useState(false);
     const dispatch = useDispatch();
-    const [form,setForm]=useState({})
+    const [form, setForm] = useState({});
     const { toastStatus } = useSelector((state) => state.app);
+    const [loading, setLoading] = useState(false);
 
     const url = window.location.href;
     const parsedUrl = new URL(url);
@@ -31,7 +32,7 @@ export default function ProductsEditSection({ data }) {
                 description: data.description,
                 quantity: data.quantity,
                 price: data.price,
-            })
+            });
         }
     }, [open]);
 
@@ -40,11 +41,17 @@ export default function ProductsEditSection({ data }) {
             setOpen(false);
         }
     }, [toastStatus.status]);
-    function submitData(e) {
+    async function submitData(e) {
         e.preventDefault();
-        store.dispatch(update_supplies_thunk(form));
-        store.dispatch(get_supplies_thunk())
-        setOpen(false)
+        setLoading(true);
+        try {
+            await store.dispatch(update_supplies_thunk(form));
+            await store.dispatch(get_supplies_thunk());
+            setOpen(false);
+            setLoading(false);
+        } catch (error) {
+            setLoading(false);
+        }
     }
 
     return (
@@ -92,9 +99,7 @@ export default function ProductsEditSection({ data }) {
                                         <TextField
                                             className="w-full"
                                             required
-                                            value={
-                                                form.description ?? ""
-                                            }
+                                            value={form.description ?? ""}
                                             onChange={(e) =>
                                                 setForm({
                                                     ...form,
@@ -140,6 +145,7 @@ export default function ProductsEditSection({ data }) {
                                         {/* <button className='bg-red-500 hover:bg-red-400 p-3 w-full rounded-md text-white font-bold'>Submit</button> */}
                                     </div>
                                     <Button
+                                        disabled={loading}
                                         className="w-full"
                                         type="submit"
                                         variant="contained"
