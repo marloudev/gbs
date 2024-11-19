@@ -4,7 +4,7 @@ import { appSlice } from '../../../../redux/app-slice';
 import { productsSlice } from './products-slice';
 import { change_status_service, create_receives_service, delete_receives_service, get_receives_service, pullout_item_service } from '@/services/receives-service';
 import { get_warehouses_service } from '@/services/warehouses-service';
-import { get_supplies_service } from '@/services/supplies-service';
+import { get_supplies_service, update_supplies_service } from '@/services/supplies-service';
 
 export function getAllProductsThunk(products) {
   return async function (dispatch, getState) {
@@ -17,6 +17,14 @@ export function create_items_thunk(data) {
     const res = await create_items_service(data)
     return res
     // dispatch(productsSlice.actions.setProducts((await products).data));
+  };
+}
+
+
+
+export function update_supplies_thunk(data) {
+  return async function (dispatch, getState) {
+    const res = await update_supplies_service(data)
   };
 }
 

@@ -15,3 +15,9 @@ export async function create_supplies_service(data) {
     return response.data;
   }
   
+
+  export async function update_supplies_service(data) {
+    const response = await axios.put('/api/supplies/'+data.id,data)
+    return response.data;
+  }
+  

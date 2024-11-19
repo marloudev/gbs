@@ -14,5 +14,17 @@ class SupplyController extends Controller
             'status' => $items,
         ]);
     }
-    
+
+    public function update(Request $request, $id)
+    {
+
+        Supply::where('id', $id)->update($request->validate([
+            'barcode' => 'required',
+            'description' => 'required',
+            'quantity' => 'required',
+        ]));
+        return response()->json([
+            'status' => 'success',
+        ], 200);
+    }
 }

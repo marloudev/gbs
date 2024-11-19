@@ -1,23 +1,20 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { setProductForm, setProducts } from "../../redux/products-slice";
 import store from "../../../../../../store/store";
 import {
-    editProductThunk,
-    getAllProductsThunk,
+    get_supplies_thunk,
+    update_supplies_thunk,
 } from "../../redux/products-thunk";
 
 import Box from "@mui/material/Box";
 import Drawer from "@mui/material/Drawer";
 import Button from "@mui/material/Button";
 import { Close, Create } from "@mui/icons-material";
-import { PencilIcon } from "@heroicons/react/24/outline";
-import { get_products_service } from "@/services/products-service";
 import { TextField } from "@mui/material";
 export default function ProductsEditSection({ data }) {
     const [open, setOpen] = useState(false);
     const dispatch = useDispatch();
-    const { productForm } = useSelector((state) => state.products);
+    const [form,setForm]=useState({})
     const { toastStatus } = useSelector((state) => state.app);
 
     const url = window.location.href;
@@ -27,16 +24,14 @@ export default function ProductsEditSection({ data }) {
 
     useEffect(() => {
         if (open) {
-            dispatch(
-                setProductForm({
-                    ...productForm,
-                    id: data.id,
-                    barcode: data.barcode,
-                    description: data.description,
-                    quantity: data.quantity,
-                    price: data.price,
-                }),
-            );
+            setForm({
+                ...form,
+                id: data.id,
+                barcode: data.barcode,
+                description: data.description,
+                quantity: data.quantity,
+                price: data.price,
+            })
         }
     }, [open]);
 
@@ -45,13 +40,11 @@ export default function ProductsEditSection({ data }) {
             setOpen(false);
         }
     }, [toastStatus.status]);
-
     function submitData(e) {
         e.preventDefault();
-        store.dispatch(editProductThunk());
-        store.dispatch(
-            getAllProductsThunk(get_products_service(page, search ?? "")),
-        );
+        store.dispatch(update_supplies_thunk(form));
+        store.dispatch(get_supplies_thunk())
+        setOpen(false)
     }
 
     return (
@@ -85,14 +78,12 @@ export default function ProductsEditSection({ data }) {
                                         <TextField
                                             className="w-full"
                                             required
-                                            value={productForm.barcode ?? ""}
+                                            value={form.barcode ?? ""}
                                             onChange={(e) =>
-                                                dispatch(
-                                                    setProductForm({
-                                                        ...productForm,
-                                                        barcode: e.target.value,
-                                                    }),
-                                                )
+                                                setForm({
+                                                    ...form,
+                                                    barcode: e.target.value,
+                                                })
                                             }
                                             id="barcode"
                                             label="Barcode"
@@ -102,16 +93,13 @@ export default function ProductsEditSection({ data }) {
                                             className="w-full"
                                             required
                                             value={
-                                                productForm.description ?? ""
+                                                form.description ?? ""
                                             }
                                             onChange={(e) =>
-                                                dispatch(
-                                                    setProductForm({
-                                                        ...productForm,
-                                                        description:
-                                                            e.target.value,
-                                                    }),
-                                                )
+                                                setForm({
+                                                    ...form,
+                                                    description: e.target.value,
+                                                })
                                             }
                                             id="description"
                                             label="Description"
@@ -121,15 +109,12 @@ export default function ProductsEditSection({ data }) {
                                             type="number"
                                             className="w-full"
                                             required
-                                            value={productForm.quantity ?? ""}
+                                            value={form.quantity ?? ""}
                                             onChange={(e) =>
-                                                dispatch(
-                                                    setProductForm({
-                                                        ...productForm,
-                                                        quantity:
-                                                            e.target.value,
-                                                    }),
-                                                )
+                                                setForm({
+                                                    ...form,
+                                                    quantity: e.target.value,
+                                                })
                                             }
                                             id="quantity"
                                             label="Quantity"
@@ -139,11 +124,11 @@ export default function ProductsEditSection({ data }) {
                                             type="number"
                                             className="w-full"
                                             required
-                                            value={productForm.price ?? ""}
+                                            value={form.price ?? ""}
                                             onChange={(e) =>
                                                 dispatch(
                                                     setProductForm({
-                                                        ...productForm,
+                                                        ...form,
                                                         price: e.target.value,
                                                     }),
                                                 )
