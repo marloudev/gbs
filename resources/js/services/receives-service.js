@@ -12,7 +12,8 @@ export async function create_receives_service(data) {
   export async function get_receives_service() {
     const params = new URLSearchParams(window.location.search);
     const searchTerm = params.get('search');
-    const response = await axios.get('/api/receives?search='+searchTerm)
+    const page = params.get('page');
+    const response = await axios.get('/api/receives?search='+searchTerm+'&page='+page)
     return response.data;
   }
   export async function change_status_service(data) {

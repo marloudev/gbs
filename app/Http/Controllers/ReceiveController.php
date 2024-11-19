@@ -48,9 +48,9 @@ class ReceiveController extends Controller
     
         // $query->orderByDesc('status');
         $query->orderBy('status', 'asc');
-        $loanRecords = $query->paginate(10);
+        $receives = $query->paginate(10);
         return response()->json([
-            'status' => $loanRecords,
+            'status' => $receives,
         ], 200);
     }
     
