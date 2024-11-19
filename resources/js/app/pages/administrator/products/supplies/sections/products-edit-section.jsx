@@ -37,10 +37,13 @@ export default function ProductsEditSection({ data }) {
     }, [open]);
 
     useEffect(() => {
+        
         if (toastStatus.status == "success") {
             setOpen(false);
         }
+
     }, [toastStatus.status]);
+
     async function submitData(e) {
         e.preventDefault();
         setLoading(true);

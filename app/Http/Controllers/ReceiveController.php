@@ -46,7 +46,8 @@ class ReceiveController extends Controller
                 });
         }
     
-        $query->orderByDesc('created_at');
+        // $query->orderByDesc('status');
+        $query->orderBy('status', 'asc');
         $loanRecords = $query->paginate(10);
         return response()->json([
             'status' => $loanRecords,
