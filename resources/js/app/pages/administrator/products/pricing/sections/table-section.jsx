@@ -26,8 +26,8 @@ export default function TableSection() {
                     <TableRow>
                         <TableCell>Barcode</TableCell>
                         <TableCell>Description</TableCell>
-                        <TableCell>Quantity</TableCell>
-                        <TableCell>Price</TableCell>
+                        <TableCell>Selling Quantity</TableCell>
+                        <TableCell>Selling Price</TableCell>
                         <TableCell>Action</TableCell>
                     </TableRow>
                 </TableHead>
