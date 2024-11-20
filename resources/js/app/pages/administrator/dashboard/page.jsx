@@ -46,7 +46,7 @@ export default function DashboardPage({ auth }) {
   return (
     <AdministratorLayout user={auth.user}>
       <DashboardPeriodicTabSection />
-      <input type="file" accept=".csv" onChange={handleFileUpload} />
+      {/* <input type="file" accept=".csv" onChange={handleFileUpload} /> */}
 
       <DashboardLineCartSection
         year={year}
