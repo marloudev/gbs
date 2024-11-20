@@ -71,6 +71,7 @@ function Row(props) {
                                         </TableCell>
                                         <TableCell>Selling Quantity</TableCell>
                                         <TableCell>Selling Price</TableCell>
+                                        <TableCell>Capital</TableCell>
                                     </TableRow>
                                 </TableHead>
                                 <TableBody>
@@ -90,6 +91,9 @@ function Row(props) {
                                                 </TableCell>
                                                 <TableCell>
                                                 ₱  {res?.product?.price??''}
+                                                </TableCell>
+                                                <TableCell>
+                                                ₱   {res?.product?.capital??''}
                                                 </TableCell>
                                             </TableRow>
                                         )
