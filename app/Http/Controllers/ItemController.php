@@ -35,8 +35,7 @@ class ItemController extends Controller
         $supply = Supply::where('barcode', $request->barcode)->first();
 
         foreach ($request->items as $key => $value) {
-            if (is_array($value)) {
-
+            if (is_array($value) && $key != 0) {
                 $item_product = ItemProduct::where('barcode', $value['barcode'])->first();
                 if (!$item_product) {
                     ItemProduct::create([
@@ -55,8 +54,6 @@ class ItemController extends Controller
                     ]);
                 }
                 //end ares ni
-
-
                 $product = Product::where('barcode', '=', $value['barcode'])->first();
                 if (!$product) {
                     Product::create([
@@ -77,7 +74,6 @@ class ItemController extends Controller
                 //end ares ni
             }
         }
-
 
         if (!$supply) {
             Supply::create([
