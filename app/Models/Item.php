@@ -26,6 +26,11 @@ class Item extends Model
     }
     public function items(): HasMany
     {
-        return $this->hasMany(ItemProduct::class,'item_id','item_id');
+        return $this->hasMany(ItemProduct::class,'item_id','item_id')->with(['product']);
+    }
+
+    public function product(): HasOne
+    {
+        return $this->hasOne(Product::class,'barcode','barcode');
     }
 }

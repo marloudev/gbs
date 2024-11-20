@@ -6,7 +6,9 @@ use App\Http\Controllers\AccountController;
 use App\Http\Controllers\AccountDetailsController;
 use App\Http\Controllers\AnalyticsController;
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ItemController;
+use App\Http\Controllers\ItemProductController;
 use App\Http\Controllers\LoyalCardController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ReceiveController;
@@ -44,4 +46,10 @@ Route::post('/change_status', [ReceiveController::class, 'change_status']);
 Route::post('/pullout_item', [ReceiveController::class, 'pullout_item']);
 Route::apiResource('warehouses', WarehouseController::class);
 Route::apiResource('supplies', SupplyController::class);
+Route::apiResource('item_product', ItemProductController::class);
+
+
+
+Route::post('/csvContent', [DashboardController::class, 'csvContent']);
+
 

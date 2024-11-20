@@ -10,30 +10,123 @@ use Illuminate\Http\Request;
 
 class ItemController extends Controller
 {
-    // public function index(Request $request)
-    // {
-    //     $items = Item::with(['items'])->paginate(10);
-    //     return response()->json([
-    //         'status' => $items,
-    //     ]);
-    // }
+
+    public function destroy($id)
+    {
+        $item = Item::where('id', $id)->first();
+        if ($item) {
+            $item->delete();
+            $item_product = ItemProduct::where('item_id', $item->item_id)->first();
+            if ($item_product) {
+                $item_product->delete();
+            }
+            $supply = Supply::where('barcode', $item->barcode)->first();
+            if ($supply) {
+                $supply->delete();
+            }
+        }
+        return response()->json([
+            'status' => 'success',
+        ], 200);
+    }
+    public function update(Request $request, $id)
+    {
+        $item = Item::where('barcode', '=', $request->barcode)->first();
+        $supply = Supply::where('barcode', $request->barcode)->first();
+
+        foreach ($request->items as $key => $value) {
+            if (is_array($value)) {
+
+                $item_product = ItemProduct::where('barcode', $value['barcode'])->first();
+                if (!$item_product) {
+                    ItemProduct::create([
+                        ...$value,
+                        'item_id' => $item->item_id ?? $request->item_id,
+                    ]);
+                } else {
+                    $item_product->update([
+                        'item_id' => $item->item_id ?? $request->item_id,
+                        'barcode' => $value['barcode'],
+                        'name' => $value['name'],
+                        'description' => $value['description'],
+                        'uom' => $value['uom'],
+                        'quantity' => $value['quantity'],
+                        // 'discount' => $value['discount'],
+                    ]);
+                }
+                //end ares ni
+
+
+                $product = Product::where('barcode', '=', $value['barcode'])->first();
+                if (!$product) {
+                    Product::create([
+                        'barcode' => $value['barcode'],
+                        'description' => $value['description'],
+                        'quantity' => 1,
+                        'price' => $value['price'],
+                        'capital' => $value['capital'],
+                        'remaining' => 0,
+                    ]);
+                } else {
+                    $product->update([
+                        'description' => $value['description'],
+                        'capital' => $value['capital'],
+                    ]);
+                }
+
+                //end ares ni
+            }
+        }
+
+
+        if (!$supply) {
+            Supply::create([
+                'barcode' => $request->barcode,
+                'brand' => $request->name,
+                'description' => $request->description,
+                'uom' => $request->uom,
+                'quantity' => 0,
+            ]);
+        } else {
+            $supply->update([
+                'brand' => $request->name,
+                'description' => $request->description,
+                'uom' => $request->uom,
+            ]);
+        }
+        if ($item) {
+            $item->update([
+                'item_id' => $item->item_id ?? $request->item_id,
+                'barcode' => $request->barcode,
+                'name' => $request->name,
+                'description' => $request->description,
+                'uom' => $request->uom,
+                'quantity' => $request->quantity,
+                'capital' => $request->capital,
+            ]);
+        }
+
+
+
+        return response()->json([
+            'status' => 'success',
+        ], 200);
+    }
     public function index(Request $request)
     {
-        $query = Item::with(['items']);
+        $query = Item::with(['items', 'product']);
         if ($request->search && $request->search != 'null') {
             $query->where('item_id', '=', $request->search)
                 ->orWhere(function ($q) use ($request) {
-                    // $q->orWhereHas('item', function ($q) use ($request) {
-                    //     $q->where('barcode', '=', $request->search);
-                    // });
-                    $q->orWhere('barcode', '=', $request->search);
+                    $q->orWhere('barcode', 'like', '%' . $request->search . '%');
                 });
         }
-    
+
         $query->orderByDesc('created_at');
-        $loanRecords = $query->paginate(10);
+        $items = $query->paginate(10);
+
         return response()->json([
-            'status' => $loanRecords,
+            'status' => $items,
         ], 200);
     }
 

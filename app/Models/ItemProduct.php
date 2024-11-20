@@ -24,4 +24,8 @@ class ItemProduct extends Model
     {
         return $this->hasOne(Item::class, 'item_id', 'item_id');
     }
+    public function product(): HasOne
+    {
+        return $this->hasOne(Product::class,'barcode','barcode');
+    }
 }

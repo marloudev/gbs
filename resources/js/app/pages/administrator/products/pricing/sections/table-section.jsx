@@ -18,7 +18,6 @@ import ProductsEditSection from "./products-edit-section";
 
 export default function TableSection() {
     const { products } = useSelector((state) => state.products);
-    console.log('products',products)
     return (
         <TableContainer component={Paper}>
             <Table sx={{ minWidth: 650 }} aria-label="simple table">

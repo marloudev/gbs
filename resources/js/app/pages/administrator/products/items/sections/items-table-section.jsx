@@ -14,6 +14,8 @@ import Paper from "@mui/material/Paper";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 import { useSelector } from "react-redux";
+import ItemUpdateSection from "./item-update-section";
+import ItemsDeleteSection from "./items-delete-section";
 
 function Row(props) {
     const { row } = props;
@@ -40,9 +42,14 @@ function Row(props) {
                 <TableCell>{row.name}</TableCell>
                 <TableCell>{row.description}</TableCell>
                 <TableCell>{row.uom}</TableCell>
-                <TableCell>{row.capital}</TableCell>
+                <TableCell>₱ {row.capital}</TableCell>
                 <TableCell></TableCell>
-                <TableCell>Action</TableCell>
+                <TableCell>
+                    <div className="flex gap-3">
+                        <ItemUpdateSection data={row} />
+                        <ItemsDeleteSection data={row} />
+                    </div>
+                </TableCell>
             </TableRow>
             <TableRow>
                 <TableCell
@@ -63,25 +70,30 @@ function Row(props) {
                                             Unit of Measurement
                                         </TableCell>
                                         <TableCell>Selling Quantity</TableCell>
-                                        <TableCell>Action</TableCell>
+                                        <TableCell>Selling Price</TableCell>
                                     </TableRow>
                                 </TableHead>
                                 <TableBody>
-                                    {row.items.map((res, i) => (
-                                        <TableRow key={i}>
-                                            {/* <TableCell>{res.item_id}</TableCell> */}
-                                            <TableCell>{res.barcode}</TableCell>
-                                            <TableCell>{res.name}</TableCell>
-                                            <TableCell>
-                                                {res.description}
-                                            </TableCell>
-                                            <TableCell>{res.uom}</TableCell>
-                                            <TableCell>
-                                                {res.quantity}
-                                            </TableCell>
-                                            <TableCell>action</TableCell>
-                                        </TableRow>
-                                    ))}
+                                    {row.items.map((res, i) => {
+                                        console.log('resres',res)
+                                        return (
+                                            <TableRow key={i}>
+                                                {/* <TableCell>{res.item_id}</TableCell> */}
+                                                <TableCell>{res.barcode}</TableCell>
+                                                <TableCell>{res.name}</TableCell>
+                                                <TableCell>
+                                                    {res.description}
+                                                </TableCell>
+                                                <TableCell>{res.uom}</TableCell>
+                                                <TableCell>
+                                                    {res.quantity}
+                                                </TableCell>
+                                                <TableCell>
+                                                ₱  {res?.product?.price??''}
+                                                </TableCell>
+                                            </TableRow>
+                                        )
+                                    })}
                                 </TableBody>
                             </Table>
                         </Box>
