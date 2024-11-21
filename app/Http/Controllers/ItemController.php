@@ -16,13 +16,23 @@ class ItemController extends Controller
         $item = Item::where('id', $id)->first();
         if ($item) {
             $item->delete();
-            $item_product = ItemProduct::where('item_id', $item->item_id)->first();
-            if ($item_product) {
-                $item_product->delete();
-            }
+
             $supply = Supply::where('barcode', $item->barcode)->first();
             if ($supply) {
                 $supply->delete();
+            }
+
+            $item_products = ItemProduct::where('item_id', '=', $item->item_id)->get();
+            foreach ($item_products as $key => $value) {
+                $product =  Product::where('barcode', $value['barcode'])->first();
+                if ($product) {
+                    $product->delete();
+                }
+            }
+
+            $item_product = ItemProduct::where('item_id', $item->item_id);
+            if ($item_product) {
+                $item_product->delete();
             }
         }
         return response()->json([
@@ -37,6 +47,8 @@ class ItemController extends Controller
         foreach ($request->items as $key => $value) {
             if (is_array($value) && $key != 0) {
                 $item_product = ItemProduct::where('barcode', $value['barcode'])->first();
+
+
                 if (!$item_product) {
                     ItemProduct::create([
                         ...$value,
@@ -68,9 +80,23 @@ class ItemController extends Controller
                     $product->update([
                         'description' => $value['description'],
                         'capital' => $value['capital'],
+                        'quantity' => $value['quantity'],
                     ]);
                 }
 
+                $item_exist = Item::where([
+                    ['barcode', '=', $value['barcode']],
+                    ['item_id', '=', null]
+                ])->first();
+
+                $suppy_exist = Supply::where('barcode', '=', $value['barcode'])->first();
+
+                if ($item_exist) {
+                    $item_exist->delete();
+                }
+                if ($suppy_exist) {
+                    $suppy_exist->delete();
+                }
                 //end ares ni
             }
         }
@@ -116,6 +142,7 @@ class ItemController extends Controller
                 ->orWhere(function ($q) use ($request) {
                     $q->orWhere('barcode', 'like', '%' . $request->search . '%');
                 });
+            $query->orWhere('description', 'like', '%' . $request->search . '%');
         }
 
         $query->orderByDesc('created_at');

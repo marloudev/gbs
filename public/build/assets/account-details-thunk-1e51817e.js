@@ -1,0 +1,1 @@
+import{g as r}from"./account-details-6f223d90.js";import{f as n}from"./app-fd6d6e0e.js";function _(t){return async function(c,a){const s=a().account_details.search,e=a().dashboard.year,o=(await r(t,{search:s,year:e})).data;c(n.actions.setAccountDetails(o))}}export{_ as g};
